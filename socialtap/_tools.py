@@ -524,7 +524,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_engagement",
         "title": "Engagement by handle",
-        "description": "Engagement rate, average views, likes and comments, posting cadence and top post for an account, computed from its recent posts the same way on every platform. Pass handle: a profile link, @handle, username or ID. Price per successful call: Facebook, Instagram, Reddit, Rumble, TikTok, X, YouTube: 1 credit. LinkedIn: 1 credit (public page) or 15 credits (data partner).",
+        "description": "Engagement rate, average views, likes and comments, posting cadence and top post of an account, computed from recent posts the same way on every platform. Pass handle: a profile link, @handle, username or ID. Price per successful call: Facebook, Instagram, Reddit, Rumble, TikTok, X, YouTube: 1 credit. LinkedIn: 1 credit (public page) or 15 credits (data partner).",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -4675,7 +4675,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_embed",
         "title": "Embed by link",
-        "description": "Platforms' own embed code for public posts, videos, playlists and profiles: the HTML to paste, its iframe URL and size, and the title, author and thumbnail it shows. Pass url: its link or ID. Price per successful call: 1 credit.",
+        "description": "Platforms' own embed code for public posts, videos, playlists and profiles: the HTML to paste, the iframe URL and size, and the title and thumbnail. Pass url: its link or ID. Price per successful call: 1 credit.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -4784,7 +4784,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_issue",
         "title": "Issue by link",
-        "description": "Issues and pull requests with their state, labels, author, assignees, milestone, comment and reaction counts, and for pull requests the branches, merge time and lines changed. Pass url: its link or ID. Price per successful call: 1 credit.",
+        "description": "Issues and pull requests with state, labels, author, assignees and comment counts, and for pull requests the branches, merge time and lines changed. Pass url: its link or ID. Price per successful call: 1 credit.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -4832,7 +4832,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_job_posting",
         "title": "Job posting by link",
-        "description": "Get a job posting. Job postings with the title, employer, location and workplace type, employment type, seniority, salary range, description, posting date, whether it is closed, applicants and apply link. Pass url: its link or ID. Price per successful call: 1 credit.",
+        "description": "Get a job posting. Job postings with the title, employer, location, workplace and employment type, seniority, salary range, posting date, applicants and apply link. Pass url: its link or ID. Price per successful call: 1 credit.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -5389,7 +5389,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_activity",
         "title": "Activity of a profile",
-        "description": "The activity of a profile, a page per call: an account's public activity: pushes, pull requests, issues, comments, reviews, releases, stars and forks, with the repository, branch or tag, issue or pull request number and title, and when. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The activity of a profile, a page per call: an account's public activity (pushes, pull requests, issues, comments, reviews, releases, stars and forks) with the repository, what it touched and when. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -5693,7 +5693,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_issues",
         "title": "Issues of a repository",
-        "description": "The issues of a repository, a page per call: issues and pull requests with their state, labels, author, assignees, milestone, comment and reaction counts, and for pull requests the branches, merge time and lines changed. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The issues of a repository, a page per call: issues and pull requests with state, labels, author, assignees and comment counts, and for pull requests the branches, merge time and lines changed. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -5792,7 +5792,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_job_related_jobs",
         "title": "Job related jobs",
-        "description": "The job related jobs, a page per call: job postings with the title, employer, location and workplace type, employment type, seniority, salary range, description, posting date, whether it is closed, applicants and apply link. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The job related jobs, a page per call: job postings with the title, employer, location, workplace and employment type, seniority, salary range, posting date, applicants and apply link. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -5856,7 +5856,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_jobs",
         "title": "Jobs of a profile",
-        "description": "The jobs of a profile, a page per call: job postings with the title, employer, location and workplace type, employment type, seniority, salary range, description, posting date, whether it is closed, applicants and apply link. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The jobs of a profile, a page per call: job postings with the title, employer, location, workplace and employment type, seniority, salary range, posting date, applicants and apply link. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -6344,7 +6344,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_profile_pull_requests",
         "title": "Profile pull requests",
-        "description": "The profile pull requests, a page per call: issues and pull requests with their state, labels, author, assignees, milestone, comment and reaction counts, and for pull requests the branches, merge time and lines changed. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The profile pull requests, a page per call: issues and pull requests with state, labels, author, assignees and comment counts, and for pull requests the branches, merge time and lines changed. Pass handle: a profile link, @handle, username or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -6429,7 +6429,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_releases",
         "title": "Releases of a repository",
-        "description": "The releases of a repository, a page per call: software releases with their tag, title, release notes, author, pre-release flag, date, downloadable files with sizes and download counts, and source archives. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The releases of a repository, a page per call: software releases with their tag, title, notes, author, pre-release flag, date, downloadable files with sizes and download counts, and source archives. Pass url: its link or ID. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -7082,7 +7082,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_whoishiring_jobs",
         "title": "Whoishiring jobs",
-        "description": "The whoishiring jobs, a page per call: job postings with the title, employer, location and workplace type, employment type, seniority, salary range, description, posting date, whether it is closed, applicants and apply link. Pass platform; the other arguments choose the list. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
+        "description": "The whoishiring jobs, a page per call: job postings with the title, employer, location, workplace and employment type, seniority, salary range, posting date, applicants and apply link. Pass platform; the other arguments choose the list. Price per successful page: 1 credit. Follow next_cursor while it is set; a short page is not the end.",
         "input_schema": {
             "type": "object",
             "properties": {

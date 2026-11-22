@@ -165,8 +165,8 @@ class ActivityPlatformSpecific:
 
 @dataclass(frozen=True)
 class Activity:
-    """An account's public activity: pushes, pull requests, issues, comments, reviews, releases, stars and forks,
-    with the repository, branch or tag, issue or pull request number and title, and when.
+    """An account's public activity (pushes, pull requests, issues, comments, reviews, releases, stars and forks)
+    with the repository, what it touched and when.
     """
 
     platform: str
@@ -3955,8 +3955,8 @@ class EmbedPlatformSpecific:
 
 @dataclass(frozen=True)
 class Embed:
-    """Platforms' own embed code for public posts, videos, playlists and profiles: the HTML to paste, its iframe URL
-    and size, and the title, author and thumbnail it shows.
+    """Platforms' own embed code for public posts, videos, playlists and profiles: the HTML to paste, the iframe URL
+    and size, and the title and thumbnail.
     """
 
     platform: str
@@ -11573,8 +11573,8 @@ class EngagementPlatformSpecific:
 
 @dataclass(frozen=True)
 class Engagement:
-    """Engagement rate, average views, likes and comments, posting cadence and top post for an account, computed from
-    its recent posts the same way on every platform.
+    """Engagement rate, average views, likes and comments, posting cadence and top post of an account, computed from
+    recent posts the same way on every platform.
     """
 
     platform: str
@@ -12307,8 +12307,8 @@ class IssuePlatformSpecific:
 
 @dataclass(frozen=True)
 class Issue:
-    """Issues and pull requests with their state, labels, author, assignees, milestone, comment and reaction counts,
-    and for pull requests the branches, merge time and lines changed.
+    """Issues and pull requests with state, labels, author, assignees and comment counts, and for pull requests the
+    branches, merge time and lines changed.
     """
 
     platform: str
@@ -12651,8 +12651,8 @@ class JobPostingPlatformSpecific:
 
 @dataclass(frozen=True)
 class JobPosting:
-    """Job postings with the title, employer, location and workplace type, employment type, seniority, salary range,
-    description, posting date, whether it is closed, applicants and apply link.
+    """Job postings with the title, employer, location, workplace and employment type, seniority, salary range,
+    posting date, applicants and apply link.
     """
 
     platform: str
@@ -15158,8 +15158,8 @@ class ReleasePlatformSpecific:
 
 @dataclass(frozen=True)
 class Release:
-    """Software releases with their tag, title, release notes, author, pre-release flag, date, downloadable files
-    with sizes and download counts, and source archives.
+    """Software releases with their tag, title, notes, author, pre-release flag, date, downloadable files with sizes
+    and download counts, and source archives.
     """
 
     platform: str

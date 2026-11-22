@@ -7999,9 +7999,9 @@ class FacebookTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript of a video or reel.
 
-        Returns the timed transcript of a public Facebook video or reel from its link or ID, from its captions or,
-        when it has none and you send transcribe_audio=true, its audio. Captions are the uploaded track first, then
-        Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
+        Returns the timed transcript of a public Facebook video or reel from its link or ID, read from its captions.
+        When it has none, send transcribe_audio=true to transcribe its audio. Captions are the uploaded track first,
+        then Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
         speech-to-text. Each segment has its start and end time, and text holds the whole transcript.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
@@ -8363,8 +8363,8 @@ class GitHubContributions:
         """A user's daily contribution counts for a year.
 
         Returns a GitHub user's contribution calendar, the graph on its profile, from its username, account ID or
-        link: the exact count and GitHub's shade for every day of the last twelve months or of a calendar year you
-        choose, the period's total, and how it splits into commits, issues, pull requests and code review.
+        link. You get the exact count and GitHub's shade for every day of the last twelve months or of a calendar year
+        you choose, the period's total, and how it splits into commits, issues, pull requests and code review.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 
@@ -9921,10 +9921,10 @@ class GitHubRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Every public repo of a user or org, with stars.
 
-        Returns the public repositories of a GitHub user or organization, from its username, account ID or link, a
-        page at a time, newest first or by latest push. Each repository comes with its exact star and fork counts,
-        description, topics, main language, license, homepage, default branch, fork and archived flags, size, and when
-        it was created, updated and last pushed to.
+        Returns the public repositories of a GitHub user or organization, from its username, account ID or link. They
+        come a page at a time, newest first or by latest push. Each repository comes with its exact star and fork
+        counts, description, topics, main language, license, homepage, default branch, fork and archived flags, size,
+        and when it was created, updated and last pushed to.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -10575,10 +10575,10 @@ class GitHubSearchProfiles:
     ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
         """Developers and organizations by keyword or location.
 
-        Returns the GitHub users and organizations a search finds, from keywords and GitHub's own qualifiers such as
-        location, language, follower count and account type, by best match, most followers or join date. Each comes
-        with its ID, username, profile link, avatar and whether it is a person or an organization, up to a hundred a
-        page.
+        Returns the GitHub users and organizations a search finds, by best match, most followers or join date. Search
+        with keywords and GitHub's own qualifiers such as location, language, follower count and account type. Each
+        comes with its ID, username, profile link, avatar and whether it is a person or an organization, up to a
+        hundred a page.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -10754,8 +10754,8 @@ class GitHubSearchRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Repos by keyword, with exact star and fork counts.
 
-        Returns the public GitHub repositories a search finds, from keywords and GitHub's own qualifiers such as
-        language, stars, topic and owner, by best match, most stars or latest push. Each comes with its owner,
+        Returns the public GitHub repositories a search finds, by best match, most stars or latest push. Search with
+        keywords and GitHub's own qualifiers such as language, stars, topic and owner. Each comes with its owner,
         description, language, topics, license, exact star and fork counts, and when it was created and last pushed
         to.
 
@@ -11116,10 +11116,9 @@ class GitHubTrendingRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Repos ranked by stars gained, by language.
 
-        Returns GitHub's trending repositories in GitHub's order, for today, this week or this month, optionally for
-        one programming language and one spoken language. Each repository has its ID, name, owner, description,
-        language, exact star and fork counts, the stars it gained in the window and the contributors GitHub shows for
-        it.
+        Returns GitHub's trending repositories in GitHub's order, for today, this week or this month. Narrow it to one
+        programming language and one spoken language. Each repository has its ID, name, owner, description, language,
+        exact star and fork counts, the stars it gained in the window and the contributors GitHub shows for it.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -13048,10 +13047,10 @@ class HackerNewsSearchStories:
     ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
         """Stories by keyword, ranked or newest first.
 
-        Returns the public Hacker News stories that match your words, ranked by relevance or newest first: links, Ask
-        HN, Show HN and Launch HN posts, jobs and polls. Filter by type, poster, points, comment count, date or the
-        front page, or find who linked to a site. Each story has its title, the page it links to, its text as plain
-        text, points and comment count, poster and posting time.
+        Returns the public Hacker News stories that match your words, ranked by relevance or newest first. Stories are
+        links, Ask HN, Show HN and Launch HN posts, jobs and polls. Filter by type, poster, points, comment count,
+        date or the front page, or find who linked to a site. Each story has its title, the page it links to, its text
+        as plain text, points and comment count, poster and posting time.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -19184,9 +19183,10 @@ class LinkedInFollowing:
     ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
         """Companies, schools, Top Voices a member follows.
 
-        Returns what a LinkedIn member follows, from their profile link or name: the company Pages, the schools, the
-        Top Voices or the newsletters listed in their Interests. Each account has its name, link, LinkedIn ID, logo or
-        photo, exact follower count and, for people, their headline. Page through long lists with the cursor.
+        Returns what a LinkedIn member follows, from their profile link or name. Choose the company Pages, the
+        schools, the Top Voices or the newsletters listed in their Interests. Each account has its name, link,
+        LinkedIn ID, logo or photo, exact follower count and, for people, their headline. Page through long lists with
+        the cursor.
 
         Cost per page: 5 credits. Failed requests and cache hits are free.
 
@@ -20610,7 +20610,7 @@ class LinkedInProfile:
     ) -> Union[Result[Profile], Result[Dict[str, Any]]]:
         """Company size and industry, or a member's career.
 
-        Returns a public LinkedIn company, school or showcase Page, or a member's profile, from its link, its name
+        Returns a public LinkedIn company, school or showcase Page, or a member's profile. Send its link, its name
         with a prefix (company/, in/) or a company's website (domain/). A Page has its industry, size, headquarters
         and locations, website, founding year, specialties, exact follower and employee counts, and the affiliated and
         similar Pages beside it. A member has their headline, about text, location, followers, connections,
@@ -25399,10 +25399,10 @@ class RedditTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Video post transcript, from captions or audio.
 
-        Returns the timed transcript of a public Reddit video post from its link or ID, from Reddit's captions or,
-        when it has none and you send transcribe_audio=true, its audio. Each segment has its start and end time, and
-        text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it and
-        app share links work too.
+        Returns the timed transcript of a public Reddit video post from its link or ID, read from Reddit's captions.
+        When it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time,
+        and text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it
+        and app share links work too.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.
@@ -26374,11 +26374,11 @@ class RumbleTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript of any video or past stream.
 
-        Returns the timed transcript of a public Rumble video, short or past live stream, from its captions or, when
-        it has none and you send transcribe_audio=true, its audio. Each segment has its start and end time, and text
-        holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names the
-        track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link, embed
-        links included, or a video ID.
+        Returns the timed transcript of a public Rumble video, short or past live stream, read from its captions. When
+        it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time, and
+        text holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names
+        the track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link,
+        embed links included, or a video ID.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.
@@ -34675,8 +34675,8 @@ class TikTokTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript from captions or the audio.
 
-        Returns the timed transcript of a public TikTok video from its link or ID, read from its captions or, when it
-        has none and you send transcribe_audio=true, its audio. You get the creator's edited captions, TikTok's
+        Returns the timed transcript of a public TikTok video from its link or ID, read from its captions. When it has
+        none, send transcribe_audio=true to transcribe its audio. You get the creator's edited captions, TikTok's
         auto-captions, or TikTok's own translation when lang asks for another language. Each segment has its start and
         end time, and text holds the whole transcript.
 
@@ -35866,10 +35866,10 @@ class TruthSocialPosts:
     ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
         """Truths and ReTruths of any account, newest first.
 
-        Returns a Truth Social account's public posts, its Truths and ReTruths, newest first and a page at a time,
-        from a username, profile link or account ID. Each post has its text with hashtags and mentions, images and
-        videos, link card, poll and group, exact publish time, and exact reply, ReTruth and like counts (and downvotes
-        in a group). A ReTruth carries the post it reposts, and a quote the post it quotes.
+        Returns a Truth Social account's public posts, its Truths and ReTruths, from a username, profile link or
+        account ID. They come newest first, a page at a time. Each post has its text with hashtags and mentions,
+        images and videos, link card, poll and group, exact publish time, and exact reply, ReTruth and like counts
+        (and downvotes in a group). A ReTruth carries the post it reposts, and a quote the post it quotes.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -37233,8 +37233,8 @@ class XFriendship:
     ) -> Union[Result[Relationship], Result[Dict[str, Any]]]:
         """Does one account follow another, and back.
 
-        Returns whether one X (formerly Twitter) account follows another, from two usernames, links or user IDs:
-        is_following, is_followed_by (both true when they follow each other), each account's user ID and current
+        Returns whether one X (formerly Twitter) account follows another, from two usernames, links or user IDs. You
+        get is_following, is_followed_by (both true when they follow each other), each account's user ID and current
         username, and whether X lets the first send the second a direct message. Unknown accounts return not_found,
         naming which one.
 
@@ -38823,10 +38823,10 @@ class XSpace:
     ) -> Union[Result[Live], Result[Dict[str, Any]]]:
         """Live audio room with host, listeners and replay.
 
-        Returns an X (formerly Twitter) Space from its link or ID: whether it is live, scheduled or over, its title,
-        host, start and end, how many listen now and how many tuned in. It also has the co-hosts, speakers, the
-        listeners X names, topics, replay plays, the post it was shared in, and on request the live or recorded
-        audio's HLS playlist.
+        Returns an X (formerly Twitter) Space from its link or ID: whether it is live, scheduled or over, and its
+        title and host. You get its start and end, how many listen now and how many tuned in. It also has the
+        co-hosts, speakers, the listeners X names, topics, replay plays, the post it was shared in, and on request the
+        live or recorded audio's HLS playlist.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 
@@ -38897,8 +38897,8 @@ class XTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Video post transcript, from captions or audio.
 
-        Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, from X's own
-        captions or, when it has none and you send transcribe_audio=true, the video's audio. Each segment has its
+        Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, read from X's
+        captions. When it has none, send transcribe_audio=true to transcribe the video's audio. Each segment has its
         start and end time, text holds the whole transcript, and language says what was spoken. Reposts, quotes of a
         video, videos in a post's card and posts with several videos work too.
 
@@ -39645,9 +39645,9 @@ class YouTubeTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript from captions or audio.
 
-        Returns the timed transcript of a public YouTube video, short or live replay, from its captions or, when it
-        has none and you send transcribe_audio=true, its audio. Send the video's link or ID. Each segment has its
-        start and end time, and text holds the whole transcript.
+        Returns the timed transcript of a public YouTube video, short or live replay, from its link or ID. It reads
+        the captions or, when there are none and you send transcribe_audio=true, the audio. Each segment has its start
+        and end time, and text holds the whole transcript.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.
@@ -49249,9 +49249,9 @@ class AsyncFacebookTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript of a video or reel.
 
-        Returns the timed transcript of a public Facebook video or reel from its link or ID, from its captions or,
-        when it has none and you send transcribe_audio=true, its audio. Captions are the uploaded track first, then
-        Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
+        Returns the timed transcript of a public Facebook video or reel from its link or ID, read from its captions.
+        When it has none, send transcribe_audio=true to transcribe its audio. Captions are the uploaded track first,
+        then Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
         speech-to-text. Each segment has its start and end time, and text holds the whole transcript.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
@@ -49613,8 +49613,8 @@ class AsyncGitHubContributions:
         """A user's daily contribution counts for a year.
 
         Returns a GitHub user's contribution calendar, the graph on its profile, from its username, account ID or
-        link: the exact count and GitHub's shade for every day of the last twelve months or of a calendar year you
-        choose, the period's total, and how it splits into commits, issues, pull requests and code review.
+        link. You get the exact count and GitHub's shade for every day of the last twelve months or of a calendar year
+        you choose, the period's total, and how it splits into commits, issues, pull requests and code review.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 
@@ -51171,10 +51171,10 @@ class AsyncGitHubRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Every public repo of a user or org, with stars.
 
-        Returns the public repositories of a GitHub user or organization, from its username, account ID or link, a
-        page at a time, newest first or by latest push. Each repository comes with its exact star and fork counts,
-        description, topics, main language, license, homepage, default branch, fork and archived flags, size, and when
-        it was created, updated and last pushed to.
+        Returns the public repositories of a GitHub user or organization, from its username, account ID or link. They
+        come a page at a time, newest first or by latest push. Each repository comes with its exact star and fork
+        counts, description, topics, main language, license, homepage, default branch, fork and archived flags, size,
+        and when it was created, updated and last pushed to.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -51825,10 +51825,10 @@ class AsyncGitHubSearchProfiles:
     ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
         """Developers and organizations by keyword or location.
 
-        Returns the GitHub users and organizations a search finds, from keywords and GitHub's own qualifiers such as
-        location, language, follower count and account type, by best match, most followers or join date. Each comes
-        with its ID, username, profile link, avatar and whether it is a person or an organization, up to a hundred a
-        page.
+        Returns the GitHub users and organizations a search finds, by best match, most followers or join date. Search
+        with keywords and GitHub's own qualifiers such as location, language, follower count and account type. Each
+        comes with its ID, username, profile link, avatar and whether it is a person or an organization, up to a
+        hundred a page.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -52004,8 +52004,8 @@ class AsyncGitHubSearchRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Repos by keyword, with exact star and fork counts.
 
-        Returns the public GitHub repositories a search finds, from keywords and GitHub's own qualifiers such as
-        language, stars, topic and owner, by best match, most stars or latest push. Each comes with its owner,
+        Returns the public GitHub repositories a search finds, by best match, most stars or latest push. Search with
+        keywords and GitHub's own qualifiers such as language, stars, topic and owner. Each comes with its owner,
         description, language, topics, license, exact star and fork counts, and when it was created and last pushed
         to.
 
@@ -52366,10 +52366,9 @@ class AsyncGitHubTrendingRepositories:
     ) -> Union[ListResult[Repository], ListResult[Dict[str, Any]]]:
         """Repos ranked by stars gained, by language.
 
-        Returns GitHub's trending repositories in GitHub's order, for today, this week or this month, optionally for
-        one programming language and one spoken language. Each repository has its ID, name, owner, description,
-        language, exact star and fork counts, the stars it gained in the window and the contributors GitHub shows for
-        it.
+        Returns GitHub's trending repositories in GitHub's order, for today, this week or this month. Narrow it to one
+        programming language and one spoken language. Each repository has its ID, name, owner, description, language,
+        exact star and fork counts, the stars it gained in the window and the contributors GitHub shows for it.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -54298,10 +54297,10 @@ class AsyncHackerNewsSearchStories:
     ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
         """Stories by keyword, ranked or newest first.
 
-        Returns the public Hacker News stories that match your words, ranked by relevance or newest first: links, Ask
-        HN, Show HN and Launch HN posts, jobs and polls. Filter by type, poster, points, comment count, date or the
-        front page, or find who linked to a site. Each story has its title, the page it links to, its text as plain
-        text, points and comment count, poster and posting time.
+        Returns the public Hacker News stories that match your words, ranked by relevance or newest first. Stories are
+        links, Ask HN, Show HN and Launch HN posts, jobs and polls. Filter by type, poster, points, comment count,
+        date or the front page, or find who linked to a site. Each story has its title, the page it links to, its text
+        as plain text, points and comment count, poster and posting time.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -60434,9 +60433,10 @@ class AsyncLinkedInFollowing:
     ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
         """Companies, schools, Top Voices a member follows.
 
-        Returns what a LinkedIn member follows, from their profile link or name: the company Pages, the schools, the
-        Top Voices or the newsletters listed in their Interests. Each account has its name, link, LinkedIn ID, logo or
-        photo, exact follower count and, for people, their headline. Page through long lists with the cursor.
+        Returns what a LinkedIn member follows, from their profile link or name. Choose the company Pages, the
+        schools, the Top Voices or the newsletters listed in their Interests. Each account has its name, link,
+        LinkedIn ID, logo or photo, exact follower count and, for people, their headline. Page through long lists with
+        the cursor.
 
         Cost per page: 5 credits. Failed requests and cache hits are free.
 
@@ -61860,7 +61860,7 @@ class AsyncLinkedInProfile:
     ) -> Union[Result[Profile], Result[Dict[str, Any]]]:
         """Company size and industry, or a member's career.
 
-        Returns a public LinkedIn company, school or showcase Page, or a member's profile, from its link, its name
+        Returns a public LinkedIn company, school or showcase Page, or a member's profile. Send its link, its name
         with a prefix (company/, in/) or a company's website (domain/). A Page has its industry, size, headquarters
         and locations, website, founding year, specialties, exact follower and employee counts, and the affiliated and
         similar Pages beside it. A member has their headline, about text, location, followers, connections,
@@ -66649,10 +66649,10 @@ class AsyncRedditTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Video post transcript, from captions or audio.
 
-        Returns the timed transcript of a public Reddit video post from its link or ID, from Reddit's captions or,
-        when it has none and you send transcribe_audio=true, its audio. Each segment has its start and end time, and
-        text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it and
-        app share links work too.
+        Returns the timed transcript of a public Reddit video post from its link or ID, read from Reddit's captions.
+        When it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time,
+        and text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it
+        and app share links work too.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.
@@ -67624,11 +67624,11 @@ class AsyncRumbleTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript of any video or past stream.
 
-        Returns the timed transcript of a public Rumble video, short or past live stream, from its captions or, when
-        it has none and you send transcribe_audio=true, its audio. Each segment has its start and end time, and text
-        holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names the
-        track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link, embed
-        links included, or a video ID.
+        Returns the timed transcript of a public Rumble video, short or past live stream, read from its captions. When
+        it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time, and
+        text holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names
+        the track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link,
+        embed links included, or a video ID.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.
@@ -75925,8 +75925,8 @@ class AsyncTikTokTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript from captions or the audio.
 
-        Returns the timed transcript of a public TikTok video from its link or ID, read from its captions or, when it
-        has none and you send transcribe_audio=true, its audio. You get the creator's edited captions, TikTok's
+        Returns the timed transcript of a public TikTok video from its link or ID, read from its captions. When it has
+        none, send transcribe_audio=true to transcribe its audio. You get the creator's edited captions, TikTok's
         auto-captions, or TikTok's own translation when lang asks for another language. Each segment has its start and
         end time, and text holds the whole transcript.
 
@@ -77116,10 +77116,10 @@ class AsyncTruthSocialPosts:
     ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
         """Truths and ReTruths of any account, newest first.
 
-        Returns a Truth Social account's public posts, its Truths and ReTruths, newest first and a page at a time,
-        from a username, profile link or account ID. Each post has its text with hashtags and mentions, images and
-        videos, link card, poll and group, exact publish time, and exact reply, ReTruth and like counts (and downvotes
-        in a group). A ReTruth carries the post it reposts, and a quote the post it quotes.
+        Returns a Truth Social account's public posts, its Truths and ReTruths, from a username, profile link or
+        account ID. They come newest first, a page at a time. Each post has its text with hashtags and mentions,
+        images and videos, link card, poll and group, exact publish time, and exact reply, ReTruth and like counts
+        (and downvotes in a group). A ReTruth carries the post it reposts, and a quote the post it quotes.
 
         Cost per page: 1 credit. Failed requests and cache hits are free.
 
@@ -78483,8 +78483,8 @@ class AsyncXFriendship:
     ) -> Union[Result[Relationship], Result[Dict[str, Any]]]:
         """Does one account follow another, and back.
 
-        Returns whether one X (formerly Twitter) account follows another, from two usernames, links or user IDs:
-        is_following, is_followed_by (both true when they follow each other), each account's user ID and current
+        Returns whether one X (formerly Twitter) account follows another, from two usernames, links or user IDs. You
+        get is_following, is_followed_by (both true when they follow each other), each account's user ID and current
         username, and whether X lets the first send the second a direct message. Unknown accounts return not_found,
         naming which one.
 
@@ -80073,10 +80073,10 @@ class AsyncXSpace:
     ) -> Union[Result[Live], Result[Dict[str, Any]]]:
         """Live audio room with host, listeners and replay.
 
-        Returns an X (formerly Twitter) Space from its link or ID: whether it is live, scheduled or over, its title,
-        host, start and end, how many listen now and how many tuned in. It also has the co-hosts, speakers, the
-        listeners X names, topics, replay plays, the post it was shared in, and on request the live or recorded
-        audio's HLS playlist.
+        Returns an X (formerly Twitter) Space from its link or ID: whether it is live, scheduled or over, and its
+        title and host. You get its start and end, how many listen now and how many tuned in. It also has the
+        co-hosts, speakers, the listeners X names, topics, replay plays, the post it was shared in, and on request the
+        live or recorded audio's HLS playlist.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 
@@ -80147,8 +80147,8 @@ class AsyncXTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Video post transcript, from captions or audio.
 
-        Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, from X's own
-        captions or, when it has none and you send transcribe_audio=true, the video's audio. Each segment has its
+        Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, read from X's
+        captions. When it has none, send transcribe_audio=true to transcribe the video's audio. Each segment has its
         start and end time, text holds the whole transcript, and language says what was spoken. Reposts, quotes of a
         video, videos in a post's card and posts with several videos work too.
 
@@ -80895,9 +80895,9 @@ class AsyncYouTubeTranscript:
     ) -> Union[Result[Transcript], Result[Dict[str, Any]]]:
         """Timed transcript from captions or audio.
 
-        Returns the timed transcript of a public YouTube video, short or live replay, from its captions or, when it
-        has none and you send transcribe_audio=true, its audio. Send the video's link or ID. Each segment has its
-        start and end time, and text holds the whole transcript.
+        Returns the timed transcript of a public YouTube video, short or live replay, from its link or ID. It reads
+        the captions or, when there are none and you send transcribe_audio=true, the audio. Each segment has its start
+        and end time, and text holds the whole transcript.
 
         Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
         transcribe_audio=true). Failed requests and cache hits are free.

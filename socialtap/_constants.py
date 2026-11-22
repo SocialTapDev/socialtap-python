@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Dict, NamedTuple, Optional
 
-VERSION = "1.584.33"
+VERSION = "1.585.34"
 """SDK version: 1.<contract facts>.<generator revision> (sdk/README.md)."""
 DEFAULT_BASE_URL = "https://socialtap.dev"
 API_KEY_ENV = "SOCIALTAP_API_KEY"
