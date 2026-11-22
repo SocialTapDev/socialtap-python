@@ -40093,8 +40093,8 @@ class BillingAutoTopupResource:
         """Get auto top-up.
 
         The account's auto top-up: the pack it buys when the balance falls to its threshold, its monthly cap and what
-        it charged this month, the saved card it charges, its latest top-up, and why it turned itself off, if it did.
-        Free.
+        it charged this month, the saved payment method it charges, its latest top-up, and why it turned itself off,
+        if it did. Free.
 
         Free; needs an API key with the `account:read` scope (GET /v1/billing/auto_topup).
 
@@ -81322,8 +81322,8 @@ class AsyncBillingAutoTopupResource:
         """Get auto top-up.
 
         The account's auto top-up: the pack it buys when the balance falls to its threshold, its monthly cap and what
-        it charged this month, the saved card it charges, its latest top-up, and why it turned itself off, if it did.
-        Free.
+        it charged this month, the saved payment method it charges, its latest top-up, and why it turned itself off,
+        if it did. Free.
 
         Free; needs an API key with the `account:read` scope (GET /v1/billing/auto_topup).
 

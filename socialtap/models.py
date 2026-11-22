@@ -18277,27 +18277,39 @@ class Subscription:
 @dataclass(frozen=True)
 class PaymentMethodSummary:
 
-    brand: str
-    """Card brand (visa, mastercard, amex, …)."""
+    type: str
+    """What kind of payment method: card (Apple Pay and Google Pay included), link (Stripe's Link), cashapp (Cash App
+    Pay) or amazon_pay (Amazon Pay). New values may be added. Known values: card, link, cashapp, amazon_pay.
+    """
 
-    last4: str
-    """The card number's last four digits."""
+    brand: Optional[str]
+    """Card brand (visa, mastercard, amex, …); null when type isn't card."""
 
-    exp_month: int
-    """Expiry month (1–12)."""
+    last4: Optional[str]
+    """The card number's last four digits; null when type isn't card."""
 
-    exp_year: int
-    """Expiry year."""
+    exp_month: Optional[int]
+    """Expiry month (1–12); null when type isn't card."""
+
+    exp_year: Optional[int]
+    """Expiry year; null when type isn't card."""
+
+    account: Optional[str]
+    """The wallet account it charges, as its provider shows it: the Link account's email, or the Cash App $Cashtag;
+    null for a card, for Amazon Pay, or when the provider doesn't say.
+    """
 
     @classmethod
     def from_dict(cls, data: Any) -> PaymentMethodSummary:
         """Read a decoded JSON object. Raises APIDecodeError when a member is missing or of the wrong type (see _parse)."""
         d = _p.obj(data)
         return cls(
-            brand=_p.field(d, "brand", _p.as_str),
-            last4=_p.field(d, "last4", _p.as_str),
-            exp_month=_p.field(d, "exp_month", _p.as_int),
-            exp_year=_p.field(d, "exp_year", _p.as_int),
+            type=_p.field(d, "type", _p.as_str),
+            brand=_p.field(d, "brand", lambda v: _p.opt(v, _p.as_str)),
+            last4=_p.field(d, "last4", lambda v: _p.opt(v, _p.as_str)),
+            exp_month=_p.field(d, "exp_month", lambda v: _p.opt(v, _p.as_int)),
+            exp_year=_p.field(d, "exp_year", lambda v: _p.opt(v, _p.as_int)),
+            account=_p.field(d, "account", lambda v: _p.opt(v, _p.as_str)),
         )
 
 
@@ -18405,12 +18417,12 @@ class AutoTopup:
     off_reason: Optional[str]
     """Why auto top-up turned itself off (null while on, or when a person turned it off): card_declined (the bank
     declined the charge), authentication_required (the bank asked the cardholder to confirm it: buy the pack in
-    Billing, then turn auto top-up back on), no_card (no saved card), billing_address_required (Stripe Tax needs
-    the card's billing address: add it in the payment settings), payment_failed (another payment error), disputed
-    (a payment on this account was disputed: auto top-up turns on again only with a different card), bank_inquiry
-    (a bank asked about a payment on this account, which is not yet a dispute: turn it back on when you are
-    ready), plan_ended (it bought a monthly plan's top-up, and the plan ended). It never retries: fix the cause,
-    then turn it on again. Known values: card_declined, authentication_required, no_card,
+    Billing, then turn auto top-up back on), no_card (no saved payment method), billing_address_required (Stripe
+    Tax needs your billing address: add it in the payment settings), payment_failed (another payment error),
+    disputed (a payment on this account was disputed: auto top-up turns on again only with a different payment
+    method), bank_inquiry (a bank asked about a payment on this account, which is not yet a dispute: turn it back
+    on when you are ready), plan_ended (it bought a monthly plan's top-up, and the plan ended). It never retries:
+    fix the cause, then turn it on again. Known values: card_declined, authentication_required, no_card,
     billing_address_required, payment_failed, disputed, bank_inquiry, plan_ended.
     """
 
@@ -18421,8 +18433,8 @@ class AutoTopup:
     """When it turned itself off, RFC 3339 UTC; null when off_reason is. Format: date-time."""
 
     payment_method: Optional[PaymentMethodSummary]
-    """The saved card a top-up charges (the default card in the payment settings, else the newest); null when there
-    is none, or when the payment processor could not be reached.
+    """The saved payment method a top-up charges (the default in the payment settings, else the newest one saved);
+    null when there is none, or when the payment processor could not be reached.
     """
 
     last_charge: Optional[AutoTopupCharge]
