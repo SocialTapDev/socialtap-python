@@ -6932,7 +6932,7 @@ class FacebookSearchGroups:
         group's full, live record in the same response: ID, exact member count, privacy, rules, admins and activity.
         Page through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -7026,7 +7026,7 @@ class FacebookSearchGroups:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -7603,7 +7603,7 @@ class FacebookSearchPosts:
         text, media, exact reaction, comment and share counts and publish time. media=video finds videos instead. Page
         through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -7712,7 +7712,7 @@ class FacebookSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -7817,7 +7817,7 @@ class FacebookSearchProfiles:
         response: ID, exact counts, verified badge, picture and contact details. account_type narrows the results to
         Pages or to people.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -7916,7 +7916,7 @@ class FacebookSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -16217,7 +16217,7 @@ class InstagramSearchPlaces:
         Add fill=true to get each location's current Instagram record (category, coordinates, address, exact post
         count) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -16310,7 +16310,7 @@ class InstagramSearchPlaces:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -16582,7 +16582,7 @@ class InstagramSearchProfiles:
         search index shows them. Add fill=true to get each account's current profile (user ID, exact counts, verified
         badge, picture, links) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -16675,7 +16675,7 @@ class InstagramSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -16769,7 +16769,7 @@ class InstagramSearchSounds:
         when the search index shows it. Add fill=true to get each audio's current record (exact reel count, length,
         cover art, audio file, Spotify link) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -16862,7 +16862,7 @@ class InstagramSearchSounds:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -21511,7 +21511,7 @@ class LinkedInSearchPosts:
         count. Add fill=true to get each post's full, live record in the same response: whole text, media, exact
         reaction and comment counts and top comments.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -21604,7 +21604,7 @@ class LinkedInSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -21702,7 +21702,7 @@ class LinkedInSearchProfiles:
         Add fill=true to get the live LinkedIn profile of each account LinkedIn shows logged out, in the same
         response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -21807,7 +21807,7 @@ class LinkedInSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -29111,7 +29111,7 @@ class TelegramSearchChannels:
         fill=true to get each channel's full, current record in the same response: exact subscribers, photo, badge,
         creation date, numeric ID, and whether it is a channel or a group. Page through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -29213,7 +29213,7 @@ class TelegramSearchChannels:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -32904,7 +32904,7 @@ class TikTokSearchHashtags:
         Its post count and TikTok's description of it come too when the search index shows them. Add fill=true to also
         get each hashtag's full live record (its ID, exact post and view counts, picture) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -32996,7 +32996,7 @@ class TikTokSearchHashtags:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -33275,7 +33275,7 @@ class TikTokSearchProfiles:
         them. Add fill=true to also get each account's full live profile (user ID, exact counts, verification, avatar)
         in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -33367,7 +33367,7 @@ class TikTokSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -33460,7 +33460,7 @@ class TikTokSearchSounds:
         fill=true to also get each sound's full live record (sound ID, duration, cover art, audio link, album, exact
         video count) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -33552,7 +33552,7 @@ class TikTokSearchSounds:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -33816,7 +33816,7 @@ class TikTokSearchTop:
         a video's caption and likes, a hashtag's post count, a sound's artist and video count. Add fill=true to also
         get each result's full live record in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -33908,7 +33908,7 @@ class TikTokSearchTop:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -38078,7 +38078,7 @@ class XSearchCommunities:
         response: ID, exact member count, rules, topic, banner, admin, NSFW flag and how people join. Page through
         results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -38170,7 +38170,7 @@ class XSearchCommunities:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -38439,7 +38439,7 @@ class XSearchPosts:
         get each post's full record from X in the same response: full text, media, views, likes, reposts, replies and
         the author's verification. Filter by date with since and until, and page through results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -38547,7 +38547,7 @@ class XSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -38650,7 +38650,7 @@ class XSearchProfiles:
         fill=true to get each account's full profile from X in the same response: user ID, exact counts, verification,
         avatar and links. Page through results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -38743,7 +38743,7 @@ class XSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -39263,6 +39263,203 @@ class YouTubeEngagement:
         return self._core._get("/v1/youtube/engagement", {"handle": handle, "tab": tab, "max_age": max_age, "fields": fields}, model_or_raw(Engagement.from_dict, fields), timeout, max_retries)
 
 
+class YouTubeHashtagPosts:
+    """``youtube.hashtag_posts``: Videos and shorts under a hashtag with exact views."""
+
+    def __init__(self, core: SyncCore) -> None:
+        self._core = core
+
+    @overload
+    def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Post]: ...
+
+    @overload
+    def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
+        """Videos and shorts under a hashtag with exact views.
+
+        Returns the videos and shorts YouTube lists under a hashtag, in YouTube's order, from the hashtag's link or
+        its name. Each video has its title, channel with its handle and verification badge, exact view count, upload
+        time and length. Set kind to short for the hashtag's Shorts tab, a separate list of shorts. A hashtag no video
+        uses returns not_found.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 36 items per page (YouTube's order for the hashtag (its hashtag page's feed), not by time);
+        `page.next_cursor` continues the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            url: A YouTube hashtag link (youtube.com/hashtag/cooking, or its Shorts tab:
+                youtube.com/hashtag/cooking/shorts), or the hashtag itself with or without the # (cooking, #cooking).
+                Hashtags are case-insensitive and may be in any script (#料理). At most 2048 characters. Example:
+                https://www.youtube.com/hashtag/cooking
+            kind: Which tab of the hashtag's page: all (default: its videos, shorts and streams, each with its
+                channel, exact view count, upload time and length) or short (its Shorts tab: a separate list of
+                shorts, each with its title, channel ID and rounded view count). A Shorts tab link sent without kind
+                lists short. One of: all, short. Example: short
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. The videos come in YouTube's order for the hashtag, not by time, so since and until filter
+                each page by published_at (from YouTube's relative upload label, to the day beyond a day old). Not
+                with kind=short: the Shorts tab shows no upload time. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 36. Default: 36.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._list("/v1/youtube/hashtag_posts", {"url": url, "kind": kind, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Post]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[Paginator[Post], Paginator[Dict[str, Any]]]:
+        """Every item of youtube.hashtag_posts, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            url: A YouTube hashtag link (youtube.com/hashtag/cooking, or its Shorts tab:
+                youtube.com/hashtag/cooking/shorts), or the hashtag itself with or without the # (cooking, #cooking).
+                Hashtags are case-insensitive and may be in any script (#料理). At most 2048 characters. Example:
+                https://www.youtube.com/hashtag/cooking
+            kind: Which tab of the hashtag's page: all (default: its videos, shorts and streams, each with its
+                channel, exact view count, upload time and length) or short (its Shorts tab: a separate list of
+                shorts, each with its title, channel ID and rounded view count). A Shorts tab link sent without kind
+                lists short. One of: all, short. Example: short
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. The videos come in YouTube's order for the hashtag, not by time, so since and until filter
+                each page by published_at (from YouTube's relative upload label, to the day beyond a day old). Not
+                with kind=short: the Shorts tab shows no upload time. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 36. Default: 36.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/hashtag_posts", {"url": url, "kind": kind, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
 class YouTubePost:
     """``youtube.post``: Video or short with exact view, like and comment counts."""
 
@@ -39600,6 +39797,579 @@ class YouTubeProfile:
         return self._core._get("/v1/youtube/profile", {"handle": handle, "max_age": max_age, "fields": fields}, model_or_raw(Profile.from_dict, fields), timeout, max_retries)
 
 
+class YouTubeSearchPosts:
+    """``youtube.search_posts``: Videos, shorts and live streams by keyword."""
+
+    def __init__(self, core: SyncCore) -> None:
+        self._core = core
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Post]: ...
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
+        """Videos, shorts and live streams by keyword.
+
+        Returns the YouTube videos, shorts and live streams that match a keyword, across YouTube or in one channel, by
+        best match or popularity. Videos come with their channel and verification badge, exact view count, upload day,
+        length and, across YouTube, the part of the description that matched. Shorts have rounded views, and streams
+        on air no views, upload time or length. Narrow it with kind, length and upload date.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 30 items per page (YouTube's relevance ranking (its search order)); `page.next_cursor` continues
+        the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words or a phrase, matched by YouTube's search as on youtube.com, in any language. YouTube's
+                operators pass through: "exact phrase", intitle:word, -word, #hashtag. At most 500 characters.
+                Example: marathon training
+            kind: Which results: all (default: the videos, streams and shorts in YouTube's result list, without its
+                shelves), video (YouTube's Videos filter), short (its Shorts filter, each with its channel, upload
+                time and length) or live (streams on air now). platform_type says which each result is. One of: all,
+                video, short, live. Default: all. Example: short
+            duration: Only videos of a length: short (under 3 minutes), medium (3 to 20 minutes) or long (over 20
+                minutes), by YouTube's Duration filter. Lists videos only (no shorts or streams), so not with kind
+                short or live. One of: short, medium, long. Example: long
+            author: Only this channel's videos, as its Search tab finds them: a handle (@MrBeast), any channel link or
+                a UC… channel ID. Its results come in YouTube's order for the channel, so not with kind, duration or
+                sort=popular. All of YouTube when omitted. At most 512 characters. Example: @NASA
+            sort: Order of the results. relevance (default): YouTube's best match. popular: YouTube's Popularity
+                ranking, roughly most viewed first. One of: relevance, popular. Default: relevance.
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. Results are ranked, not ordered by time, so since and until filter each page by published_at,
+                which comes from YouTube's relative upload label ("1 month ago") and can be up to one label unit later
+                than the upload: a result whose label could fall inside the window is kept, so results up to one label
+                unit older may be included. Send a date. YouTube's own Upload date filter (this week, month or year)
+                is applied when it covers since, so fewer pages are fetched. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 30. Default: 30.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._list("/v1/youtube/search_posts", {"query": query, "kind": kind, "duration": duration, "author": author, "sort": sort, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Post]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[Paginator[Post], Paginator[Dict[str, Any]]]:
+        """Every item of youtube.search_posts, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words or a phrase, matched by YouTube's search as on youtube.com, in any language. YouTube's
+                operators pass through: "exact phrase", intitle:word, -word, #hashtag. At most 500 characters.
+                Example: marathon training
+            kind: Which results: all (default: the videos, streams and shorts in YouTube's result list, without its
+                shelves), video (YouTube's Videos filter), short (its Shorts filter, each with its channel, upload
+                time and length) or live (streams on air now). platform_type says which each result is. One of: all,
+                video, short, live. Default: all. Example: short
+            duration: Only videos of a length: short (under 3 minutes), medium (3 to 20 minutes) or long (over 20
+                minutes), by YouTube's Duration filter. Lists videos only (no shorts or streams), so not with kind
+                short or live. One of: short, medium, long. Example: long
+            author: Only this channel's videos, as its Search tab finds them: a handle (@MrBeast), any channel link or
+                a UC… channel ID. Its results come in YouTube's order for the channel, so not with kind, duration or
+                sort=popular. All of YouTube when omitted. At most 512 characters. Example: @NASA
+            sort: Order of the results. relevance (default): YouTube's best match. popular: YouTube's Popularity
+                ranking, roughly most viewed first. One of: relevance, popular. Default: relevance.
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. Results are ranked, not ordered by time, so since and until filter each page by published_at,
+                which comes from YouTube's relative upload label ("1 month ago") and can be up to one label unit later
+                than the upload: a result whose label could fall inside the window is kept, so results up to one label
+                unit older may be included. Send a date. YouTube's own Upload date filter (this week, month or year)
+                is applied when it covers since, so fewer pages are fetched. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 30. Default: 30.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_posts", {"query": query, "kind": kind, "duration": duration, "author": author, "sort": sort, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
+class YouTubeSearchProfiles:
+    """``youtube.search_profiles``: Channels by keyword, with subscribers and handles."""
+
+    def __init__(self, core: SyncCore) -> None:
+        self._core = core
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Profile]: ...
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
+        """Channels by keyword, with subscribers and handles.
+
+        Returns the YouTube channels that match a keyword, a name or a handle, in YouTube's order. Each channel has
+        its ID, handle, name, link, avatar, an excerpt of its description, its subscriber count and its verified and
+        official artist badges. Page through every result with the cursor. A search with no match returns an empty
+        page.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 20 items per page (YouTube's relevance ranking (its search order)); `page.next_cursor` continues
+        the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words, a name or a handle, matched by YouTube's channel search as on youtube.com, in any language:
+                a channel's name, its handle (@mrbeast) and the words in its description. At most 500 characters.
+                Example: marathon
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 20. Default: 20.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._list("/v1/youtube/search_profiles", {"query": query, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Profile.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Profile]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[Paginator[Profile], Paginator[Dict[str, Any]]]:
+        """Every item of youtube.search_profiles, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words, a name or a handle, matched by YouTube's channel search as on youtube.com, in any language:
+                a channel's name, its handle (@mrbeast) and the words in its description. At most 500 characters.
+                Example: marathon
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 20. Default: 20.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_profiles", {"query": query, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Profile.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
+class YouTubeSearchSuggestions:
+    """``youtube.search_suggestions``: Search box autocomplete for a partial query."""
+
+    def __init__(self, core: SyncCore) -> None:
+        self._core = core
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Suggestion]: ...
+
+    @overload
+    def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Suggestion], ListResult[Dict[str, Any]]]:
+        """Search box autocomplete for a partial query.
+
+        Returns the searches YouTube's search box completes a partial query to, in YouTube's order, from a word, part
+        of a word or a channel's name. Each suggestion has its text, rank and a link to its results. A channel YouTube
+        proposes comes with its channel ID, handle, name and avatar, and a person or show with its Knowledge Graph ID,
+        description and picture. Set country and lang to get what people there search.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 14 items per page (YouTube's search box order (most likely search first)); `page.next_cursor`
+        continues the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: The start of a search, as typed into YouTube's search box: a word, part of a word, a channel's name
+                or @handle, in any language (marathon tr, mrbea, 料理). Up to 100 characters, YouTube's own limit, where
+                an emoji counts as two. At most 100 characters. Example: marathon tr
+            lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
+                language of the search box: YouTube completes in it where it can and writes entity descriptions in it.
+                A BCP-47 tag such as en, ja or pt-BR (case-insensitive). Default: en. Default: en. Example: en
+            country: Region: an ISO 3166-1 alpha-2 country code such as US or BR (case-insensitive). The country whose
+                searches to complete with: an ISO 3166-1 alpha-2 code such as US, GB or JP (case-insensitive). A
+                country YouTube keeps no list of its own for gets its worldwide list, the US one. Default: US.
+                Default: US. Example: US
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 14. Default: 14.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._list("/v1/youtube/search_suggestions", {"query": query, "lang": lang, "country": country, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Suggestion.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Suggestion]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Paginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[Paginator[Suggestion], Paginator[Dict[str, Any]]]:
+        """Every item of youtube.search_suggestions, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: The start of a search, as typed into YouTube's search box: a word, part of a word, a channel's name
+                or @handle, in any language (marathon tr, mrbea, 料理). Up to 100 characters, YouTube's own limit, where
+                an emoji counts as two. At most 100 characters. Example: marathon tr
+            lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
+                language of the search box: YouTube completes in it where it can and writes entity descriptions in it.
+                A BCP-47 tag such as en, ja or pt-BR (case-insensitive). Default: en. Default: en. Example: en
+            country: Region: an ISO 3166-1 alpha-2 country code such as US or BR (case-insensitive). The country whose
+                searches to complete with: an ISO 3166-1 alpha-2 code such as US, GB or JP (case-insensitive). A
+                country YouTube keeps no list of its own for gets its worldwide list, the US one. Default: US.
+                Default: US. Example: US
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 14. Default: 14.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_suggestions", {"query": query, "lang": lang, "country": country, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Suggestion.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
 class YouTubeTranscript:
     """``youtube.transcript``: Timed transcript from captions or audio."""
 
@@ -39684,28 +40454,41 @@ class YouTube:
     Public YouTube channel profiles with subscriber counts, and posts: any video, short or live stream with exact
     view, like and comment counts, or a channel's uploads, newest or most popular first. Get a video's timed
     transcript, from its captions or its audio, and its comments a page at a time. Engagement adds a channel's
-    views per upload, median views and posting cadence.
+    views per upload, median views and posting cadence. Search YouTube by keyword for videos, shorts and live
+    streams, or for channels, and get the suggestions its search box shows for a query.
     """
 
     comments: YouTubeComments
     """Newest or top first, with likes and reply counts."""
     engagement: YouTubeEngagement
     """Views per upload, cadence and outlier videos."""
+    hashtag_posts: YouTubeHashtagPosts
+    """Videos and shorts under a hashtag with exact views."""
     post: YouTubePost
     """Video or short with exact view, like and comment counts."""
     posts: YouTubePosts
     """Videos, shorts and live streams of a channel."""
     profile: YouTubeProfile
     """Subscribers, exact view counts and social links."""
+    search_posts: YouTubeSearchPosts
+    """Videos, shorts and live streams by keyword."""
+    search_profiles: YouTubeSearchProfiles
+    """Channels by keyword, with subscribers and handles."""
+    search_suggestions: YouTubeSearchSuggestions
+    """Search box autocomplete for a partial query."""
     transcript: YouTubeTranscript
     """Timed transcript from captions or audio."""
 
     def __init__(self, core: SyncCore) -> None:
         self.comments = YouTubeComments(core)
         self.engagement = YouTubeEngagement(core)
+        self.hashtag_posts = YouTubeHashtagPosts(core)
         self.post = YouTubePost(core)
         self.posts = YouTubePosts(core)
         self.profile = YouTubeProfile(core)
+        self.search_posts = YouTubeSearchPosts(core)
+        self.search_profiles = YouTubeSearchProfiles(core)
+        self.search_suggestions = YouTubeSearchSuggestions(core)
         self.transcript = YouTubeTranscript(core)
 
 
@@ -39807,8 +40590,8 @@ class UsageRateResource:
         How close the account runs to its runaway-protection ceiling (max_rps in GET /v1/account): per time bucket,
         the requests the ceiling counted, the busiest second (peak_rps), the average rate and the requests refused
         with rate_limited. The ceiling is a safety limit that stops a runaway client, not a plan limit: plans have no
-        rate limit. Account-wide (every key and the dashboard). Buckets are listed oldest first, cursor-paged. Data is
-        complete to within about 5 minutes. Free.
+        rate limit. Account-wide: every key and the dashboard's playground (loading the dashboard's pages doesn't
+        count). Buckets are listed oldest first, cursor-paged. Data is complete to within about 5 minutes. Free.
 
         Free; needs an API key with the `account:read` scope (GET /v1/usage/rate).
 
@@ -48182,7 +48965,7 @@ class AsyncFacebookSearchGroups:
         group's full, live record in the same response: ID, exact member count, privacy, rules, admins and activity.
         Page through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -48276,7 +49059,7 @@ class AsyncFacebookSearchGroups:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -48853,7 +49636,7 @@ class AsyncFacebookSearchPosts:
         text, media, exact reaction, comment and share counts and publish time. media=video finds videos instead. Page
         through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -48962,7 +49745,7 @@ class AsyncFacebookSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -49067,7 +49850,7 @@ class AsyncFacebookSearchProfiles:
         response: ID, exact counts, verified badge, picture and contact details. account_type narrows the results to
         Pages or to people.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -49166,7 +49949,7 @@ class AsyncFacebookSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -57467,7 +58250,7 @@ class AsyncInstagramSearchPlaces:
         Add fill=true to get each location's current Instagram record (category, coordinates, address, exact post
         count) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -57560,7 +58343,7 @@ class AsyncInstagramSearchPlaces:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -57832,7 +58615,7 @@ class AsyncInstagramSearchProfiles:
         search index shows them. Add fill=true to get each account's current profile (user ID, exact counts, verified
         badge, picture, links) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -57925,7 +58708,7 @@ class AsyncInstagramSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -58019,7 +58802,7 @@ class AsyncInstagramSearchSounds:
         when the search index shows it. Add fill=true to get each audio's current record (exact reel count, length,
         cover art, audio file, Spotify link) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -58112,7 +58895,7 @@ class AsyncInstagramSearchSounds:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -62761,7 +63544,7 @@ class AsyncLinkedInSearchPosts:
         count. Add fill=true to get each post's full, live record in the same response: whole text, media, exact
         reaction and comment counts and top comments.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -62854,7 +63637,7 @@ class AsyncLinkedInSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -62952,7 +63735,7 @@ class AsyncLinkedInSearchProfiles:
         Add fill=true to get the live LinkedIn profile of each account LinkedIn shows logged out, in the same
         response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -63057,7 +63840,7 @@ class AsyncLinkedInSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -70361,7 +71144,7 @@ class AsyncTelegramSearchChannels:
         fill=true to get each channel's full, current record in the same response: exact subscribers, photo, badge,
         creation date, numeric ID, and whether it is a channel or a group. Page through the results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -70463,7 +71246,7 @@ class AsyncTelegramSearchChannels:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -74154,7 +74937,7 @@ class AsyncTikTokSearchHashtags:
         Its post count and TikTok's description of it come too when the search index shows them. Add fill=true to also
         get each hashtag's full live record (its ID, exact post and view counts, picture) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -74246,7 +75029,7 @@ class AsyncTikTokSearchHashtags:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -74525,7 +75308,7 @@ class AsyncTikTokSearchProfiles:
         them. Add fill=true to also get each account's full live profile (user ID, exact counts, verification, avatar)
         in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -74617,7 +75400,7 @@ class AsyncTikTokSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -74710,7 +75493,7 @@ class AsyncTikTokSearchSounds:
         fill=true to also get each sound's full live record (sound ID, duration, cover art, audio link, album, exact
         video count) in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -74802,7 +75585,7 @@ class AsyncTikTokSearchSounds:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -75066,7 +75849,7 @@ class AsyncTikTokSearchTop:
         a video's caption and likes, a hashtag's post count, a sound's artist and video count. Add fill=true to also
         get each result's full live record in the same response.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -75158,7 +75941,7 @@ class AsyncTikTokSearchTop:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -79328,7 +80111,7 @@ class AsyncXSearchCommunities:
         response: ID, exact member count, rules, topic, banner, admin, NSFW flag and how people join. Page through
         results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -79420,7 +80203,7 @@ class AsyncXSearchCommunities:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -79689,7 +80472,7 @@ class AsyncXSearchPosts:
         get each post's full record from X in the same response: full text, media, views, likes, reposts, replies and
         the author's verification. Filter by date with since and until, and page through results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -79797,7 +80580,7 @@ class AsyncXSearchPosts:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -79900,7 +80683,7 @@ class AsyncXSearchProfiles:
         fill=true to get each account's full profile from X in the same response: user ID, exact counts, verification,
         avatar and links. Page through results with the cursor.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         Lists up to 50 items per page (the search engine's ranking (most relevant first)); `page.next_cursor`
         continues the list. An empty page with has_more is not the end.
@@ -79993,7 +80776,7 @@ class AsyncXSearchProfiles:
         total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
         that stopped it) and end_reason (the API's page.end_reason) say what happened.
 
-        Cost per page: 1 credit + 1 per result filled in. Failed requests and cache hits are free.
+        Cost per page: 1 credit + 1 per result filled in (with fill=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -80513,6 +81296,203 @@ class AsyncYouTubeEngagement:
         return await self._core._get("/v1/youtube/engagement", {"handle": handle, "tab": tab, "max_age": max_age, "fields": fields}, model_or_raw(Engagement.from_dict, fields), timeout, max_retries)
 
 
+class AsyncYouTubeHashtagPosts:
+    """``youtube.hashtag_posts``: Videos and shorts under a hashtag with exact views."""
+
+    def __init__(self, core: AsyncCore) -> None:
+        self._core = core
+
+    @overload
+    async def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Post]: ...
+
+    @overload
+    async def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    async def list(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
+        """Videos and shorts under a hashtag with exact views.
+
+        Returns the videos and shorts YouTube lists under a hashtag, in YouTube's order, from the hashtag's link or
+        its name. Each video has its title, channel with its handle and verification badge, exact view count, upload
+        time and length. Set kind to short for the hashtag's Shorts tab, a separate list of shorts. A hashtag no video
+        uses returns not_found.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 36 items per page (YouTube's order for the hashtag (its hashtag page's feed), not by time);
+        `page.next_cursor` continues the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            url: A YouTube hashtag link (youtube.com/hashtag/cooking, or its Shorts tab:
+                youtube.com/hashtag/cooking/shorts), or the hashtag itself with or without the # (cooking, #cooking).
+                Hashtags are case-insensitive and may be in any script (#料理). At most 2048 characters. Example:
+                https://www.youtube.com/hashtag/cooking
+            kind: Which tab of the hashtag's page: all (default: its videos, shorts and streams, each with its
+                channel, exact view count, upload time and length) or short (its Shorts tab: a separate list of
+                shorts, each with its title, channel ID and rounded view count). A Shorts tab link sent without kind
+                lists short. One of: all, short. Example: short
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. The videos come in YouTube's order for the hashtag, not by time, so since and until filter
+                each page by published_at (from YouTube's relative upload label, to the day beyond a day old). Not
+                with kind=short: the Shorts tab shows no upload time. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 36. Default: 36.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return await self._core._list("/v1/youtube/hashtag_posts", {"url": url, "kind": kind, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Post]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        url: str,
+        kind: Optional[Literal["all", "short"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[AsyncPaginator[Post], AsyncPaginator[Dict[str, Any]]]:
+        """Every item of youtube.hashtag_posts, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            url: A YouTube hashtag link (youtube.com/hashtag/cooking, or its Shorts tab:
+                youtube.com/hashtag/cooking/shorts), or the hashtag itself with or without the # (cooking, #cooking).
+                Hashtags are case-insensitive and may be in any script (#料理). At most 2048 characters. Example:
+                https://www.youtube.com/hashtag/cooking
+            kind: Which tab of the hashtag's page: all (default: its videos, shorts and streams, each with its
+                channel, exact view count, upload time and length) or short (its Shorts tab: a separate list of
+                shorts, each with its title, channel ID and rounded view count). A Shorts tab link sent without kind
+                lists short. One of: all, short. Example: short
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. The videos come in YouTube's order for the hashtag, not by time, so since and until filter
+                each page by published_at (from YouTube's relative upload label, to the day beyond a day old). Not
+                with kind=short: the Shorts tab shows no upload time. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 36. Default: 36.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/hashtag_posts", {"url": url, "kind": kind, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
 class AsyncYouTubePost:
     """``youtube.post``: Video or short with exact view, like and comment counts."""
 
@@ -80850,6 +81830,579 @@ class AsyncYouTubeProfile:
         return await self._core._get("/v1/youtube/profile", {"handle": handle, "max_age": max_age, "fields": fields}, model_or_raw(Profile.from_dict, fields), timeout, max_retries)
 
 
+class AsyncYouTubeSearchPosts:
+    """``youtube.search_posts``: Videos, shorts and live streams by keyword."""
+
+    def __init__(self, core: AsyncCore) -> None:
+        self._core = core
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Post]: ...
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    async def list(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Post], ListResult[Dict[str, Any]]]:
+        """Videos, shorts and live streams by keyword.
+
+        Returns the YouTube videos, shorts and live streams that match a keyword, across YouTube or in one channel, by
+        best match or popularity. Videos come with their channel and verification badge, exact view count, upload day,
+        length and, across YouTube, the part of the description that matched. Shorts have rounded views, and streams
+        on air no views, upload time or length. Narrow it with kind, length and upload date.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 30 items per page (YouTube's relevance ranking (its search order)); `page.next_cursor` continues
+        the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words or a phrase, matched by YouTube's search as on youtube.com, in any language. YouTube's
+                operators pass through: "exact phrase", intitle:word, -word, #hashtag. At most 500 characters.
+                Example: marathon training
+            kind: Which results: all (default: the videos, streams and shorts in YouTube's result list, without its
+                shelves), video (YouTube's Videos filter), short (its Shorts filter, each with its channel, upload
+                time and length) or live (streams on air now). platform_type says which each result is. One of: all,
+                video, short, live. Default: all. Example: short
+            duration: Only videos of a length: short (under 3 minutes), medium (3 to 20 minutes) or long (over 20
+                minutes), by YouTube's Duration filter. Lists videos only (no shorts or streams), so not with kind
+                short or live. One of: short, medium, long. Example: long
+            author: Only this channel's videos, as its Search tab finds them: a handle (@MrBeast), any channel link or
+                a UC… channel ID. Its results come in YouTube's order for the channel, so not with kind, duration or
+                sort=popular. All of YouTube when omitted. At most 512 characters. Example: @NASA
+            sort: Order of the results. relevance (default): YouTube's best match. popular: YouTube's Popularity
+                ranking, roughly most viewed first. One of: relevance, popular. Default: relevance.
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. Results are ranked, not ordered by time, so since and until filter each page by published_at,
+                which comes from YouTube's relative upload label ("1 month ago") and can be up to one label unit later
+                than the upload: a result whose label could fall inside the window is kept, so results up to one label
+                unit older may be included. Send a date. YouTube's own Upload date filter (this week, month or year)
+                is applied when it covers since, so fewer pages are fetched. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 30. Default: 30.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return await self._core._list("/v1/youtube/search_posts", {"query": query, "kind": kind, "duration": duration, "author": author, "sort": sort, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Post]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        kind: Optional[Literal["all", "video", "short", "live"]] = None,
+        duration: Optional[Literal["short", "medium", "long"]] = None,
+        author: Optional[str] = None,
+        sort: Optional[Literal["relevance", "popular"]] = None,
+        since: Optional[str] = None,
+        until: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[AsyncPaginator[Post], AsyncPaginator[Dict[str, Any]]]:
+        """Every item of youtube.search_posts, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words or a phrase, matched by YouTube's search as on youtube.com, in any language. YouTube's
+                operators pass through: "exact phrase", intitle:word, -word, #hashtag. At most 500 characters.
+                Example: marathon training
+            kind: Which results: all (default: the videos, streams and shorts in YouTube's result list, without its
+                shelves), video (YouTube's Videos filter), short (its Shorts filter, each with its channel, upload
+                time and length) or live (streams on air now). platform_type says which each result is. One of: all,
+                video, short, live. Default: all. Example: short
+            duration: Only videos of a length: short (under 3 minutes), medium (3 to 20 minutes) or long (over 20
+                minutes), by YouTube's Duration filter. Lists videos only (no shorts or streams), so not with kind
+                short or live. One of: short, medium, long. Example: long
+            author: Only this channel's videos, as its Search tab finds them: a handle (@MrBeast), any channel link or
+                a UC… channel ID. Its results come in YouTube's order for the channel, so not with kind, duration or
+                sort=popular. All of YouTube when omitted. At most 512 characters. Example: @NASA
+            sort: Order of the results. relevance (default): YouTube's best match. popular: YouTube's Popularity
+                ranking, roughly most viewed first. One of: relevance, popular. Default: relevance.
+            since: Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight
+                UTC). On newest-first lists, paging stops when it is reached, so later pages are not fetched or
+                charged. Results are ranked, not ordered by time, so since and until filter each page by published_at,
+                which comes from YouTube's relative upload label ("1 month ago") and can be up to one label unit later
+                than the upload: a result whose label could fall inside the window is kept, so results up to one label
+                unit older may be included. Send a date. YouTube's own Upload date filter (this week, month or year)
+                is applied when it covers since, so fewer pages are fetched. Example: 2026-10-01
+            until: Only items before this time (exclusive): RFC 3339 or a date (midnight UTC). Example: 2026-10-08
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 30. Default: 30.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_posts", {"query": query, "kind": kind, "duration": duration, "author": author, "sort": sort, "since": since, "until": until, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Post.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
+class AsyncYouTubeSearchProfiles:
+    """``youtube.search_profiles``: Channels by keyword, with subscribers and handles."""
+
+    def __init__(self, core: AsyncCore) -> None:
+        self._core = core
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Profile]: ...
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    async def list(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Profile], ListResult[Dict[str, Any]]]:
+        """Channels by keyword, with subscribers and handles.
+
+        Returns the YouTube channels that match a keyword, a name or a handle, in YouTube's order. Each channel has
+        its ID, handle, name, link, avatar, an excerpt of its description, its subscriber count and its verified and
+        official artist badges. Page through every result with the cursor. A search with no match returns an empty
+        page.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 20 items per page (YouTube's relevance ranking (its search order)); `page.next_cursor` continues
+        the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words, a name or a handle, matched by YouTube's channel search as on youtube.com, in any language:
+                a channel's name, its handle (@mrbeast) and the words in its description. At most 500 characters.
+                Example: marathon
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 20. Default: 20.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return await self._core._list("/v1/youtube/search_profiles", {"query": query, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Profile.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Profile]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[AsyncPaginator[Profile], AsyncPaginator[Dict[str, Any]]]:
+        """Every item of youtube.search_profiles, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: Words, a name or a handle, matched by YouTube's channel search as on youtube.com, in any language:
+                a channel's name, its handle (@mrbeast) and the words in its description. At most 500 characters.
+                Example: marathon
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 20. Default: 20.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_profiles", {"query": query, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Profile.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
+class AsyncYouTubeSearchSuggestions:
+    """``youtube.search_suggestions``: Search box autocomplete for a partial query."""
+
+    def __init__(self, core: AsyncCore) -> None:
+        self._core = core
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Suggestion]: ...
+
+    @overload
+    async def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> ListResult[Dict[str, Any]]: ...
+
+    async def list(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[ListResult[Suggestion], ListResult[Dict[str, Any]]]:
+        """Search box autocomplete for a partial query.
+
+        Returns the searches YouTube's search box completes a partial query to, in YouTube's order, from a word, part
+        of a word or a channel's name. Each suggestion has its text, rank and a link to its results. A channel YouTube
+        proposes comes with its channel ID, handle, name and avatar, and a person or show with its Knowledge Graph ID,
+        description and picture. Set country and lang to get what people there search.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        Lists up to 14 items per page (YouTube's search box order (most likely search first)); `page.next_cursor`
+        continues the list. An empty page with has_more is not the end.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: The start of a search, as typed into YouTube's search box: a word, part of a word, a channel's name
+                or @handle, in any language (marathon tr, mrbea, 料理). Up to 100 characters, YouTube's own limit, where
+                an emoji counts as two. At most 100 characters. Example: marathon tr
+            lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
+                language of the search box: YouTube completes in it where it can and writes entity descriptions in it.
+                A BCP-47 tag such as en, ja or pt-BR (case-insensitive). Default: en. Default: en. Example: en
+            country: Region: an ISO 3166-1 alpha-2 country code such as US or BR (case-insensitive). The country whose
+                searches to complete with: an ISO 3166-1 alpha-2 code such as US, GB or JP (case-insensitive). A
+                country YouTube keeps no list of its own for gets its worldwide list, the US one. Default: US.
+                Default: US. Example: US
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 14. Default: 14.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return await self._core._list("/v1/youtube/search_suggestions", {"query": query, "lang": lang, "country": country, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Suggestion.from_dict, fields), timeout, max_retries)
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: None = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Suggestion]: ...
+
+    @overload
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: str,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> AsyncPaginator[Dict[str, Any]]: ...
+
+    def iterate(
+        self,
+        *,
+        query: str,
+        lang: Optional[str] = None,
+        country: Optional[str] = None,
+        max_age: Optional[int] = None,
+        fields: Optional[str] = None,
+        limit: Optional[int] = None,
+        cursor: Optional[str] = None,
+        max_pages: Optional[int] = None,
+        max_credits: Optional[int] = None,
+        timeout: Optional[float] = None,
+        max_retries: Optional[int] = None,
+    ) -> Union[AsyncPaginator[Suggestion], AsyncPaginator[Dict[str, Any]]]:
+        """Every item of youtube.search_suggestions, page by page (starts at cursor when given).
+
+        Guards: max_pages, and max_credits (a page costs at most 1 credits and is not fetched when it could take the
+        total over). After the loop, the paginator's pages_fetched, credits_charged, stop_reason ("end" or the guard
+        that stopped it) and end_reason (the API's page.end_reason) say what happened.
+
+        Cost per page: 1 credit. Failed requests and cache hits are free.
+
+        With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
+        model would have to invent the others).
+
+        Args:
+            query: The start of a search, as typed into YouTube's search box: a word, part of a word, a channel's name
+                or @handle, in any language (marathon tr, mrbea, 料理). Up to 100 characters, YouTube's own limit, where
+                an emoji counts as two. At most 100 characters. Example: marathon tr
+            lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
+                language of the search box: YouTube completes in it where it can and writes entity descriptions in it.
+                A BCP-47 tag such as en, ja or pt-BR (case-insensitive). Default: en. Default: en. Example: en
+            country: Region: an ISO 3166-1 alpha-2 country code such as US or BR (case-insensitive). The country whose
+                searches to complete with: an ISO 3166-1 alpha-2 code such as US, GB or JP (case-insensitive). A
+                country YouTube keeps no list of its own for gets its worldwide list, the US one. Default: US.
+                Default: US. Example: US
+            max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
+                fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
+                sent. Minimum: 0.
+            fields: Return only these fields of each item: comma-separated paths in the schema's notation
+                (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
+                rejected. Applied after the cache, so it changes neither the price nor cache hits; page and meta are
+                always returned whole.
+            limit: Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced
+                to it). Omit it: every page costs the same, so a smaller limit means more pages to pay for. Range: 1
+                to 14. Default: 14.
+            cursor: page.next_cursor from the previous response. Send the same other parameters; omit to start from
+                the first page.
+            max_pages: Stop after this many pages.
+            max_credits: Stop before the total could exceed this many credits.
+            timeout: Seconds per attempt (overrides the client's).
+            max_retries: Automatic retries (overrides the client's).
+        """
+        return self._core._iterate("/v1/youtube/search_suggestions", {"query": query, "lang": lang, "country": country, "max_age": max_age, "fields": fields, "limit": limit, "cursor": cursor}, model_or_raw(Suggestion.from_dict, fields), 1, max_pages, max_credits, timeout, max_retries)
+
+
 class AsyncYouTubeTranscript:
     """``youtube.transcript``: Timed transcript from captions or audio."""
 
@@ -80934,28 +82487,41 @@ class AsyncYouTube:
     Public YouTube channel profiles with subscriber counts, and posts: any video, short or live stream with exact
     view, like and comment counts, or a channel's uploads, newest or most popular first. Get a video's timed
     transcript, from its captions or its audio, and its comments a page at a time. Engagement adds a channel's
-    views per upload, median views and posting cadence.
+    views per upload, median views and posting cadence. Search YouTube by keyword for videos, shorts and live
+    streams, or for channels, and get the suggestions its search box shows for a query.
     """
 
     comments: AsyncYouTubeComments
     """Newest or top first, with likes and reply counts."""
     engagement: AsyncYouTubeEngagement
     """Views per upload, cadence and outlier videos."""
+    hashtag_posts: AsyncYouTubeHashtagPosts
+    """Videos and shorts under a hashtag with exact views."""
     post: AsyncYouTubePost
     """Video or short with exact view, like and comment counts."""
     posts: AsyncYouTubePosts
     """Videos, shorts and live streams of a channel."""
     profile: AsyncYouTubeProfile
     """Subscribers, exact view counts and social links."""
+    search_posts: AsyncYouTubeSearchPosts
+    """Videos, shorts and live streams by keyword."""
+    search_profiles: AsyncYouTubeSearchProfiles
+    """Channels by keyword, with subscribers and handles."""
+    search_suggestions: AsyncYouTubeSearchSuggestions
+    """Search box autocomplete for a partial query."""
     transcript: AsyncYouTubeTranscript
     """Timed transcript from captions or audio."""
 
     def __init__(self, core: AsyncCore) -> None:
         self.comments = AsyncYouTubeComments(core)
         self.engagement = AsyncYouTubeEngagement(core)
+        self.hashtag_posts = AsyncYouTubeHashtagPosts(core)
         self.post = AsyncYouTubePost(core)
         self.posts = AsyncYouTubePosts(core)
         self.profile = AsyncYouTubeProfile(core)
+        self.search_posts = AsyncYouTubeSearchPosts(core)
+        self.search_profiles = AsyncYouTubeSearchProfiles(core)
+        self.search_suggestions = AsyncYouTubeSearchSuggestions(core)
         self.transcript = AsyncYouTubeTranscript(core)
 
 
@@ -81036,8 +82602,8 @@ class AsyncUsageRateResource:
         How close the account runs to its runaway-protection ceiling (max_rps in GET /v1/account): per time bucket,
         the requests the ceiling counted, the busiest second (peak_rps), the average rate and the requests refused
         with rate_limited. The ceiling is a safety limit that stops a runaway client, not a plan limit: plans have no
-        rate limit. Account-wide (every key and the dashboard). Buckets are listed oldest first, cursor-paged. Data is
-        complete to within about 5 minutes. Free.
+        rate limit. Account-wide: every key and the dashboard's playground (loading the dashboard's pages doesn't
+        count). Buckets are listed oldest first, cursor-paged. Data is complete to within about 5 minutes. Free.
 
         Free; needs an API key with the `account:read` scope (GET /v1/usage/rate).
 
@@ -82492,4 +84058,4 @@ class AsyncNotificationPreferencesResource:
         return await self._core._call("PATCH", "/v1/notification_preferences", {}, omit_not_given({"categories": categories}), NotificationPreferences.from_dict, timeout, max_retries)
 
 
-__all__ = ["AmazonDealProducts", "AmazonOffers", "AmazonProduct", "AmazonReviews", "AmazonSearchProducts", "AmazonSeller", "AmazonShop", "AmazonShopLists", "AmazonShopPosts", "AmazonTopProducts", "Amazon", "AppleMusicAlbum", "AppleMusicArtist", "AppleMusicSearchAlbums", "AppleMusicSearchArtists", "AppleMusicSearchPlaylists", "AppleMusicSearchTracks", "AppleMusicTopAlbums", "AppleMusicTopPlaylists", "AppleMusicTopTracks", "AppleMusicTrack", "AppleMusic", "BlueskyComments", "BlueskyPost", "BlueskyPosts", "BlueskyProfile", "BlueskySearchPosts", "Bluesky", "FacebookAd", "FacebookAdTranscript", "FacebookAds", "FacebookAdvertiser", "FacebookComments", "FacebookEngagement", "FacebookEvent", "FacebookEvents", "FacebookGroup", "FacebookGroupPosts", "FacebookListing", "FacebookPhotos", "FacebookPlaceEvents", "FacebookPost", "FacebookPosts", "FacebookProfile", "FacebookReels", "FacebookReplies", "FacebookSearchAds", "FacebookSearchAdvertisers", "FacebookSearchEvents", "FacebookSearchGroups", "FacebookSearchListings", "FacebookSearchPlaces", "FacebookSearchPosts", "FacebookSearchProfiles", "FacebookTranscript", "Facebook", "GitHubActivity", "GitHubContributions", "GitHubFollowers", "GitHubFollowing", "GitHubIssue", "GitHubIssueComments", "GitHubIssues", "GitHubPinnedRepositories", "GitHubProfile", "GitHubProfilePullRequests", "GitHubReadme", "GitHubReleases", "GitHubRepositories", "GitHubRepository", "GitHubRepositoryContributors", "GitHubSearchIssues", "GitHubSearchProfiles", "GitHubSearchRepositories", "GitHubTrendingProfiles", "GitHubTrendingRepositories", "GitHub", "GoogleAd", "GoogleAds", "GoogleAdvertiser", "GoogleSearchAds", "GoogleSearchAdvertisers", "GoogleSearchSuggestions", "Google", "HackerNewsComment", "HackerNewsComments", "HackerNewsFeedStories", "HackerNewsSearchComments", "HackerNewsSearchStories", "HackerNewsStory", "HackerNewsUser", "HackerNewsUserComments", "HackerNewsUserFavorites", "HackerNewsUserStories", "HackerNewsWhoishiringJobs", "HackerNews", "InstagramComment", "InstagramComments", "InstagramEmbed", "InstagramEngagement", "InstagramHashtag", "InstagramHashtagPosts", "InstagramHighlights", "InstagramPlace", "InstagramPlacePosts", "InstagramPlaylistStories", "InstagramPopularTrends", "InstagramPost", "InstagramPosts", "InstagramProfile", "InstagramReels", "InstagramSearchHashtags", "InstagramSearchPlaces", "InstagramSearchPosts", "InstagramSearchProfiles", "InstagramSearchSounds", "InstagramSearchSuggestions", "InstagramSimilarProfiles", "InstagramSound", "InstagramSoundPosts", "InstagramStory", "InstagramTopic", "InstagramTranscript", "InstagramTrendingPosts", "InstagramUsername", "Instagram", "KickPost", "KickTranscript", "Kick", "KomiPage", "Komi", "KwaiPost", "KwaiPosts", "KwaiProfile", "Kwai", "LnkBioProfile", "LnkBio", "LinkedInAd", "LinkedInComments", "LinkedInEmployees", "LinkedInEngagement", "LinkedInFollowing", "LinkedInJob", "LinkedInJobRelatedJobs", "LinkedInJobs", "LinkedInLikedPosts", "LinkedInPost", "LinkedInPostReactions", "LinkedInPostReposts", "LinkedInPosts", "LinkedInProfile", "LinkedInProfileComments", "LinkedInProfileGroups", "LinkedInSearchAds", "LinkedInSearchJobs", "LinkedInSearchPosts", "LinkedInSearchProfiles", "LinkedInTranscript", "LinkedIn", "LinkmeProfile", "Linkme", "LinktreeProfile", "Linktree", "PillarPage", "Pillar", "PinterestBoard", "PinterestBoardPins", "PinterestBoards", "PinterestPin", "PinterestPins", "PinterestProfile", "PinterestSearchPins", "PinterestTopTrends", "PinterestTopic", "PinterestWebPage", "Pinterest", "RedditComments", "RedditEngagement", "RedditPost", "RedditPosts", "RedditProfile", "RedditProfileComments", "RedditSearchComments", "RedditSearchPosts", "RedditSearchProfiles", "RedditSearchSubreddits", "RedditSubreddit", "RedditSubredditPosts", "RedditTranscript", "Reddit", "RumbleComments", "RumbleEngagement", "RumblePost", "RumblePosts", "RumbleProfile", "RumbleSearchPosts", "RumbleTranscript", "Rumble", "SnapchatComments", "SnapchatProfile", "SnapchatSpotlight", "Snapchat", "SoundCloudArtist", "SoundCloudTrack", "SoundCloudTracks", "SoundCloud", "SpotifyAlbum", "SpotifyArtist", "SpotifyPlaylist", "SpotifyPlaylistTracks", "SpotifyPodcast", "SpotifyPodcastEpisodes", "SpotifySearchAlbums", "SpotifySearchArtists", "SpotifySearchPlaylists", "SpotifySearchPodcasts", "SpotifySearchTracks", "SpotifyTrack", "Spotify", "TelegramChannel", "TelegramChannelPosts", "TelegramPost", "TelegramSearchChannels", "Telegram", "ThreadsComments", "ThreadsPost", "ThreadsPosts", "ThreadsProfile", "ThreadsSearchPosts", "ThreadsSearchProfiles", "Threads", "TikTokAd", "TikTokComment", "TikTokComments", "TikTokDownload", "TikTokEffect", "TikTokEffectPosts", "TikTokEngagement", "TikTokFollowers", "TikTokFollowing", "TikTokHashtag", "TikTokHashtagPosts", "TikTokLikedPosts", "TikTokLive", "TikTokPlacePosts", "TikTokPlaylistPosts", "TikTokPlaylists", "TikTokPost", "TikTokPosts", "TikTokProfile", "TikTokReplies", "TikTokSearchAds", "TikTokSearchHashtags", "TikTokSearchPosts", "TikTokSearchProfiles", "TikTokSearchSounds", "TikTokSearchSuggestions", "TikTokSearchTop", "TikTokSound", "TikTokSoundPosts", "TikTokTopAds", "TikTokTopPosts", "TikTokTranscript", "TikTokTrendingHashtags", "TikTokTrendingPosts", "TikTok", "TikTokShopProduct", "TikTokShopProducts", "TikTokShopReviews", "TikTokShopSearchProducts", "TikTokShop", "TruthSocialPost", "TruthSocialPosts", "TruthSocialProfile", "TruthSocial", "TwitchProfile", "TwitchSchedule", "TwitchTranscript", "TwitchVideo", "TwitchVideos", "Twitch", "XComments", "XCommunity", "XCommunityPosts", "XEngagement", "XFriendship", "XList", "XListFollowers", "XPost", "XPosts", "XProfile", "XProfileMentions", "XSearchCommunities", "XSearchHashtags", "XSearchPosts", "XSearchProfiles", "XSpace", "XTranscript", "X", "YouTubeComments", "YouTubeEngagement", "YouTubePost", "YouTubePosts", "YouTubeProfile", "YouTubeTranscript", "YouTube", "JobWithResults", "JobWaitError", "AccountResource", "UsageRateResource", "UsageResource", "CreditTransactionsResource", "BillingCheckoutResource", "BillingSubscriptionResource", "BillingAutoTopupResource", "BillingPurchasesResource", "BillingResource", "RequestsResource", "ApiKeysResource", "JobsResultsResource", "JobsResource", "WebhookEndpointsDeliveriesResource", "WebhookEndpointsResource", "EventsResource", "NotificationPreferencesResource", "AsyncAmazonDealProducts", "AsyncAmazonOffers", "AsyncAmazonProduct", "AsyncAmazonReviews", "AsyncAmazonSearchProducts", "AsyncAmazonSeller", "AsyncAmazonShop", "AsyncAmazonShopLists", "AsyncAmazonShopPosts", "AsyncAmazonTopProducts", "AsyncAmazon", "AsyncAppleMusicAlbum", "AsyncAppleMusicArtist", "AsyncAppleMusicSearchAlbums", "AsyncAppleMusicSearchArtists", "AsyncAppleMusicSearchPlaylists", "AsyncAppleMusicSearchTracks", "AsyncAppleMusicTopAlbums", "AsyncAppleMusicTopPlaylists", "AsyncAppleMusicTopTracks", "AsyncAppleMusicTrack", "AsyncAppleMusic", "AsyncBlueskyComments", "AsyncBlueskyPost", "AsyncBlueskyPosts", "AsyncBlueskyProfile", "AsyncBlueskySearchPosts", "AsyncBluesky", "AsyncFacebookAd", "AsyncFacebookAdTranscript", "AsyncFacebookAds", "AsyncFacebookAdvertiser", "AsyncFacebookComments", "AsyncFacebookEngagement", "AsyncFacebookEvent", "AsyncFacebookEvents", "AsyncFacebookGroup", "AsyncFacebookGroupPosts", "AsyncFacebookListing", "AsyncFacebookPhotos", "AsyncFacebookPlaceEvents", "AsyncFacebookPost", "AsyncFacebookPosts", "AsyncFacebookProfile", "AsyncFacebookReels", "AsyncFacebookReplies", "AsyncFacebookSearchAds", "AsyncFacebookSearchAdvertisers", "AsyncFacebookSearchEvents", "AsyncFacebookSearchGroups", "AsyncFacebookSearchListings", "AsyncFacebookSearchPlaces", "AsyncFacebookSearchPosts", "AsyncFacebookSearchProfiles", "AsyncFacebookTranscript", "AsyncFacebook", "AsyncGitHubActivity", "AsyncGitHubContributions", "AsyncGitHubFollowers", "AsyncGitHubFollowing", "AsyncGitHubIssue", "AsyncGitHubIssueComments", "AsyncGitHubIssues", "AsyncGitHubPinnedRepositories", "AsyncGitHubProfile", "AsyncGitHubProfilePullRequests", "AsyncGitHubReadme", "AsyncGitHubReleases", "AsyncGitHubRepositories", "AsyncGitHubRepository", "AsyncGitHubRepositoryContributors", "AsyncGitHubSearchIssues", "AsyncGitHubSearchProfiles", "AsyncGitHubSearchRepositories", "AsyncGitHubTrendingProfiles", "AsyncGitHubTrendingRepositories", "AsyncGitHub", "AsyncGoogleAd", "AsyncGoogleAds", "AsyncGoogleAdvertiser", "AsyncGoogleSearchAds", "AsyncGoogleSearchAdvertisers", "AsyncGoogleSearchSuggestions", "AsyncGoogle", "AsyncHackerNewsComment", "AsyncHackerNewsComments", "AsyncHackerNewsFeedStories", "AsyncHackerNewsSearchComments", "AsyncHackerNewsSearchStories", "AsyncHackerNewsStory", "AsyncHackerNewsUser", "AsyncHackerNewsUserComments", "AsyncHackerNewsUserFavorites", "AsyncHackerNewsUserStories", "AsyncHackerNewsWhoishiringJobs", "AsyncHackerNews", "AsyncInstagramComment", "AsyncInstagramComments", "AsyncInstagramEmbed", "AsyncInstagramEngagement", "AsyncInstagramHashtag", "AsyncInstagramHashtagPosts", "AsyncInstagramHighlights", "AsyncInstagramPlace", "AsyncInstagramPlacePosts", "AsyncInstagramPlaylistStories", "AsyncInstagramPopularTrends", "AsyncInstagramPost", "AsyncInstagramPosts", "AsyncInstagramProfile", "AsyncInstagramReels", "AsyncInstagramSearchHashtags", "AsyncInstagramSearchPlaces", "AsyncInstagramSearchPosts", "AsyncInstagramSearchProfiles", "AsyncInstagramSearchSounds", "AsyncInstagramSearchSuggestions", "AsyncInstagramSimilarProfiles", "AsyncInstagramSound", "AsyncInstagramSoundPosts", "AsyncInstagramStory", "AsyncInstagramTopic", "AsyncInstagramTranscript", "AsyncInstagramTrendingPosts", "AsyncInstagramUsername", "AsyncInstagram", "AsyncKickPost", "AsyncKickTranscript", "AsyncKick", "AsyncKomiPage", "AsyncKomi", "AsyncKwaiPost", "AsyncKwaiPosts", "AsyncKwaiProfile", "AsyncKwai", "AsyncLnkBioProfile", "AsyncLnkBio", "AsyncLinkedInAd", "AsyncLinkedInComments", "AsyncLinkedInEmployees", "AsyncLinkedInEngagement", "AsyncLinkedInFollowing", "AsyncLinkedInJob", "AsyncLinkedInJobRelatedJobs", "AsyncLinkedInJobs", "AsyncLinkedInLikedPosts", "AsyncLinkedInPost", "AsyncLinkedInPostReactions", "AsyncLinkedInPostReposts", "AsyncLinkedInPosts", "AsyncLinkedInProfile", "AsyncLinkedInProfileComments", "AsyncLinkedInProfileGroups", "AsyncLinkedInSearchAds", "AsyncLinkedInSearchJobs", "AsyncLinkedInSearchPosts", "AsyncLinkedInSearchProfiles", "AsyncLinkedInTranscript", "AsyncLinkedIn", "AsyncLinkmeProfile", "AsyncLinkme", "AsyncLinktreeProfile", "AsyncLinktree", "AsyncPillarPage", "AsyncPillar", "AsyncPinterestBoard", "AsyncPinterestBoardPins", "AsyncPinterestBoards", "AsyncPinterestPin", "AsyncPinterestPins", "AsyncPinterestProfile", "AsyncPinterestSearchPins", "AsyncPinterestTopTrends", "AsyncPinterestTopic", "AsyncPinterestWebPage", "AsyncPinterest", "AsyncRedditComments", "AsyncRedditEngagement", "AsyncRedditPost", "AsyncRedditPosts", "AsyncRedditProfile", "AsyncRedditProfileComments", "AsyncRedditSearchComments", "AsyncRedditSearchPosts", "AsyncRedditSearchProfiles", "AsyncRedditSearchSubreddits", "AsyncRedditSubreddit", "AsyncRedditSubredditPosts", "AsyncRedditTranscript", "AsyncReddit", "AsyncRumbleComments", "AsyncRumbleEngagement", "AsyncRumblePost", "AsyncRumblePosts", "AsyncRumbleProfile", "AsyncRumbleSearchPosts", "AsyncRumbleTranscript", "AsyncRumble", "AsyncSnapchatComments", "AsyncSnapchatProfile", "AsyncSnapchatSpotlight", "AsyncSnapchat", "AsyncSoundCloudArtist", "AsyncSoundCloudTrack", "AsyncSoundCloudTracks", "AsyncSoundCloud", "AsyncSpotifyAlbum", "AsyncSpotifyArtist", "AsyncSpotifyPlaylist", "AsyncSpotifyPlaylistTracks", "AsyncSpotifyPodcast", "AsyncSpotifyPodcastEpisodes", "AsyncSpotifySearchAlbums", "AsyncSpotifySearchArtists", "AsyncSpotifySearchPlaylists", "AsyncSpotifySearchPodcasts", "AsyncSpotifySearchTracks", "AsyncSpotifyTrack", "AsyncSpotify", "AsyncTelegramChannel", "AsyncTelegramChannelPosts", "AsyncTelegramPost", "AsyncTelegramSearchChannels", "AsyncTelegram", "AsyncThreadsComments", "AsyncThreadsPost", "AsyncThreadsPosts", "AsyncThreadsProfile", "AsyncThreadsSearchPosts", "AsyncThreadsSearchProfiles", "AsyncThreads", "AsyncTikTokAd", "AsyncTikTokComment", "AsyncTikTokComments", "AsyncTikTokDownload", "AsyncTikTokEffect", "AsyncTikTokEffectPosts", "AsyncTikTokEngagement", "AsyncTikTokFollowers", "AsyncTikTokFollowing", "AsyncTikTokHashtag", "AsyncTikTokHashtagPosts", "AsyncTikTokLikedPosts", "AsyncTikTokLive", "AsyncTikTokPlacePosts", "AsyncTikTokPlaylistPosts", "AsyncTikTokPlaylists", "AsyncTikTokPost", "AsyncTikTokPosts", "AsyncTikTokProfile", "AsyncTikTokReplies", "AsyncTikTokSearchAds", "AsyncTikTokSearchHashtags", "AsyncTikTokSearchPosts", "AsyncTikTokSearchProfiles", "AsyncTikTokSearchSounds", "AsyncTikTokSearchSuggestions", "AsyncTikTokSearchTop", "AsyncTikTokSound", "AsyncTikTokSoundPosts", "AsyncTikTokTopAds", "AsyncTikTokTopPosts", "AsyncTikTokTranscript", "AsyncTikTokTrendingHashtags", "AsyncTikTokTrendingPosts", "AsyncTikTok", "AsyncTikTokShopProduct", "AsyncTikTokShopProducts", "AsyncTikTokShopReviews", "AsyncTikTokShopSearchProducts", "AsyncTikTokShop", "AsyncTruthSocialPost", "AsyncTruthSocialPosts", "AsyncTruthSocialProfile", "AsyncTruthSocial", "AsyncTwitchProfile", "AsyncTwitchSchedule", "AsyncTwitchTranscript", "AsyncTwitchVideo", "AsyncTwitchVideos", "AsyncTwitch", "AsyncXComments", "AsyncXCommunity", "AsyncXCommunityPosts", "AsyncXEngagement", "AsyncXFriendship", "AsyncXList", "AsyncXListFollowers", "AsyncXPost", "AsyncXPosts", "AsyncXProfile", "AsyncXProfileMentions", "AsyncXSearchCommunities", "AsyncXSearchHashtags", "AsyncXSearchPosts", "AsyncXSearchProfiles", "AsyncXSpace", "AsyncXTranscript", "AsyncX", "AsyncYouTubeComments", "AsyncYouTubeEngagement", "AsyncYouTubePost", "AsyncYouTubePosts", "AsyncYouTubeProfile", "AsyncYouTubeTranscript", "AsyncYouTube", "AsyncAccountResource", "AsyncUsageRateResource", "AsyncUsageResource", "AsyncCreditTransactionsResource", "AsyncBillingCheckoutResource", "AsyncBillingSubscriptionResource", "AsyncBillingAutoTopupResource", "AsyncBillingPurchasesResource", "AsyncBillingResource", "AsyncRequestsResource", "AsyncApiKeysResource", "AsyncJobsResultsResource", "AsyncJobsResource", "AsyncWebhookEndpointsDeliveriesResource", "AsyncWebhookEndpointsResource", "AsyncEventsResource", "AsyncNotificationPreferencesResource"]
+__all__ = ["AmazonDealProducts", "AmazonOffers", "AmazonProduct", "AmazonReviews", "AmazonSearchProducts", "AmazonSeller", "AmazonShop", "AmazonShopLists", "AmazonShopPosts", "AmazonTopProducts", "Amazon", "AppleMusicAlbum", "AppleMusicArtist", "AppleMusicSearchAlbums", "AppleMusicSearchArtists", "AppleMusicSearchPlaylists", "AppleMusicSearchTracks", "AppleMusicTopAlbums", "AppleMusicTopPlaylists", "AppleMusicTopTracks", "AppleMusicTrack", "AppleMusic", "BlueskyComments", "BlueskyPost", "BlueskyPosts", "BlueskyProfile", "BlueskySearchPosts", "Bluesky", "FacebookAd", "FacebookAdTranscript", "FacebookAds", "FacebookAdvertiser", "FacebookComments", "FacebookEngagement", "FacebookEvent", "FacebookEvents", "FacebookGroup", "FacebookGroupPosts", "FacebookListing", "FacebookPhotos", "FacebookPlaceEvents", "FacebookPost", "FacebookPosts", "FacebookProfile", "FacebookReels", "FacebookReplies", "FacebookSearchAds", "FacebookSearchAdvertisers", "FacebookSearchEvents", "FacebookSearchGroups", "FacebookSearchListings", "FacebookSearchPlaces", "FacebookSearchPosts", "FacebookSearchProfiles", "FacebookTranscript", "Facebook", "GitHubActivity", "GitHubContributions", "GitHubFollowers", "GitHubFollowing", "GitHubIssue", "GitHubIssueComments", "GitHubIssues", "GitHubPinnedRepositories", "GitHubProfile", "GitHubProfilePullRequests", "GitHubReadme", "GitHubReleases", "GitHubRepositories", "GitHubRepository", "GitHubRepositoryContributors", "GitHubSearchIssues", "GitHubSearchProfiles", "GitHubSearchRepositories", "GitHubTrendingProfiles", "GitHubTrendingRepositories", "GitHub", "GoogleAd", "GoogleAds", "GoogleAdvertiser", "GoogleSearchAds", "GoogleSearchAdvertisers", "GoogleSearchSuggestions", "Google", "HackerNewsComment", "HackerNewsComments", "HackerNewsFeedStories", "HackerNewsSearchComments", "HackerNewsSearchStories", "HackerNewsStory", "HackerNewsUser", "HackerNewsUserComments", "HackerNewsUserFavorites", "HackerNewsUserStories", "HackerNewsWhoishiringJobs", "HackerNews", "InstagramComment", "InstagramComments", "InstagramEmbed", "InstagramEngagement", "InstagramHashtag", "InstagramHashtagPosts", "InstagramHighlights", "InstagramPlace", "InstagramPlacePosts", "InstagramPlaylistStories", "InstagramPopularTrends", "InstagramPost", "InstagramPosts", "InstagramProfile", "InstagramReels", "InstagramSearchHashtags", "InstagramSearchPlaces", "InstagramSearchPosts", "InstagramSearchProfiles", "InstagramSearchSounds", "InstagramSearchSuggestions", "InstagramSimilarProfiles", "InstagramSound", "InstagramSoundPosts", "InstagramStory", "InstagramTopic", "InstagramTranscript", "InstagramTrendingPosts", "InstagramUsername", "Instagram", "KickPost", "KickTranscript", "Kick", "KomiPage", "Komi", "KwaiPost", "KwaiPosts", "KwaiProfile", "Kwai", "LnkBioProfile", "LnkBio", "LinkedInAd", "LinkedInComments", "LinkedInEmployees", "LinkedInEngagement", "LinkedInFollowing", "LinkedInJob", "LinkedInJobRelatedJobs", "LinkedInJobs", "LinkedInLikedPosts", "LinkedInPost", "LinkedInPostReactions", "LinkedInPostReposts", "LinkedInPosts", "LinkedInProfile", "LinkedInProfileComments", "LinkedInProfileGroups", "LinkedInSearchAds", "LinkedInSearchJobs", "LinkedInSearchPosts", "LinkedInSearchProfiles", "LinkedInTranscript", "LinkedIn", "LinkmeProfile", "Linkme", "LinktreeProfile", "Linktree", "PillarPage", "Pillar", "PinterestBoard", "PinterestBoardPins", "PinterestBoards", "PinterestPin", "PinterestPins", "PinterestProfile", "PinterestSearchPins", "PinterestTopTrends", "PinterestTopic", "PinterestWebPage", "Pinterest", "RedditComments", "RedditEngagement", "RedditPost", "RedditPosts", "RedditProfile", "RedditProfileComments", "RedditSearchComments", "RedditSearchPosts", "RedditSearchProfiles", "RedditSearchSubreddits", "RedditSubreddit", "RedditSubredditPosts", "RedditTranscript", "Reddit", "RumbleComments", "RumbleEngagement", "RumblePost", "RumblePosts", "RumbleProfile", "RumbleSearchPosts", "RumbleTranscript", "Rumble", "SnapchatComments", "SnapchatProfile", "SnapchatSpotlight", "Snapchat", "SoundCloudArtist", "SoundCloudTrack", "SoundCloudTracks", "SoundCloud", "SpotifyAlbum", "SpotifyArtist", "SpotifyPlaylist", "SpotifyPlaylistTracks", "SpotifyPodcast", "SpotifyPodcastEpisodes", "SpotifySearchAlbums", "SpotifySearchArtists", "SpotifySearchPlaylists", "SpotifySearchPodcasts", "SpotifySearchTracks", "SpotifyTrack", "Spotify", "TelegramChannel", "TelegramChannelPosts", "TelegramPost", "TelegramSearchChannels", "Telegram", "ThreadsComments", "ThreadsPost", "ThreadsPosts", "ThreadsProfile", "ThreadsSearchPosts", "ThreadsSearchProfiles", "Threads", "TikTokAd", "TikTokComment", "TikTokComments", "TikTokDownload", "TikTokEffect", "TikTokEffectPosts", "TikTokEngagement", "TikTokFollowers", "TikTokFollowing", "TikTokHashtag", "TikTokHashtagPosts", "TikTokLikedPosts", "TikTokLive", "TikTokPlacePosts", "TikTokPlaylistPosts", "TikTokPlaylists", "TikTokPost", "TikTokPosts", "TikTokProfile", "TikTokReplies", "TikTokSearchAds", "TikTokSearchHashtags", "TikTokSearchPosts", "TikTokSearchProfiles", "TikTokSearchSounds", "TikTokSearchSuggestions", "TikTokSearchTop", "TikTokSound", "TikTokSoundPosts", "TikTokTopAds", "TikTokTopPosts", "TikTokTranscript", "TikTokTrendingHashtags", "TikTokTrendingPosts", "TikTok", "TikTokShopProduct", "TikTokShopProducts", "TikTokShopReviews", "TikTokShopSearchProducts", "TikTokShop", "TruthSocialPost", "TruthSocialPosts", "TruthSocialProfile", "TruthSocial", "TwitchProfile", "TwitchSchedule", "TwitchTranscript", "TwitchVideo", "TwitchVideos", "Twitch", "XComments", "XCommunity", "XCommunityPosts", "XEngagement", "XFriendship", "XList", "XListFollowers", "XPost", "XPosts", "XProfile", "XProfileMentions", "XSearchCommunities", "XSearchHashtags", "XSearchPosts", "XSearchProfiles", "XSpace", "XTranscript", "X", "YouTubeComments", "YouTubeEngagement", "YouTubeHashtagPosts", "YouTubePost", "YouTubePosts", "YouTubeProfile", "YouTubeSearchPosts", "YouTubeSearchProfiles", "YouTubeSearchSuggestions", "YouTubeTranscript", "YouTube", "JobWithResults", "JobWaitError", "AccountResource", "UsageRateResource", "UsageResource", "CreditTransactionsResource", "BillingCheckoutResource", "BillingSubscriptionResource", "BillingAutoTopupResource", "BillingPurchasesResource", "BillingResource", "RequestsResource", "ApiKeysResource", "JobsResultsResource", "JobsResource", "WebhookEndpointsDeliveriesResource", "WebhookEndpointsResource", "EventsResource", "NotificationPreferencesResource", "AsyncAmazonDealProducts", "AsyncAmazonOffers", "AsyncAmazonProduct", "AsyncAmazonReviews", "AsyncAmazonSearchProducts", "AsyncAmazonSeller", "AsyncAmazonShop", "AsyncAmazonShopLists", "AsyncAmazonShopPosts", "AsyncAmazonTopProducts", "AsyncAmazon", "AsyncAppleMusicAlbum", "AsyncAppleMusicArtist", "AsyncAppleMusicSearchAlbums", "AsyncAppleMusicSearchArtists", "AsyncAppleMusicSearchPlaylists", "AsyncAppleMusicSearchTracks", "AsyncAppleMusicTopAlbums", "AsyncAppleMusicTopPlaylists", "AsyncAppleMusicTopTracks", "AsyncAppleMusicTrack", "AsyncAppleMusic", "AsyncBlueskyComments", "AsyncBlueskyPost", "AsyncBlueskyPosts", "AsyncBlueskyProfile", "AsyncBlueskySearchPosts", "AsyncBluesky", "AsyncFacebookAd", "AsyncFacebookAdTranscript", "AsyncFacebookAds", "AsyncFacebookAdvertiser", "AsyncFacebookComments", "AsyncFacebookEngagement", "AsyncFacebookEvent", "AsyncFacebookEvents", "AsyncFacebookGroup", "AsyncFacebookGroupPosts", "AsyncFacebookListing", "AsyncFacebookPhotos", "AsyncFacebookPlaceEvents", "AsyncFacebookPost", "AsyncFacebookPosts", "AsyncFacebookProfile", "AsyncFacebookReels", "AsyncFacebookReplies", "AsyncFacebookSearchAds", "AsyncFacebookSearchAdvertisers", "AsyncFacebookSearchEvents", "AsyncFacebookSearchGroups", "AsyncFacebookSearchListings", "AsyncFacebookSearchPlaces", "AsyncFacebookSearchPosts", "AsyncFacebookSearchProfiles", "AsyncFacebookTranscript", "AsyncFacebook", "AsyncGitHubActivity", "AsyncGitHubContributions", "AsyncGitHubFollowers", "AsyncGitHubFollowing", "AsyncGitHubIssue", "AsyncGitHubIssueComments", "AsyncGitHubIssues", "AsyncGitHubPinnedRepositories", "AsyncGitHubProfile", "AsyncGitHubProfilePullRequests", "AsyncGitHubReadme", "AsyncGitHubReleases", "AsyncGitHubRepositories", "AsyncGitHubRepository", "AsyncGitHubRepositoryContributors", "AsyncGitHubSearchIssues", "AsyncGitHubSearchProfiles", "AsyncGitHubSearchRepositories", "AsyncGitHubTrendingProfiles", "AsyncGitHubTrendingRepositories", "AsyncGitHub", "AsyncGoogleAd", "AsyncGoogleAds", "AsyncGoogleAdvertiser", "AsyncGoogleSearchAds", "AsyncGoogleSearchAdvertisers", "AsyncGoogleSearchSuggestions", "AsyncGoogle", "AsyncHackerNewsComment", "AsyncHackerNewsComments", "AsyncHackerNewsFeedStories", "AsyncHackerNewsSearchComments", "AsyncHackerNewsSearchStories", "AsyncHackerNewsStory", "AsyncHackerNewsUser", "AsyncHackerNewsUserComments", "AsyncHackerNewsUserFavorites", "AsyncHackerNewsUserStories", "AsyncHackerNewsWhoishiringJobs", "AsyncHackerNews", "AsyncInstagramComment", "AsyncInstagramComments", "AsyncInstagramEmbed", "AsyncInstagramEngagement", "AsyncInstagramHashtag", "AsyncInstagramHashtagPosts", "AsyncInstagramHighlights", "AsyncInstagramPlace", "AsyncInstagramPlacePosts", "AsyncInstagramPlaylistStories", "AsyncInstagramPopularTrends", "AsyncInstagramPost", "AsyncInstagramPosts", "AsyncInstagramProfile", "AsyncInstagramReels", "AsyncInstagramSearchHashtags", "AsyncInstagramSearchPlaces", "AsyncInstagramSearchPosts", "AsyncInstagramSearchProfiles", "AsyncInstagramSearchSounds", "AsyncInstagramSearchSuggestions", "AsyncInstagramSimilarProfiles", "AsyncInstagramSound", "AsyncInstagramSoundPosts", "AsyncInstagramStory", "AsyncInstagramTopic", "AsyncInstagramTranscript", "AsyncInstagramTrendingPosts", "AsyncInstagramUsername", "AsyncInstagram", "AsyncKickPost", "AsyncKickTranscript", "AsyncKick", "AsyncKomiPage", "AsyncKomi", "AsyncKwaiPost", "AsyncKwaiPosts", "AsyncKwaiProfile", "AsyncKwai", "AsyncLnkBioProfile", "AsyncLnkBio", "AsyncLinkedInAd", "AsyncLinkedInComments", "AsyncLinkedInEmployees", "AsyncLinkedInEngagement", "AsyncLinkedInFollowing", "AsyncLinkedInJob", "AsyncLinkedInJobRelatedJobs", "AsyncLinkedInJobs", "AsyncLinkedInLikedPosts", "AsyncLinkedInPost", "AsyncLinkedInPostReactions", "AsyncLinkedInPostReposts", "AsyncLinkedInPosts", "AsyncLinkedInProfile", "AsyncLinkedInProfileComments", "AsyncLinkedInProfileGroups", "AsyncLinkedInSearchAds", "AsyncLinkedInSearchJobs", "AsyncLinkedInSearchPosts", "AsyncLinkedInSearchProfiles", "AsyncLinkedInTranscript", "AsyncLinkedIn", "AsyncLinkmeProfile", "AsyncLinkme", "AsyncLinktreeProfile", "AsyncLinktree", "AsyncPillarPage", "AsyncPillar", "AsyncPinterestBoard", "AsyncPinterestBoardPins", "AsyncPinterestBoards", "AsyncPinterestPin", "AsyncPinterestPins", "AsyncPinterestProfile", "AsyncPinterestSearchPins", "AsyncPinterestTopTrends", "AsyncPinterestTopic", "AsyncPinterestWebPage", "AsyncPinterest", "AsyncRedditComments", "AsyncRedditEngagement", "AsyncRedditPost", "AsyncRedditPosts", "AsyncRedditProfile", "AsyncRedditProfileComments", "AsyncRedditSearchComments", "AsyncRedditSearchPosts", "AsyncRedditSearchProfiles", "AsyncRedditSearchSubreddits", "AsyncRedditSubreddit", "AsyncRedditSubredditPosts", "AsyncRedditTranscript", "AsyncReddit", "AsyncRumbleComments", "AsyncRumbleEngagement", "AsyncRumblePost", "AsyncRumblePosts", "AsyncRumbleProfile", "AsyncRumbleSearchPosts", "AsyncRumbleTranscript", "AsyncRumble", "AsyncSnapchatComments", "AsyncSnapchatProfile", "AsyncSnapchatSpotlight", "AsyncSnapchat", "AsyncSoundCloudArtist", "AsyncSoundCloudTrack", "AsyncSoundCloudTracks", "AsyncSoundCloud", "AsyncSpotifyAlbum", "AsyncSpotifyArtist", "AsyncSpotifyPlaylist", "AsyncSpotifyPlaylistTracks", "AsyncSpotifyPodcast", "AsyncSpotifyPodcastEpisodes", "AsyncSpotifySearchAlbums", "AsyncSpotifySearchArtists", "AsyncSpotifySearchPlaylists", "AsyncSpotifySearchPodcasts", "AsyncSpotifySearchTracks", "AsyncSpotifyTrack", "AsyncSpotify", "AsyncTelegramChannel", "AsyncTelegramChannelPosts", "AsyncTelegramPost", "AsyncTelegramSearchChannels", "AsyncTelegram", "AsyncThreadsComments", "AsyncThreadsPost", "AsyncThreadsPosts", "AsyncThreadsProfile", "AsyncThreadsSearchPosts", "AsyncThreadsSearchProfiles", "AsyncThreads", "AsyncTikTokAd", "AsyncTikTokComment", "AsyncTikTokComments", "AsyncTikTokDownload", "AsyncTikTokEffect", "AsyncTikTokEffectPosts", "AsyncTikTokEngagement", "AsyncTikTokFollowers", "AsyncTikTokFollowing", "AsyncTikTokHashtag", "AsyncTikTokHashtagPosts", "AsyncTikTokLikedPosts", "AsyncTikTokLive", "AsyncTikTokPlacePosts", "AsyncTikTokPlaylistPosts", "AsyncTikTokPlaylists", "AsyncTikTokPost", "AsyncTikTokPosts", "AsyncTikTokProfile", "AsyncTikTokReplies", "AsyncTikTokSearchAds", "AsyncTikTokSearchHashtags", "AsyncTikTokSearchPosts", "AsyncTikTokSearchProfiles", "AsyncTikTokSearchSounds", "AsyncTikTokSearchSuggestions", "AsyncTikTokSearchTop", "AsyncTikTokSound", "AsyncTikTokSoundPosts", "AsyncTikTokTopAds", "AsyncTikTokTopPosts", "AsyncTikTokTranscript", "AsyncTikTokTrendingHashtags", "AsyncTikTokTrendingPosts", "AsyncTikTok", "AsyncTikTokShopProduct", "AsyncTikTokShopProducts", "AsyncTikTokShopReviews", "AsyncTikTokShopSearchProducts", "AsyncTikTokShop", "AsyncTruthSocialPost", "AsyncTruthSocialPosts", "AsyncTruthSocialProfile", "AsyncTruthSocial", "AsyncTwitchProfile", "AsyncTwitchSchedule", "AsyncTwitchTranscript", "AsyncTwitchVideo", "AsyncTwitchVideos", "AsyncTwitch", "AsyncXComments", "AsyncXCommunity", "AsyncXCommunityPosts", "AsyncXEngagement", "AsyncXFriendship", "AsyncXList", "AsyncXListFollowers", "AsyncXPost", "AsyncXPosts", "AsyncXProfile", "AsyncXProfileMentions", "AsyncXSearchCommunities", "AsyncXSearchHashtags", "AsyncXSearchPosts", "AsyncXSearchProfiles", "AsyncXSpace", "AsyncXTranscript", "AsyncX", "AsyncYouTubeComments", "AsyncYouTubeEngagement", "AsyncYouTubeHashtagPosts", "AsyncYouTubePost", "AsyncYouTubePosts", "AsyncYouTubeProfile", "AsyncYouTubeSearchPosts", "AsyncYouTubeSearchProfiles", "AsyncYouTubeSearchSuggestions", "AsyncYouTubeTranscript", "AsyncYouTube", "AsyncAccountResource", "AsyncUsageRateResource", "AsyncUsageResource", "AsyncCreditTransactionsResource", "AsyncBillingCheckoutResource", "AsyncBillingSubscriptionResource", "AsyncBillingAutoTopupResource", "AsyncBillingPurchasesResource", "AsyncBillingResource", "AsyncRequestsResource", "AsyncApiKeysResource", "AsyncJobsResultsResource", "AsyncJobsResource", "AsyncWebhookEndpointsDeliveriesResource", "AsyncWebhookEndpointsResource", "AsyncEventsResource", "AsyncNotificationPreferencesResource"]

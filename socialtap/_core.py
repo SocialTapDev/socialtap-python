@@ -40,7 +40,7 @@ from typing import (
 )
 
 from . import _parse as _p
-from ._constants import API_KEY_ENV, DEFAULT_BASE_URL, DEFAULT_LONG_TIMEOUT_S, DEFAULT_MAX_RETRIES, DEFAULT_TIMEOUT_S, ERROR_CODES, HEADERS, SIGNUP_URL, VERSION
+from ._constants import API_KEY_ENV, CLIENT_NAME, DEFAULT_BASE_URL, DEFAULT_LONG_TIMEOUT_S, DEFAULT_MAX_RETRIES, DEFAULT_TIMEOUT_S, ERROR_CODES, HEADERS, SIGNUP_URL, VERSION
 from ._exceptions import APIConnectionError, APIDecodeError, APIError, APITimeoutError, RetryAfterExceededError, SocialTapError
 from .errors import make_api_error
 from .models import EnvelopeMeta, EnvelopePage, EnvelopeRouteMeta
@@ -293,7 +293,7 @@ class _Base:
             user = query.get("max_age")
             q["max_age"] = str(max(user if isinstance(user, int) and not isinstance(user, bool) else 0, elapsed))
         url = self.base_url + path + ("?" + urllib.parse.urlencode(q) if q else "")
-        h = {"accept": "application/json", "user-agent": f"socialtap-python/{VERSION}", **self._default_headers, **(headers or {})}
+        h = {"accept": "application/json", "user-agent": f"{CLIENT_NAME}/{VERSION}", **self._default_headers, **(headers or {})}
         h[HEADERS["api_key"]] = self.api_key
         data = None
         if body is not None:

@@ -12,7 +12,7 @@ import json
 from dataclasses import dataclass
 from typing import Any, Dict, Mapping, Optional, Tuple
 
-from ._constants import VERSION
+from ._constants import CLIENT_NAME, VERSION
 from ._core import AsyncCore, SyncCore
 from ._exceptions import SocialTapError
 from ._tools import DEFAULT_TOOLS, MCP_PATH, MCP_PROTOCOL_VERSION, TOOL_DATA
@@ -63,7 +63,7 @@ def call_tool(client: SyncCore, name: str, arguments: Optional[Mapping[str, Any]
     """Call one tool with the client's API key: ``call_tool(client, "get_transcript", {"url": url})``. Transport
     failures (no connection, a 5xx, the per-IP limit) raise like any request and are retried for tools that may be
     repeated; the tool's own failures are results with ``is_error``."""
-    path, body, headers, retry = _request(name, arguments, "socialtap-python")
+    path, body, headers, retry = _request(name, arguments, CLIENT_NAME)
     r, decoded = client.request("POST", path, body=body, retry=retry, timeout=timeout, extra_headers=headers)
     return _result(name, decoded, r.status)
 
@@ -72,7 +72,7 @@ async def acall_tool(
     client: AsyncCore, name: str, arguments: Optional[Mapping[str, Any]] = None, *, timeout: Optional[float] = None
 ) -> ToolResult:
     """The async form of :func:`call_tool` (an ``AsyncSocialTap`` client)."""
-    path, body, headers, retry = _request(name, arguments, "socialtap-python")
+    path, body, headers, retry = _request(name, arguments, CLIENT_NAME)
     r, decoded = await client.request("POST", path, body=body, retry=retry, timeout=timeout, extra_headers=headers)
     return _result(name, decoded, r.status)
 

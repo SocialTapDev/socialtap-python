@@ -28,7 +28,7 @@ class SocialTap(SyncCore):
     Google, Hacker News, Instagram, Komi, Kwai, LinkedIn, Linkme, Linktree, Lnk.Bio, Pillar, Pinterest, Reddit,
     Rumble, Snapchat, SoundCloud, Spotify, Telegram, Threads, TikTok, Truth Social, Twitch, X and YouTube; readmes
     on GitHub; relationships on X; releases on GitHub; repositories on GitHub; reviews on Amazon and TikTok Shop;
-    sounds on Instagram and TikTok; suggestions on Google, Instagram and TikTok; topics on Instagram and
+    sounds on Instagram and TikTok; suggestions on Google, Instagram, TikTok and YouTube; topics on Instagram and
     Pinterest; transcripts on Facebook, Instagram, Kick, LinkedIn, Reddit, Rumble, TikTok, Twitch, X and YouTube;
     trends on Instagram and Pinterest; usernames on Instagram; web pages on Pinterest; web results on Facebook,
     Instagram, LinkedIn, Telegram, TikTok and X.
@@ -200,7 +200,7 @@ class AsyncSocialTap(AsyncCore):
     Google, Hacker News, Instagram, Komi, Kwai, LinkedIn, Linkme, Linktree, Lnk.Bio, Pillar, Pinterest, Reddit,
     Rumble, Snapchat, SoundCloud, Spotify, Telegram, Threads, TikTok, Truth Social, Twitch, X and YouTube; readmes
     on GitHub; relationships on X; releases on GitHub; repositories on GitHub; reviews on Amazon and TikTok Shop;
-    sounds on Instagram and TikTok; suggestions on Google, Instagram and TikTok; topics on Instagram and
+    sounds on Instagram and TikTok; suggestions on Google, Instagram, TikTok and YouTube; topics on Instagram and
     Pinterest; transcripts on Facebook, Instagram, Kick, LinkedIn, Reddit, Rumble, TikTok, Twitch, X and YouTube;
     trends on Instagram and Pinterest; usernames on Instagram; web pages on Pinterest; web results on Facebook,
     Instagram, LinkedIn, Telegram, TikTok and X.

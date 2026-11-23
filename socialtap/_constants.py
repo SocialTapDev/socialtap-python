@@ -5,8 +5,10 @@ from __future__ import annotations
 
 from typing import Dict, NamedTuple, Optional
 
-VERSION = "1.585.34"
+VERSION = "1.597.37"
 """SDK version: 1.<contract facts>.<generator revision> (sdk/README.md)."""
+CLIENT_NAME = "socialtap-python"
+"""The name this SDK sends as its User-Agent's product and its MCP clientInfo name (catalog clients)."""
 DEFAULT_BASE_URL = "https://socialtap.dev"
 API_KEY_ENV = "SOCIALTAP_API_KEY"
 SIGNUP_URL: Optional[str] = "https://socialtap.dev/signup/"
