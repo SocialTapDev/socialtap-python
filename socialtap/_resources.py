@@ -4059,8 +4059,8 @@ class FacebookAdTranscript:
         language and the video's length. It works on single-video ads and on dynamic ads whose variations are videos,
         running or not.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -4072,10 +4072,10 @@ class FacebookAdTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
                 language spoken in the video, a hint to speech-to-text. Without lang the language is detected.
                 Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -8000,12 +8000,12 @@ class FacebookTranscript:
         """Timed transcript of a video or reel.
 
         Returns the timed transcript of a public Facebook video or reel from its link or ID, read from its captions.
-        When it has none, send transcribe_audio=true to transcribe its audio. Captions are the uploaded track first,
-        then Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
-        speech-to-text. Each segment has its start and end time, and text holds the whole transcript.
+        When it has none, we transcribe its audio: short videos on every request, longer ones with
+        transcribe_audio=true. Captions are the uploaded track first, then Facebook's auto-generated one. Each segment
+        has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -8014,10 +8014,10 @@ class FacebookTranscript:
             url: Facebook video URL (reel, watch, page video, video.php, m./mbasic./web. hosts, fb.watch and share/v|r
                 links) or a numeric video ID. At most 2048 characters. Example:
                 https://www.facebook.com/reel/1803909017420449
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -17639,12 +17639,12 @@ class InstagramTranscript:
         """Timed transcript of a public reel or video.
 
         Returns the timed transcript of a public Instagram reel or video post, from its link or shortcode. Instagram
-        shows no captions logged out, so most transcripts are speech-to-text on the post's audio: send
-        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript. For a
-        carousel, img_index picks the video.
+        shows no captions logged out, so most transcripts are speech-to-text on the post's audio: short reels on every
+        request, longer videos with transcribe_audio=true. Each segment has its start and end time, and text holds the
+        whole transcript. For a carousel, img_index picks the video.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -17654,10 +17654,10 @@ class InstagramTranscript:
                 instagram.com/share/… links) or a raw shortcode. For carousel posts, ?img_index=N selects the item;
                 default is the first video. At most 2048 characters. Example:
                 https://www.instagram.com/reel/De1S3KpCXf0/
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -18122,8 +18122,8 @@ class KickTranscript:
         length. Kick has no captions to read, so every transcript comes from speech-to-text, on HLS clips and the
         older MP4 clips alike.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -18136,10 +18136,10 @@ class KickTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). A hint to
                 speech-to-text: the language the clip is spoken in. Without it the language is detected; language says
                 which was used. It does not translate. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -21897,12 +21897,12 @@ class LinkedInTranscript:
         """Timed transcript of any public video post.
 
         Returns the timed transcript of a public LinkedIn video post, from its link, URN or activity ID. LinkedIn's
-        own captions come first, and with transcribe_audio=true a video without them is transcribed from its audio.
-        Each segment has its start and end time, text holds the whole transcript and duration_ms the video's length. A
-        post without a native video returns invalid_input.
+        own captions come first, and a video without them is transcribed from its audio: short videos on every
+        request, longer ones with transcribe_audio=true. Each segment has its start and end time, text holds the whole
+        transcript and duration_ms the video's length. A post without a native video returns invalid_input.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -21913,10 +21913,10 @@ class LinkedInTranscript:
                 (linkedin.com/feed/update/urn:li:activity:<id>, also urn:li:share: and urn:li:ugcPost:), on any
                 country host, or its bare URN (urn:li:activity:<id>) or activity ID. At most 2048 characters. Example:
                 https://www.linkedin.com/posts/reidhoffman_cyberattacks-on-governments-and-enterprises-activity-7516514048604254210-TNkp
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -25400,12 +25400,12 @@ class RedditTranscript:
         """Video post transcript, from captions or audio.
 
         Returns the timed transcript of a public Reddit video post from its link or ID, read from Reddit's captions.
-        When it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time,
-        and text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it
-        and app share links work too.
+        When it has none, we transcribe its audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript.
+        Crossposts of a video, videos inside a text post, and v.redd.it, redd.it and app share links work too.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -25422,10 +25422,10 @@ class RedditTranscript:
                 whatever is spoken. Any other language is transcribed by speech-to-text in it instead (meta.source =
                 asr, priced per minute). For a video Reddit has no captions for, speech-to-text runs either way,
                 detecting the language without lang. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -26375,13 +26375,13 @@ class RumbleTranscript:
         """Timed transcript of any video or past stream.
 
         Returns the timed transcript of a public Rumble video, short or past live stream, read from its captions. When
-        it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time, and
-        text holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names
-        the track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link,
-        embed links included, or a video ID.
+        it has none, we transcribe its audio: short videos on every request, longer ones with transcribe_audio=true.
+        Each segment has its start and end time, and text holds the whole transcript. The uploader's captions win over
+        Rumble's automatic ones; the answer names the track it used, links its WebVTT file and lists every track the
+        video has. Accepts any Rumble video link, embed links included, or a video ID.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -26394,10 +26394,10 @@ class RumbleTranscript:
                 caption track: an uploaded track in that language before Rumble's automatic one. When the video has no
                 track in that language, the default track is returned (language says which). Default: an uploaded
                 track in the spoken language, else Rumble's automatic captions. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -34676,12 +34676,12 @@ class TikTokTranscript:
         """Timed transcript from captions or the audio.
 
         Returns the timed transcript of a public TikTok video from its link or ID, read from its captions. When it has
-        none, send transcribe_audio=true to transcribe its audio. You get the creator's edited captions, TikTok's
-        auto-captions, or TikTok's own translation when lang asks for another language. Each segment has its start and
-        end time, and text holds the whole transcript.
+        none, we transcribe its audio: short videos on every request, longer ones with transcribe_audio=true. You get
+        the creator's edited captions, TikTok's auto-captions, or TikTok's own translation when lang asks for another
+        language. Each segment has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -34693,10 +34693,10 @@ class TikTokTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). Selects the
                 caption track (TikTok also offers its own translations); falls back to the video's original language,
                 then any track. TikTok's three-letter codes (eng-US) work too. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -36353,8 +36353,8 @@ class TwitchTranscript:
         clip's audio. Each segment has its start and end time, with the full text, the language heard and the clip's
         length.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -36367,10 +36367,10 @@ class TwitchTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). A hint to
                 speech-to-text: the language the clip is spoken in. Without it the language is detected; language says
                 which was used. It does not translate. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -38898,12 +38898,13 @@ class XTranscript:
         """Video post transcript, from captions or audio.
 
         Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, read from X's
-        captions. When it has none, send transcribe_audio=true to transcribe the video's audio. Each segment has its
-        start and end time, text holds the whole transcript, and language says what was spoken. Reposts, quotes of a
-        video, videos in a post's card and posts with several videos work too.
+        captions. When it has none, we transcribe the video's audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, text holds the whole transcript, and language
+        says what was spoken. Reposts, quotes of a video, videos in a post's card and posts with several videos work
+        too.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -38918,10 +38919,10 @@ class XTranscript:
                 caption track in that language when the video has one. X captions a video in its spoken language only,
                 so for another language you get that track, and language says which. For a video X has no captions
                 for, it is the language speech-to-text listens for (detected without it). Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -40416,11 +40417,11 @@ class YouTubeTranscript:
         """Timed transcript from captions or audio.
 
         Returns the timed transcript of a public YouTube video, short or live replay, from its link or ID. It reads
-        the captions or, when there are none and you send transcribe_audio=true, the audio. Each segment has its start
-        and end time, and text holds the whole transcript.
+        the captions or, when there are none, the audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -40431,10 +40432,10 @@ class YouTubeTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). Selects the
                 caption track; a manual track is preferred over an auto-generated one. Default: the video's
                 original-language manual track, else its auto-generated track. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -46092,8 +46093,8 @@ class AsyncFacebookAdTranscript:
         language and the video's length. It works on single-video ads and on dynamic ads whose variations are videos,
         running or not.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -46105,10 +46106,10 @@ class AsyncFacebookAdTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). The
                 language spoken in the video, a hint to speech-to-text. Without lang the language is detected.
                 Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -50033,12 +50034,12 @@ class AsyncFacebookTranscript:
         """Timed transcript of a video or reel.
 
         Returns the timed transcript of a public Facebook video or reel from its link or ID, read from its captions.
-        When it has none, send transcribe_audio=true to transcribe its audio. Captions are the uploaded track first,
-        then Facebook's auto-generated one, and with transcribe_audio=true a video without either is transcribed with
-        speech-to-text. Each segment has its start and end time, and text holds the whole transcript.
+        When it has none, we transcribe its audio: short videos on every request, longer ones with
+        transcribe_audio=true. Captions are the uploaded track first, then Facebook's auto-generated one. Each segment
+        has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -50047,10 +50048,10 @@ class AsyncFacebookTranscript:
             url: Facebook video URL (reel, watch, page video, video.php, m./mbasic./web. hosts, fb.watch and share/v|r
                 links) or a numeric video ID. At most 2048 characters. Example:
                 https://www.facebook.com/reel/1803909017420449
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -59672,12 +59673,12 @@ class AsyncInstagramTranscript:
         """Timed transcript of a public reel or video.
 
         Returns the timed transcript of a public Instagram reel or video post, from its link or shortcode. Instagram
-        shows no captions logged out, so most transcripts are speech-to-text on the post's audio: send
-        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript. For a
-        carousel, img_index picks the video.
+        shows no captions logged out, so most transcripts are speech-to-text on the post's audio: short reels on every
+        request, longer videos with transcribe_audio=true. Each segment has its start and end time, and text holds the
+        whole transcript. For a carousel, img_index picks the video.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -59687,10 +59688,10 @@ class AsyncInstagramTranscript:
                 instagram.com/share/… links) or a raw shortcode. For carousel posts, ?img_index=N selects the item;
                 default is the first video. At most 2048 characters. Example:
                 https://www.instagram.com/reel/De1S3KpCXf0/
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -60155,8 +60156,8 @@ class AsyncKickTranscript:
         length. Kick has no captions to read, so every transcript comes from speech-to-text, on HLS clips and the
         older MP4 clips alike.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -60169,10 +60170,10 @@ class AsyncKickTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). A hint to
                 speech-to-text: the language the clip is spoken in. Without it the language is detected; language says
                 which was used. It does not translate. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -63930,12 +63931,12 @@ class AsyncLinkedInTranscript:
         """Timed transcript of any public video post.
 
         Returns the timed transcript of a public LinkedIn video post, from its link, URN or activity ID. LinkedIn's
-        own captions come first, and with transcribe_audio=true a video without them is transcribed from its audio.
-        Each segment has its start and end time, text holds the whole transcript and duration_ms the video's length. A
-        post without a native video returns invalid_input.
+        own captions come first, and a video without them is transcribed from its audio: short videos on every
+        request, longer ones with transcribe_audio=true. Each segment has its start and end time, text holds the whole
+        transcript and duration_ms the video's length. A post without a native video returns invalid_input.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -63946,10 +63947,10 @@ class AsyncLinkedInTranscript:
                 (linkedin.com/feed/update/urn:li:activity:<id>, also urn:li:share: and urn:li:ugcPost:), on any
                 country host, or its bare URN (urn:li:activity:<id>) or activity ID. At most 2048 characters. Example:
                 https://www.linkedin.com/posts/reidhoffman_cyberattacks-on-governments-and-enterprises-activity-7516514048604254210-TNkp
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -67433,12 +67434,12 @@ class AsyncRedditTranscript:
         """Video post transcript, from captions or audio.
 
         Returns the timed transcript of a public Reddit video post from its link or ID, read from Reddit's captions.
-        When it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time,
-        and text holds the whole transcript. Crossposts of a video, videos inside a text post, and v.redd.it, redd.it
-        and app share links work too.
+        When it has none, we transcribe its audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript.
+        Crossposts of a video, videos inside a text post, and v.redd.it, redd.it and app share links work too.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -67455,10 +67456,10 @@ class AsyncRedditTranscript:
                 whatever is spoken. Any other language is transcribed by speech-to-text in it instead (meta.source =
                 asr, priced per minute). For a video Reddit has no captions for, speech-to-text runs either way,
                 detecting the language without lang. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -68408,13 +68409,13 @@ class AsyncRumbleTranscript:
         """Timed transcript of any video or past stream.
 
         Returns the timed transcript of a public Rumble video, short or past live stream, read from its captions. When
-        it has none, send transcribe_audio=true to transcribe its audio. Each segment has its start and end time, and
-        text holds the whole transcript. The uploader's captions win over Rumble's automatic ones; the answer names
-        the track it used, links its WebVTT file and lists every track the video has. Accepts any Rumble video link,
-        embed links included, or a video ID.
+        it has none, we transcribe its audio: short videos on every request, longer ones with transcribe_audio=true.
+        Each segment has its start and end time, and text holds the whole transcript. The uploader's captions win over
+        Rumble's automatic ones; the answer names the track it used, links its WebVTT file and lists every track the
+        video has. Accepts any Rumble video link, embed links included, or a video ID.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -68427,10 +68428,10 @@ class AsyncRumbleTranscript:
                 caption track: an uploaded track in that language before Rumble's automatic one. When the video has no
                 track in that language, the default track is returned (language says which). Default: an uploaded
                 track in the spoken language, else Rumble's automatic captions. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -76709,12 +76710,12 @@ class AsyncTikTokTranscript:
         """Timed transcript from captions or the audio.
 
         Returns the timed transcript of a public TikTok video from its link or ID, read from its captions. When it has
-        none, send transcribe_audio=true to transcribe its audio. You get the creator's edited captions, TikTok's
-        auto-captions, or TikTok's own translation when lang asks for another language. Each segment has its start and
-        end time, and text holds the whole transcript.
+        none, we transcribe its audio: short videos on every request, longer ones with transcribe_audio=true. You get
+        the creator's edited captions, TikTok's auto-captions, or TikTok's own translation when lang asks for another
+        language. Each segment has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -76726,10 +76727,10 @@ class AsyncTikTokTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). Selects the
                 caption track (TikTok also offers its own translations); falls back to the video's original language,
                 then any track. TikTok's three-letter codes (eng-US) work too. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -78386,8 +78387,8 @@ class AsyncTwitchTranscript:
         clip's audio. Each segment has its start and end time, with the full text, the language heard and the clip's
         length.
 
-        Cost: 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true). Failed requests
-        and cache hits are free.
+        Cost: 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with
+        transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -78400,10 +78401,10 @@ class AsyncTwitchTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). A hint to
                 speech-to-text: the language the clip is spoken in. Without it the language is detected; language says
                 which was used. It does not translate. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -80931,12 +80932,13 @@ class AsyncXTranscript:
         """Video post transcript, from captions or audio.
 
         Returns the timed transcript of a public X (formerly Twitter) video post from its link or ID, read from X's
-        captions. When it has none, send transcribe_audio=true to transcribe the video's audio. Each segment has its
-        start and end time, text holds the whole transcript, and language says what was spoken. Reposts, quotes of a
-        video, videos in a post's card and posts with several videos work too.
+        captions. When it has none, we transcribe the video's audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, text holds the whole transcript, and language
+        says what was spoken. Reposts, quotes of a video, videos in a post's card and posts with several videos work
+        too.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -80951,10 +80953,10 @@ class AsyncXTranscript:
                 caption track in that language when the video has one. X captions a video in its spoken language only,
                 so for another language you get that track, and language says which. For a video X has no captions
                 for, it is the language speech-to-text listens for (detected without it). Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.
@@ -82449,11 +82451,11 @@ class AsyncYouTubeTranscript:
         """Timed transcript from captions or audio.
 
         Returns the timed transcript of a public YouTube video, short or live replay, from its link or ID. It reads
-        the captions or, when there are none and you send transcribe_audio=true, the audio. Each segment has its start
-        and end time, and text holds the whole transcript.
+        the captions or, when there are none, the audio: short videos on every request, longer ones with
+        transcribe_audio=true. Each segment has its start and end time, and text holds the whole transcript.
 
-        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with
-        transcribe_audio=true). Failed requests and cache hits are free.
+        Cost: 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3
+        minutes, longer with transcribe_audio=true). Failed requests and cache hits are free.
 
         With fields=, data (each item of a list) is the object as received: a dict of only the selected members (a
         model would have to invent the others).
@@ -82464,10 +82466,10 @@ class AsyncYouTubeTranscript:
             lang: Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -). Selects the
                 caption track; a manual track is preferred over an auto-generated one. Default: the video's
                 original-language manual track, else its auto-generated track. Example: en
-            transcribe_audio: true transcribes the audio with speech-to-text when the platform has no captions, at the
-                endpoint's speech-to-text price (without it, captions only). Without it, media with no captions
-                answers no_transcript, free, with details.reason transcribe_audio and the credits transcribing it
-                would cost. One of: true, false. Example: true
+            transcribe_audio: Speech-to-text for media the platform has no captions for, at the endpoint's
+                speech-to-text price. Left out, media up to 3 minutes is transcribed, and longer media answers
+                no_transcript, free, with details.reason transcribe_audio and the credits transcribing it costs. true
+                transcribes media of any length; false returns captions only. One of: true, false. Example: true
             max_age: Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always
                 fetch fresh. The Cache-Control: max-age=N request header is equivalent; max_age wins when both are
                 sent. Minimum: 0.

@@ -5,7 +5,7 @@
 SocialTap is the social media scraper API for developers and AI agents. Send a public link, a handle or a search and get live data back in one schema. Failed requests are free.
 
 The Python SDK for the SocialTap API: a method for every endpoint, typed models and errors, retries and pagination.
-Generated from the SocialTap catalog (version 1.597.37). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
+Generated from the SocialTap catalog (version 1.598.37). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
 
 ## Install
 
@@ -140,7 +140,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `bluesky.profile` | `client.bluesky.profile.get()` | 1 credit |
 | `bluesky.search_posts` | `client.bluesky.search_posts.list()` | 1 credit |
 | `facebook.ad` | `client.facebook.ad.get()` | 1 credit |
-| `facebook.ad_transcript` | `client.facebook.ad_transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `facebook.ad_transcript` | `client.facebook.ad_transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `facebook.ads` | `client.facebook.ads.list()` | 1 credit |
 | `facebook.advertiser` | `client.facebook.advertiser.get()` | 1 credit |
 | `facebook.comments` | `client.facebook.comments.list()` | 1 credit |
@@ -165,7 +165,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `facebook.search_places` | `client.facebook.search_places.list()` | 1 credit |
 | `facebook.search_posts` | `client.facebook.search_posts.list()` | 1 credit + 1 per result filled in (with fill=true) |
 | `facebook.search_profiles` | `client.facebook.search_profiles.list()` | 1 credit + 1 per result filled in (with fill=true) |
-| `facebook.transcript` | `client.facebook.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `facebook.transcript` | `client.facebook.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `github.activity` | `client.github.activity.list()` | 1 credit |
 | `github.contributions` | `client.github.contributions.get()` | 1 credit |
 | `github.followers` | `client.github.followers.list()` | 1 credit |
@@ -229,11 +229,11 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `instagram.sound_posts` | `client.instagram.sound_posts.list()` | 1 credit |
 | `instagram.story` | `client.instagram.story.get()` | 1 credit |
 | `instagram.topic` | `client.instagram.topic.get()` | 1 credit |
-| `instagram.transcript` | `client.instagram.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `instagram.transcript` | `client.instagram.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `instagram.trending_posts` | `client.instagram.trending_posts.list()` | 1 credit |
 | `instagram.username` | `client.instagram.username.get()` | 1 credit |
 | `kick.post` | `client.kick.post.get()` | 1 credit |
-| `kick.transcript` | `client.kick.transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `kick.transcript` | `client.kick.transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `komi.page` | `client.komi.page.get()` | 1 credit |
 | `kwai.post` | `client.kwai.post.get()` | 1 credit |
 | `kwai.posts` | `client.kwai.posts.list()` | 1 credit |
@@ -259,7 +259,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `linkedin.search_jobs` | `client.linkedin.search_jobs.list()` | 1 credit |
 | `linkedin.search_posts` | `client.linkedin.search_posts.list()` | 1 credit + 1 per result filled in (with fill=true) |
 | `linkedin.search_profiles` | `client.linkedin.search_profiles.list()` | 1 credit + 1 per result filled in (with fill=true) |
-| `linkedin.transcript` | `client.linkedin.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `linkedin.transcript` | `client.linkedin.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `linkme.profile` | `client.linkme.profile.get()` | 1 credit |
 | `linktree.profile` | `client.linktree.profile.get()` | 1 credit |
 | `pillar.page` | `client.pillar.page.get()` | 1 credit |
@@ -285,14 +285,14 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `reddit.search_subreddits` | `client.reddit.search_subreddits.list()` | 1 credit |
 | `reddit.subreddit` | `client.reddit.subreddit.get()` | 1 credit |
 | `reddit.subreddit_posts` | `client.reddit.subreddit_posts.list()` | 1 credit |
-| `reddit.transcript` | `client.reddit.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `reddit.transcript` | `client.reddit.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `rumble.comments` | `client.rumble.comments.list()` | 1 credit |
 | `rumble.engagement` | `client.rumble.engagement.get()` | 1 credit |
 | `rumble.post` | `client.rumble.post.get()` | 1 credit |
 | `rumble.posts` | `client.rumble.posts.list()` | 1 credit |
 | `rumble.profile` | `client.rumble.profile.get()` | 1 credit |
 | `rumble.search_posts` | `client.rumble.search_posts.list()` | 1 credit |
-| `rumble.transcript` | `client.rumble.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `rumble.transcript` | `client.rumble.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `snapchat.comments` | `client.snapchat.comments.list()` | 1 credit |
 | `snapchat.profile` | `client.snapchat.profile.get()` | 1 credit |
 | `snapchat.spotlight` | `client.snapchat.spotlight.get()` | 1 credit |
@@ -352,7 +352,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `tiktok.sound_posts` | `client.tiktok.sound_posts.list()` | 1 credit |
 | `tiktok.top_ads` | `client.tiktok.top_ads.list()` | 1 credit |
 | `tiktok.top_posts` | `client.tiktok.top_posts.list()` | 1 credit |
-| `tiktok.transcript` | `client.tiktok.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `tiktok.transcript` | `client.tiktok.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `tiktok.trending_hashtags` | `client.tiktok.trending_hashtags.list()` | 1 credit |
 | `tiktok.trending_posts` | `client.tiktok.trending_posts.list()` | 1 credit |
 | `tiktokshop.product` | `client.tiktokshop.product.get()` | 1 credit |
@@ -364,7 +364,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `truthsocial.profile` | `client.truthsocial.profile.get()` | 1 credit |
 | `twitch.profile` | `client.twitch.profile.get()` | 1 credit |
 | `twitch.schedule` | `client.twitch.schedule.list()` | 1 credit |
-| `twitch.transcript` | `client.twitch.transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `twitch.transcript` | `client.twitch.transcript.get()` | 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `twitch.video` | `client.twitch.video.get()` | 1 credit |
 | `twitch.videos` | `client.twitch.videos.list()` | 1 credit |
 | `x.comments` | `client.x.comments.list()` | 1 credit |
@@ -383,7 +383,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `x.search_posts` | `client.x.search_posts.list()` | 1 credit + 1 per result filled in (with fill=true) |
 | `x.search_profiles` | `client.x.search_profiles.list()` | 1 credit + 1 per result filled in (with fill=true) |
 | `x.space` | `client.x.space.get()` | 1 credit |
-| `x.transcript` | `client.x.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `x.transcript` | `client.x.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 | `youtube.comments` | `client.youtube.comments.list()` | 1 credit |
 | `youtube.engagement` | `client.youtube.engagement.get()` | 1 credit |
 | `youtube.hashtag_posts` | `client.youtube.hashtag_posts.list()` | 1 credit |
@@ -393,7 +393,7 @@ Every result also carries the envelope `meta` (request ID, source, cache status,
 | `youtube.search_posts` | `client.youtube.search_posts.list()` | 1 credit |
 | `youtube.search_profiles` | `client.youtube.search_profiles.list()` | 1 credit |
 | `youtube.search_suggestions` | `client.youtube.search_suggestions.list()` | 1 credit |
-| `youtube.transcript` | `client.youtube.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, with transcribe_audio=true) |
+| `youtube.transcript` | `client.youtube.transcript.get()` | 1 credit (captions) or 2 credits + 2 per started minute of media (speech-to-text, automatic up to 3 minutes, longer with transcribe_audio=true) |
 
 ### Endpoints newer than this package
 

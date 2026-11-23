@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "socialtap"
-version = "1.597.37"
+version = "1.598.37"
 description = "SocialTap API client: Social media scraper API. Live data from any public link."
 readme = "README.md"
 license = "MIT"

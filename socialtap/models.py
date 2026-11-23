@@ -16518,7 +16518,7 @@ class TranscriptPlatformSpecific:
 @dataclass(frozen=True)
 class Transcript:
     """Timed transcripts of public videos: the platform's caption track, or speech-to-text on the audio when there is
-    none and you ask for it.
+    none.
     """
 
     platform: str
@@ -21190,10 +21190,10 @@ class FacebookAdTranscriptParams(_FacebookAdTranscriptParamsRequired, total=Fals
     in the video, a hint to speech-to-text. Without lang the language is detected. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -22635,10 +22635,10 @@ class _FacebookTranscriptParamsRequired(TypedDict):
 class FacebookTranscriptParams(_FacebookTranscriptParamsRequired, total=False):
     """facebook.transcript's params, as a job item sends them."""
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -26096,10 +26096,10 @@ class _InstagramTranscriptParamsRequired(TypedDict):
 class InstagramTranscriptParams(_InstagramTranscriptParamsRequired, total=False):
     """instagram.transcript's params, as a job item sends them."""
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -26279,10 +26279,10 @@ class KickTranscriptParams(_KickTranscriptParamsRequired, total=False):
     was used. It does not translate. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -27686,10 +27686,10 @@ class _LinkedInTranscriptParamsRequired(TypedDict):
 class LinkedInTranscriptParams(_LinkedInTranscriptParamsRequired, total=False):
     """linkedin.transcript's params, as a job item sends them."""
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -29027,10 +29027,10 @@ class RedditTranscriptParams(_RedditTranscriptParamsRequired, total=False):
     Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -29418,10 +29418,10 @@ class RumbleTranscriptParams(_RumbleTranscriptParamsRequired, total=False):
     language, else Rumble's automatic captions. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -32509,10 +32509,10 @@ class TikTokTranscriptParams(_TikTokTranscriptParamsRequired, total=False):
     TikTok's three-letter codes (eng-US) work too. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -33089,10 +33089,10 @@ class TwitchTranscriptParams(_TwitchTranscriptParamsRequired, total=False):
     was used. It does not translate. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -34106,10 +34106,10 @@ class XTranscriptParams(_XTranscriptParamsRequired, total=False):
     speech-to-text listens for (detected without it). Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
@@ -34663,10 +34663,10 @@ class YouTubeTranscriptParams(_YouTubeTranscriptParamsRequired, total=False):
     track, else its auto-generated track. Example: en
     """
     transcribe_audio: Literal["true", "false"]
-    """true transcribes the audio with speech-to-text when the platform has no captions, at the endpoint's
-    speech-to-text price (without it, captions only). Without it, media with no captions answers no_transcript,
-    free, with details.reason transcribe_audio and the credits transcribing it would cost. One of: true, false.
-    Example: true
+    """Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price. Left out,
+    media up to 3 minutes is transcribed, and longer media answers no_transcript, free, with details.reason
+    transcribe_audio and the credits transcribing it costs. true transcribes media of any length; false returns
+    captions only. One of: true, false. Example: true
     """
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
