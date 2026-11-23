@@ -5,7 +5,7 @@
 SocialTap is the social media scraper API for developers and AI agents. Send a public link, a handle or a search and get live data back in one schema. Failed requests are free.
 
 The Python SDK for the SocialTap API: a method for every endpoint, typed models and errors, retries and pagination.
-Generated from the SocialTap catalog (version 1.599.37). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
+Generated from the SocialTap catalog (version 1.600.37). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
 
 ## Install
 
