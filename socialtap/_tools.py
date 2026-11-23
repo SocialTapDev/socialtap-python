@@ -142,6 +142,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -257,6 +262,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -337,6 +347,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -437,6 +452,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -502,6 +522,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -564,6 +589,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -717,6 +747,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -920,6 +955,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1008,6 +1048,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1080,6 +1125,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1141,6 +1191,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -1214,6 +1269,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1275,6 +1335,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -1340,6 +1405,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1401,6 +1471,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -1507,6 +1582,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1591,6 +1671,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1659,6 +1744,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1720,6 +1810,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -1791,6 +1886,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -1865,6 +1965,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1936,6 +2041,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -1999,6 +2109,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2052,6 +2167,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2117,6 +2237,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2180,6 +2305,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2241,6 +2371,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2312,6 +2447,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2375,6 +2515,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2428,6 +2573,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2505,6 +2655,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2590,6 +2745,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2636,6 +2796,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2690,6 +2855,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2740,6 +2910,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2808,6 +2983,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2861,6 +3041,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -2923,6 +3108,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -2976,6 +3166,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3050,6 +3245,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3105,6 +3305,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3158,6 +3363,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3225,6 +3435,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3278,6 +3493,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3354,6 +3574,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3422,6 +3647,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3485,6 +3715,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3541,6 +3776,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3590,6 +3830,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3710,6 +3955,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3854,6 +4104,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -3901,6 +4156,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -3989,6 +4249,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4039,6 +4304,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4087,6 +4357,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4141,6 +4416,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4200,6 +4480,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4249,6 +4534,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4296,6 +4586,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4351,6 +4646,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4399,6 +4699,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4445,6 +4750,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4508,6 +4818,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4554,6 +4869,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4604,6 +4924,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4650,6 +4975,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4700,6 +5030,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4746,6 +5081,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4796,6 +5136,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4842,6 +5187,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4897,6 +5247,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -4944,6 +5299,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -4998,6 +5358,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5046,6 +5411,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5092,6 +5462,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5161,6 +5536,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5224,6 +5604,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5277,6 +5662,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5336,6 +5726,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5410,6 +5805,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5463,6 +5863,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5564,6 +5969,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5626,6 +6036,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5700,6 +6115,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5759,6 +6179,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5812,6 +6237,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -5888,6 +6318,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -5941,6 +6376,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6006,6 +6446,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6061,6 +6506,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6114,6 +6564,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6201,6 +6656,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6262,6 +6722,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6347,6 +6812,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6400,6 +6870,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6459,6 +6934,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6528,6 +7008,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6585,6 +7070,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6655,6 +7145,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {
@@ -6784,6 +7279,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6854,6 +7354,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "minimum": 0,
                     "type": "integer",
                 },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
+                    "type": "integer",
+                },
                 "cursor": {
                     "description": "next_cursor from this tool's previous result: the next page, or the rest of a cut result. Send the same other arguments.",
                     "type": "string",
@@ -6915,6 +7420,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "max_age": {
                     "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
                     "minimum": 0,
+                    "type": "integer",
+                },
+                "max_credits": {
+                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "minimum": 1,
                     "type": "integer",
                 },
                 "cursor": {

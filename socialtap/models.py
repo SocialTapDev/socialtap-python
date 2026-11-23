@@ -19743,6 +19743,12 @@ class AmazonDealProductsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -19797,6 +19803,12 @@ class AmazonOffersParams(_AmazonOffersParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -19853,6 +19865,12 @@ class AmazonProductParams(_AmazonProductParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -19907,6 +19925,12 @@ class AmazonReviewsParams(_AmazonReviewsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -19966,6 +19990,12 @@ class AmazonSearchProductsParams(_AmazonSearchProductsParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20021,6 +20051,12 @@ class AmazonSellerParams(_AmazonSellerParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20069,6 +20105,12 @@ class AmazonShopParams(_AmazonShopParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20116,6 +20158,12 @@ class AmazonShopListsParams(_AmazonShopListsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20176,6 +20224,12 @@ class AmazonShopPostsParams(_AmazonShopPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20241,6 +20295,12 @@ class AmazonTopProductsParams(_AmazonTopProductsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20301,6 +20361,12 @@ class AppleMusicAlbumParams(_AppleMusicAlbumParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20353,6 +20419,12 @@ class AppleMusicArtistParams(_AppleMusicArtistParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20401,6 +20473,12 @@ class AppleMusicSearchAlbumsParams(_AppleMusicSearchAlbumsParamsRequired, total=
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20458,6 +20536,12 @@ class AppleMusicSearchArtistsParams(_AppleMusicSearchArtistsParamsRequired, tota
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20519,6 +20603,12 @@ class AppleMusicSearchPlaylistsParams(_AppleMusicSearchPlaylistsParamsRequired, 
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20582,6 +20672,12 @@ class AppleMusicSearchTracksParams(_AppleMusicSearchTracksParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20639,6 +20735,12 @@ class AppleMusicTopAlbumsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20688,6 +20790,12 @@ class AppleMusicTopPlaylistsParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20749,6 +20857,12 @@ class AppleMusicTopTracksParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20812,6 +20926,12 @@ class AppleMusicTrackParams(_AppleMusicTrackParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20867,6 +20987,12 @@ class BlueskyCommentsParams(_BlueskyCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -20918,6 +21044,12 @@ class BlueskyPostParams(_BlueskyPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -20975,6 +21107,12 @@ class BlueskyPostsParams(_BlueskyPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21025,6 +21163,12 @@ class BlueskyProfileParams(_BlueskyProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21099,6 +21243,12 @@ class BlueskySearchPostsParams(_BlueskySearchPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21147,6 +21297,12 @@ class FacebookAdParams(_FacebookAdParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21198,6 +21354,12 @@ class FacebookAdTranscriptParams(_FacebookAdTranscriptParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21273,6 +21435,12 @@ class FacebookAdsParams(_FacebookAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21321,6 +21489,12 @@ class FacebookAdvertiserParams(_FacebookAdvertiserParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21377,6 +21551,12 @@ class FacebookCommentsParams(_FacebookCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21426,6 +21606,12 @@ class FacebookEngagementParams(_FacebookEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21467,6 +21653,12 @@ class FacebookEventParams(_FacebookEventParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21522,6 +21714,12 @@ class FacebookEventsParams(_FacebookEventsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21571,6 +21769,12 @@ class FacebookGroupParams(_FacebookGroupParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21617,6 +21821,12 @@ class FacebookGroupPostsParams(_FacebookGroupPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21666,6 +21876,12 @@ class FacebookListingParams(_FacebookListingParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21722,6 +21938,12 @@ class FacebookPhotosParams(_FacebookPhotosParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21786,6 +22008,12 @@ class FacebookPlaceEventsParams(_FacebookPlaceEventsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21835,6 +22063,12 @@ class FacebookPostParams(_FacebookPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21887,6 +22121,12 @@ class FacebookPostsParams(_FacebookPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -21935,6 +22175,12 @@ class FacebookProfileParams(_FacebookProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -21986,6 +22232,12 @@ class FacebookReelsParams(_FacebookReelsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22048,6 +22300,12 @@ class FacebookRepliesParams(_FacebookRepliesParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22120,6 +22378,12 @@ class FacebookSearchAdsParams(_FacebookSearchAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22173,6 +22437,12 @@ class FacebookSearchAdvertisersParams(_FacebookSearchAdvertisersParamsRequired, 
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22234,6 +22504,12 @@ class FacebookSearchEventsParams(_FacebookSearchEventsParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22294,6 +22570,12 @@ class FacebookSearchGroupsParams(_FacebookSearchGroupsParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22393,6 +22675,12 @@ class FacebookSearchListingsParams(_FacebookSearchListingsParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22451,6 +22739,12 @@ class FacebookSearchPlacesParams(_FacebookSearchPlacesParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22524,6 +22818,12 @@ class FacebookSearchPostsParams(_FacebookSearchPostsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22590,6 +22890,12 @@ class FacebookSearchProfilesParams(_FacebookSearchProfilesParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22644,6 +22950,12 @@ class FacebookTranscriptParams(_FacebookTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22695,6 +23007,12 @@ class GitHubActivityParams(_GitHubActivityParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22748,6 +23066,12 @@ class GitHubContributionsParams(_GitHubContributionsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22788,6 +23112,12 @@ class GitHubFollowersParams(_GitHubFollowersParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22837,6 +23167,12 @@ class GitHubFollowingParams(_GitHubFollowingParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -22889,6 +23225,12 @@ class GitHubIssueParams(_GitHubIssueParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -22937,6 +23279,12 @@ class GitHubIssueCommentsParams(_GitHubIssueCommentsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23013,6 +23361,12 @@ class GitHubIssuesParams(_GitHubIssuesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23061,6 +23415,12 @@ class GitHubPinnedRepositoriesParams(_GitHubPinnedRepositoriesParamsRequired, to
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23111,6 +23471,12 @@ class GitHubProfileParams(_GitHubProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23174,6 +23540,12 @@ class GitHubProfilePullRequestsParams(_GitHubProfilePullRequestsParamsRequired, 
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23225,6 +23597,12 @@ class GitHubReadmeParams(_GitHubReadmeParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23274,6 +23652,12 @@ class GitHubReleasesParams(_GitHubReleasesParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23341,6 +23725,12 @@ class GitHubRepositoriesParams(_GitHubRepositoriesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23392,6 +23782,12 @@ class GitHubRepositoryParams(_GitHubRepositoryParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23434,6 +23830,12 @@ class GitHubRepositoryContributorsParams(_GitHubRepositoryContributorsParamsRequ
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23516,6 +23918,12 @@ class GitHubSearchIssuesParams(_GitHubSearchIssuesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23571,6 +23979,12 @@ class GitHubSearchProfilesParams(_GitHubSearchProfilesParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23637,6 +24051,12 @@ class GitHubSearchRepositoriesParams(_GitHubSearchRepositoriesParamsRequired, to
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23687,6 +24107,12 @@ class GitHubTrendingProfilesParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23743,6 +24169,12 @@ class GitHubTrendingRepositoriesParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23791,6 +24223,12 @@ class GoogleAdParams(_GoogleAdParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23862,6 +24300,12 @@ class GoogleAdsParams(_GoogleAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -23914,6 +24358,12 @@ class GoogleAdvertiserParams(_GoogleAdvertiserParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -23986,6 +24436,12 @@ class GoogleSearchAdsParams(_GoogleSearchAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24043,6 +24499,12 @@ class GoogleSearchAdvertisersParams(_GoogleSearchAdvertisersParamsRequired, tota
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24097,6 +24559,12 @@ class GoogleSearchSuggestionsParams(_GoogleSearchSuggestionsParamsRequired, tota
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24145,6 +24613,12 @@ class HackerNewsCommentParams(_HackerNewsCommentParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24201,6 +24675,12 @@ class HackerNewsCommentsParams(_HackerNewsCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24254,6 +24734,12 @@ class HackerNewsFeedStoriesParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24331,6 +24817,12 @@ class HackerNewsSearchCommentsParams(_HackerNewsSearchCommentsParamsRequired, to
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24417,6 +24909,12 @@ class HackerNewsSearchStoriesParams(_HackerNewsSearchStoriesParamsRequired, tota
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24467,6 +24965,12 @@ class HackerNewsStoryParams(_HackerNewsStoryParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24507,6 +25011,12 @@ class HackerNewsUserParams(_HackerNewsUserParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24557,6 +25067,12 @@ class HackerNewsUserCommentsParams(_HackerNewsUserCommentsParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24604,6 +25120,12 @@ class HackerNewsUserFavoritesParams(_HackerNewsUserFavoritesParamsRequired, tota
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24667,6 +25189,12 @@ class HackerNewsUserStoriesParams(_HackerNewsUserStoriesParamsRequired, total=Fa
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24720,6 +25248,12 @@ class HackerNewsWhoishiringJobsParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24777,6 +25311,12 @@ class InstagramCommentParams(_InstagramCommentParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24825,6 +25365,12 @@ class InstagramCommentsParams(_InstagramCommentsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -24886,6 +25432,12 @@ class InstagramEmbedParams(_InstagramEmbedParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24929,6 +25481,12 @@ class InstagramEngagementParams(_InstagramEngagementParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -24970,6 +25528,12 @@ class InstagramHashtagParams(_InstagramHashtagParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25020,6 +25584,12 @@ class InstagramHashtagPostsParams(_InstagramHashtagPostsParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25072,6 +25642,12 @@ class InstagramHighlightsParams(_InstagramHighlightsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25120,6 +25696,12 @@ class InstagramPlaceParams(_InstagramPlaceParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25173,6 +25755,12 @@ class InstagramPlacePostsParams(_InstagramPlacePostsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25231,6 +25819,12 @@ class InstagramPlaylistStoriesParams(_InstagramPlaylistStoriesParamsRequired, to
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25278,6 +25872,12 @@ class InstagramPopularTrendsParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25329,6 +25929,12 @@ class InstagramPostParams(_InstagramPostParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25377,6 +25983,12 @@ class InstagramPostsParams(_InstagramPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25429,6 +26041,12 @@ class InstagramProfileParams(_InstagramProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25478,6 +26096,12 @@ class InstagramReelsParams(_InstagramReelsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25526,6 +26150,12 @@ class InstagramSearchHashtagsParams(_InstagramSearchHashtagsParamsRequired, tota
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25588,6 +26218,12 @@ class InstagramSearchPlacesParams(_InstagramSearchPlacesParamsRequired, total=Fa
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25643,6 +26279,12 @@ class InstagramSearchPostsParams(_InstagramSearchPostsParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25705,6 +26347,12 @@ class InstagramSearchProfilesParams(_InstagramSearchProfilesParamsRequired, tota
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25766,6 +26414,12 @@ class InstagramSearchSoundsParams(_InstagramSearchSoundsParamsRequired, total=Fa
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25814,6 +26468,12 @@ class InstagramSearchSuggestionsParams(_InstagramSearchSuggestionsParamsRequired
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -25865,6 +26525,12 @@ class InstagramSimilarProfilesParams(_InstagramSimilarProfilesParamsRequired, to
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25915,6 +26581,12 @@ class InstagramSoundParams(_InstagramSoundParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -25963,6 +26635,12 @@ class InstagramSoundPostsParams(_InstagramSoundPostsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26015,6 +26693,12 @@ class InstagramStoryParams(_InstagramStoryParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26057,6 +26741,12 @@ class InstagramTopicParams(_InstagramTopicParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26105,6 +26795,12 @@ class InstagramTranscriptParams(_InstagramTranscriptParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26145,6 +26841,12 @@ class InstagramTrendingPostsParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26195,6 +26897,12 @@ class InstagramUsernameParams(_InstagramUsernameParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26235,6 +26943,12 @@ class KickPostParams(_KickPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26288,6 +27002,12 @@ class KickTranscriptParams(_KickTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26327,6 +27047,12 @@ class KomiPageParams(_KomiPageParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26369,6 +27095,12 @@ class KwaiPostParams(_KwaiPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26421,6 +27153,12 @@ class KwaiPostsParams(_KwaiPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26470,6 +27208,12 @@ class KwaiProfileParams(_KwaiProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26509,6 +27253,12 @@ class LnkBioProfileParams(_LnkBioProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26550,6 +27300,12 @@ class LinkedInAdParams(_LinkedInAdParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26594,6 +27350,12 @@ class LinkedInCommentsParams(_LinkedInCommentsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26650,6 +27412,12 @@ class LinkedInEmployeesParams(_LinkedInEmployeesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26700,6 +27468,12 @@ class LinkedInEngagementParams(_LinkedInEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26747,6 +27521,12 @@ class LinkedInFollowingParams(_LinkedInFollowingParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26797,6 +27577,12 @@ class LinkedInJobParams(_LinkedInJobParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26842,6 +27628,12 @@ class LinkedInJobRelatedJobsParams(_LinkedInJobRelatedJobsParamsRequired, total=
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -26910,6 +27702,12 @@ class LinkedInJobsParams(_LinkedInJobsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -26970,6 +27768,12 @@ class LinkedInLikedPostsParams(_LinkedInLikedPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27021,6 +27825,12 @@ class LinkedInPostParams(_LinkedInPostParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27071,6 +27881,12 @@ class LinkedInPostReactionsParams(_LinkedInPostReactionsParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27133,6 +27949,12 @@ class LinkedInPostRepostsParams(_LinkedInPostRepostsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27200,6 +28022,12 @@ class LinkedInPostsParams(_LinkedInPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27251,6 +28079,12 @@ class LinkedInProfileParams(_LinkedInProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27304,6 +28138,12 @@ class LinkedInProfileCommentsParams(_LinkedInProfileCommentsParamsRequired, tota
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27353,6 +28193,12 @@ class LinkedInProfileGroupsParams(_LinkedInProfileGroupsParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27441,6 +28287,12 @@ class LinkedInSearchAdsParams(_LinkedInSearchAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27507,6 +28359,12 @@ class LinkedInSearchJobsParams(_LinkedInSearchJobsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27567,6 +28425,12 @@ class LinkedInSearchPostsParams(_LinkedInSearchPostsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27638,6 +28502,12 @@ class LinkedInSearchProfilesParams(_LinkedInSearchProfilesParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27695,6 +28565,12 @@ class LinkedInTranscriptParams(_LinkedInTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27734,6 +28610,12 @@ class LinkmeProfileParams(_LinkmeProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27775,6 +28657,12 @@ class LinktreeProfileParams(_LinktreeProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27814,6 +28702,12 @@ class PillarPageParams(_PillarPageParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27857,6 +28751,12 @@ class PinterestBoardParams(_PinterestBoardParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27898,6 +28798,12 @@ class PinterestBoardPinsParams(_PinterestBoardPinsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -27948,6 +28854,12 @@ class PinterestBoardsParams(_PinterestBoardsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -27996,6 +28908,12 @@ class PinterestPinParams(_PinterestPinParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28051,6 +28969,12 @@ class PinterestPinsParams(_PinterestPinsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28100,6 +29024,12 @@ class PinterestProfileParams(_PinterestProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28140,6 +29070,12 @@ class PinterestSearchPinsParams(_PinterestSearchPinsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28212,6 +29148,12 @@ class PinterestTopTrendsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28262,6 +29204,12 @@ class PinterestTopicParams(_PinterestTopicParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28303,6 +29251,12 @@ class PinterestWebPageParams(_PinterestWebPageParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28370,6 +29324,12 @@ class RedditCommentsParams(_RedditCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28420,6 +29380,12 @@ class RedditEngagementParams(_RedditEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28462,6 +29428,12 @@ class RedditPostParams(_RedditPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28521,6 +29493,12 @@ class RedditPostsParams(_RedditPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28570,6 +29548,12 @@ class RedditProfileParams(_RedditProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28627,6 +29611,12 @@ class RedditProfileCommentsParams(_RedditProfileCommentsParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28692,6 +29682,12 @@ class RedditSearchCommentsParams(_RedditSearchCommentsParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28770,6 +29766,12 @@ class RedditSearchPostsParams(_RedditSearchPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28819,6 +29821,12 @@ class RedditSearchProfilesParams(_RedditSearchProfilesParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -28866,6 +29874,12 @@ class RedditSearchSubredditsParams(_RedditSearchSubredditsParamsRequired, total=
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28915,6 +29929,12 @@ class RedditSubredditParams(_RedditSubredditParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -28971,6 +29991,12 @@ class RedditSubredditPostsParams(_RedditSubredditPostsParamsRequired, total=Fals
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29036,6 +30062,12 @@ class RedditTranscriptParams(_RedditTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29088,6 +30120,12 @@ class RumbleCommentsParams(_RumbleCommentsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29147,6 +30185,12 @@ class RumbleEngagementParams(_RumbleEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29187,6 +30231,12 @@ class RumblePostParams(_RumblePostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29256,6 +30306,12 @@ class RumblePostsParams(_RumblePostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29307,6 +30363,12 @@ class RumbleProfileParams(_RumbleProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29365,6 +30427,12 @@ class RumbleSearchPostsParams(_RumbleSearchPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29427,6 +30495,12 @@ class RumbleTranscriptParams(_RumbleTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29480,6 +30554,12 @@ class SnapchatCommentsParams(_SnapchatCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29529,6 +30609,12 @@ class SnapchatProfileParams(_SnapchatProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29569,6 +30655,12 @@ class SnapchatSpotlightParams(_SnapchatSpotlightParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29613,6 +30705,12 @@ class SoundCloudArtistParams(_SoundCloudArtistParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29654,6 +30752,12 @@ class SoundCloudTrackParams(_SoundCloudTrackParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29705,6 +30809,12 @@ class SoundCloudTracksParams(_SoundCloudTracksParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29754,6 +30864,12 @@ class SpotifyAlbumParams(_SpotifyAlbumParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29797,6 +30913,12 @@ class SpotifyArtistParams(_SpotifyArtistParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29839,6 +30961,12 @@ class SpotifyPlaylistParams(_SpotifyPlaylistParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29880,6 +31008,12 @@ class SpotifyPlaylistTracksParams(_SpotifyPlaylistTracksParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -29930,6 +31064,12 @@ class SpotifyPodcastParams(_SpotifyPodcastParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -29977,6 +31117,12 @@ class SpotifyPodcastEpisodesParams(_SpotifyPodcastEpisodesParamsRequired, total=
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30031,6 +31177,12 @@ class SpotifySearchAlbumsParams(_SpotifySearchAlbumsParamsRequired, total=False)
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30091,6 +31243,12 @@ class SpotifySearchArtistsParams(_SpotifySearchArtistsParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30146,6 +31304,12 @@ class SpotifySearchPlaylistsParams(_SpotifySearchPlaylistsParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30199,6 +31363,12 @@ class SpotifySearchPodcastsParams(_SpotifySearchPodcastsParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30258,6 +31428,12 @@ class SpotifySearchTracksParams(_SpotifySearchTracksParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30309,6 +31485,12 @@ class SpotifyTrackParams(_SpotifyTrackParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30348,6 +31530,12 @@ class TelegramChannelParams(_TelegramChannelParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30404,6 +31592,12 @@ class TelegramChannelPostsParams(_TelegramChannelPostsParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30454,6 +31648,12 @@ class TelegramPostParams(_TelegramPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30514,6 +31714,12 @@ class TelegramSearchChannelsParams(_TelegramSearchChannelsParamsRequired, total=
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30571,6 +31777,12 @@ class ThreadsCommentsParams(_ThreadsCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30620,6 +31832,12 @@ class ThreadsPostParams(_ThreadsPostParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30667,6 +31885,12 @@ class ThreadsPostsParams(_ThreadsPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30717,6 +31941,12 @@ class ThreadsProfileParams(_ThreadsProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30771,6 +32001,12 @@ class ThreadsSearchPostsParams(_ThreadsSearchPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30820,6 +32056,12 @@ class ThreadsSearchProfilesParams(_ThreadsSearchProfilesParamsRequired, total=Fa
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30868,6 +32110,12 @@ class TikTokAdParams(_TikTokAdParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -30915,6 +32163,12 @@ class TikTokCommentParams(_TikTokCommentParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -30965,6 +32219,12 @@ class TikTokCommentsParams(_TikTokCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31013,6 +32273,12 @@ class TikTokDownloadParams(_TikTokDownloadParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31054,6 +32320,12 @@ class TikTokEffectParams(_TikTokEffectParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31104,6 +32376,12 @@ class TikTokEffectPostsParams(_TikTokEffectPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31153,6 +32431,12 @@ class TikTokEngagementParams(_TikTokEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31192,6 +32476,12 @@ class TikTokFollowersParams(_TikTokFollowersParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31240,6 +32530,12 @@ class TikTokFollowingParams(_TikTokFollowingParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31292,6 +32588,12 @@ class TikTokHashtagParams(_TikTokHashtagParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31341,6 +32643,12 @@ class TikTokHashtagPostsParams(_TikTokHashtagPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31397,6 +32705,12 @@ class TikTokLikedPostsParams(_TikTokLikedPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31447,6 +32761,12 @@ class TikTokLiveParams(_TikTokLiveParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31494,6 +32814,12 @@ class TikTokPlacePostsParams(_TikTokPlacePostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31552,6 +32878,12 @@ class TikTokPlaylistPostsParams(_TikTokPlaylistPostsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31599,6 +32931,12 @@ class TikTokPlaylistsParams(_TikTokPlaylistsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31648,6 +32986,12 @@ class TikTokPostParams(_TikTokPostParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31694,6 +33038,12 @@ class TikTokPostsParams(_TikTokPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31744,6 +33094,12 @@ class TikTokProfileParams(_TikTokProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31790,6 +33146,12 @@ class TikTokRepliesParams(_TikTokRepliesParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -31864,6 +33226,12 @@ class TikTokSearchAdsParams(_TikTokSearchAdsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31924,6 +33292,12 @@ class TikTokSearchHashtagsParams(_TikTokSearchHashtagsParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -31982,6 +33356,12 @@ class TikTokSearchPostsParams(_TikTokSearchPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32043,6 +33423,12 @@ class TikTokSearchProfilesParams(_TikTokSearchProfilesParamsRequired, total=Fals
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32103,6 +33489,12 @@ class TikTokSearchSoundsParams(_TikTokSearchSoundsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32157,6 +33549,12 @@ class TikTokSearchSuggestionsParams(_TikTokSearchSuggestionsParamsRequired, tota
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32218,6 +33616,12 @@ class TikTokSearchTopParams(_TikTokSearchTopParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32269,6 +33673,12 @@ class TikTokSoundParams(_TikTokSoundParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32317,6 +33727,12 @@ class TikTokSoundPostsParams(_TikTokSoundPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32390,6 +33806,12 @@ class TikTokTopAdsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32458,6 +33880,12 @@ class TikTokTopPostsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32518,6 +33946,12 @@ class TikTokTranscriptParams(_TikTokTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32566,6 +34000,12 @@ class TikTokTrendingHashtagsParams(TypedDict, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32620,6 +34060,12 @@ class TikTokTrendingPostsParams(TypedDict, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32669,6 +34115,12 @@ class TikTokShopProductParams(_TikTokShopProductParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32709,6 +34161,12 @@ class TikTokShopProductsParams(_TikTokShopProductsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32759,6 +34217,12 @@ class TikTokShopReviewsParams(_TikTokShopReviewsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32806,6 +34270,12 @@ class TikTokShopSearchProductsParams(_TikTokShopSearchProductsParamsRequired, to
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32857,6 +34327,12 @@ class TruthSocialPostParams(_TruthSocialPostParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32905,6 +34381,12 @@ class TruthSocialPostsParams(_TruthSocialPostsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -32955,6 +34437,12 @@ class TruthSocialProfileParams(_TruthSocialProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -32996,6 +34484,12 @@ class TwitchProfileParams(_TwitchProfileParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33036,6 +34530,12 @@ class TwitchScheduleParams(_TwitchScheduleParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33098,6 +34598,12 @@ class TwitchTranscriptParams(_TwitchTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33138,6 +34644,12 @@ class TwitchVideoParams(_TwitchVideoParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33199,6 +34711,12 @@ class TwitchVideosParams(_TwitchVideosParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33256,6 +34774,12 @@ class XCommentsParams(_XCommentsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33304,6 +34828,12 @@ class XCommunityParams(_XCommunityParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33360,6 +34890,12 @@ class XCommunityPostsParams(_XCommunityPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33412,6 +34948,12 @@ class XEngagementParams(_XEngagementParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33459,6 +35001,12 @@ class XFriendshipParams(_XFriendshipParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33500,6 +35048,12 @@ class XListParams(_XListParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33540,6 +35094,12 @@ class XListFollowersParams(_XListFollowersParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33590,6 +35150,12 @@ class XPostParams(_XPostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33654,6 +35220,12 @@ class XPostsParams(_XPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33705,6 +35277,12 @@ class XProfileParams(_XProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33758,6 +35336,12 @@ class XProfileMentionsParams(_XProfileMentionsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33819,6 +35403,12 @@ class XSearchCommunitiesParams(_XSearchCommunitiesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -33873,6 +35463,12 @@ class XSearchHashtagsParams(_XSearchHashtagsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -33948,6 +35544,12 @@ class XSearchPostsParams(_XSearchPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34008,6 +35610,12 @@ class XSearchProfilesParams(_XSearchProfilesParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34059,6 +35667,12 @@ class XSpaceParams(_XSpaceParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34115,6 +35729,12 @@ class XTranscriptParams(_XTranscriptParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34166,6 +35786,12 @@ class YouTubeCommentsParams(_YouTubeCommentsParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34220,6 +35846,12 @@ class YouTubeEngagementParams(_YouTubeEngagementParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34277,6 +35909,12 @@ class YouTubeHashtagPostsParams(_YouTubeHashtagPostsParamsRequired, total=False)
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34324,6 +35962,12 @@ class YouTubePostParams(_YouTubePostParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34384,6 +36028,12 @@ class YouTubePostsParams(_YouTubePostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34434,6 +36084,12 @@ class YouTubeProfileParams(_YouTubeProfileParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34506,6 +36162,12 @@ class YouTubeSearchPostsParams(_YouTubeSearchPostsParamsRequired, total=False):
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34553,6 +36215,12 @@ class YouTubeSearchProfilesParams(_YouTubeSearchProfilesParamsRequired, total=Fa
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
@@ -34613,6 +36281,12 @@ class YouTubeSearchSuggestionsParams(_YouTubeSearchSuggestionsParamsRequired, to
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
     """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
+    """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation
     (id,text,metrics.view_count,segments[].text; a parent path keeps the whole object). Unknown paths are
@@ -34671,6 +36345,12 @@ class YouTubeTranscriptParams(_YouTubeTranscriptParamsRequired, total=False):
     max_age: int
     """Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.
     The Cache-Control: max-age=N request header is equivalent; max_age wins when both are sent. Minimum: 0.
+    """
+    max_credits: int
+    """The most this request may be charged, in credits. A request that would cost more answers insufficient_credits
+    with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a
+    data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.
+    Minimum: 1.
     """
     fields: str
     """Return only these fields of each item: comma-separated paths in the schema's notation

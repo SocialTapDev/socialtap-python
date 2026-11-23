@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Dict, NamedTuple, Optional
 
-VERSION = "1.602.39"
+VERSION = "1.603.40"
 """SDK version: 1.<contract facts>.<generator revision> (sdk/README.md)."""
 CLIENT_NAME = "socialtap-python"
 """The name this SDK sends as its User-Agent's product and its MCP clientInfo name (catalog clients)."""
