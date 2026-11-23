@@ -34,11 +34,9 @@ class UnauthorizedError(APIError):
 
 
 class ForbiddenError(APIError):
-    """``forbidden`` (HTTP 403): The API key is valid but may not make this request, and details.reason says why: the
-    account is suspended, the key lacks the route's scope, has expired, or was used from an IP outside its
-    allowlist, or a rotated key's previous secret was used for a call that needs the admin scope. A running job
-    stops with it too when its account is suspended or the key that created it is revoked or expires. It is about
-    the key, never the item: a private item is private_or_unavailable, also 403, so branch on the code.
+    """``forbidden`` (HTTP 403): The API key is valid but may not make this request; details.reason says why. It
+    concerns the key, never the item: a private item is private_or_unavailable, also 403. A running job stops with
+    it when its key or account can no longer run it.
 
     Remediation: Act on details.reason. suspended: contact support. scope: use a key with details.required_scope.
     previous_secret: use the new secret. key_expired or key_revoked: create a new key. ip_not_allowed: call from
@@ -66,11 +64,9 @@ class SpendLimitReachedError(APIError):
 
 
 class RateLimitedError(APIError):
-    """``rate_limited`` (HTTP 429): The account passed its runaway-protection ceiling: a high per-account limit that
-    stops a broken client loop (plans have no rate limit). Requests without an API key (signup, the MCP server's
-    tool listing and find_endpoint) are limited per IP address instead. It also stops an account whose failed
-    requests in the last hour cost far more than its successful ones paid for: failures are free within a limit
-    (the message says so), and successes raise it.
+    """``rate_limited`` (HTTP 429): The account passed its runaway-protection ceiling (plans have no rate limit), or
+    its failed requests in the past hour cost far more than its successful ones paid for. Requests without an API
+    key are limited per IP.
 
     Remediation: Wait the seconds in the retry-after header, then retry. If your steady traffic needs more, ask
     support to raise the ceiling; without an API key, send one.
@@ -99,13 +95,12 @@ class EndpointRetiredError(APIError):
 
 
 class IdempotencyKeyReusedError(APIError):
-    """``idempotency_key_reused`` (HTTP 422): This Idempotency-Key was already used for a different request (another
-    route or body). Or it was used for this same request, which ran and returned a secret we no longer keep
-    (details.reason answer_expired): running it again would create another.
+    """``idempotency_key_reused`` (HTTP 422): This Idempotency-Key was already used for a different request, or for
+    this one when its answer held a secret we no longer keep (details.reason answer_expired).
 
-    Remediation: Use a new Idempotency-Key for a different request, and reuse a key only to retry the identical
-    request. With reason answer_expired, check what the first request created (GET /v1/api_keys, GET
-    /v1/webhook_endpoints) before sending it again under a new key.
+    Remediation: Use a new key for a different request; reuse a key only to retry the identical one. For
+    answer_expired, check what the first request created (GET /v1/api_keys, GET /v1/webhook_endpoints) before
+    retrying under a new key.
     """
 
 
@@ -142,18 +137,17 @@ class NotFoundError(APIError):
 
 
 class PrivateOrUnavailableError(APIError):
-    """``private_or_unavailable`` (HTTP 403): The item exists but is not public: it is private, age- or
-    region-restricted, or needs a login to view. It shares 403 with forbidden (which is about the key), so branch
-    on the code.
+    """``private_or_unavailable`` (HTTP 403): The item exists but isn't public: it is private, age- or
+    region-restricted, or needs a login. It shares 403 with forbidden, which is about the key: branch on the code.
 
     Remediation: Only public items can be fetched. Do not retry.
     """
 
 
 class NoTranscriptError(APIError):
-    """``no_transcript`` (HTTP 404): The video or audio exists but has no transcript: the platform has no captions
-    for it, and speech-to-text found no speech, or did not run (the media is longer than it transcribes without
-    transcribe_audio=true, or transcribe_audio=false).
+    """``no_transcript`` (HTTP 404): The video or audio exists but has no transcript: no captions, and speech-to-text
+    found no speech or didn't run (the media is too long without transcribe_audio=true, or
+    transcribe_audio=false).
 
     Remediation: Do not retry. If the platform offers other languages, try one with lang.
     """
@@ -184,8 +178,7 @@ class NoReadmeError(APIError):
 
 class UnavailableForLegalReasonsError(APIError):
     """``unavailable_for_legal_reasons`` (HTTP 451): We removed this item after a copyright notice or another legal
-    request, so we don't return it. The request was free. A list leaves such items out instead, with an
-    items_omitted warning.
+    request. The request was free. A list leaves such items out instead, with an items_omitted warning.
 
     Remediation: Do not retry. The item stays unavailable unless the notice is withdrawn.
     """

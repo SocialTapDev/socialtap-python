@@ -138,12 +138,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -193,7 +193,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "tab": {
-                    "description": "Only on Bluesky, Rumble or YouTube. Bluesky: Which of the profile's tabs to list: posts (default): its posts, its own threads and its reposts, without its replies to others; replies: those too… Rumble: The tab to list: videos (default), shorts or live (Rumble's Livestreams tab: streams on air now, scheduled ones and past ones). YouTube: The channel tab to list: videos (default), shorts or live (upcoming, live and past streams).",
+                    "description": "Only on Bluesky, Rumble or YouTube. Bluesky: The profile tab to list. Rumble: The tab to list. YouTube: The channel tab to list.",
                     "enum": [
                         "posts",
                         "replies",
@@ -214,7 +214,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "media": {
-                    "description": "Only on LinkedIn or X. LinkedIn: Only posts of one kind: image (a photo or a gallery), video (a native video) or article (LinkedIn articles: a member's Articles section when their… X: Only the account's own posts (no reposts) with media: any (a photo, video or GIF), image (one or more photos) or video (a video or GIF).",
+                    "description": "Only on LinkedIn or X. LinkedIn: Only posts of one kind. X: Only the account's own posts, no reposts, with media: any (a photo, video or GIF), image (photos) or video (a video or GIF).",
                     "enum": [
                         "image",
                         "video",
@@ -235,7 +235,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "duration": {
-                    "description": "Only on Rumble. Only short videos (Rumble's Under 4 minutes) or long ones (Over 20 minutes); any length when omitted.",
+                    "description": "Only on Rumble. Only short videos (Rumble's Under 4 minutes) or long ones (Over 20 minutes).",
                     "enum": [
                         "short",
                         "long",
@@ -243,7 +243,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -258,12 +258,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -345,12 +345,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -420,7 +420,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "replies": {
-                    "description": "Only on Reddit. all (default): a walk returns the whole tree, every reply Reddit left behind a \"more replies\" link included (on the pages after the one that shows its parent).",
+                    "description": "Only on Reddit. all: the whole tree, with the replies Reddit holds behind \"more replies\" links on the next pages, so a walk costs several times the pages.",
                     "enum": [
                         "all",
                         "shown",
@@ -428,12 +428,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "comment_id": {
-                    "description": "Only on Snapchat. List this comment's replies instead of the Spotlight's comments: the id of a comment from this endpoint.",
+                    "description": "Only on Snapchat. List this comment's replies instead: the id of a comment from this endpoint.",
                     "maxLength": 36,
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 1000,
                     "minimum": 1,
                     "type": "integer",
@@ -448,12 +448,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -501,7 +501,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "transcribe_audio": {
-                    "description": "Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price.",
+                    "description": "Speech-to-text for media without captions, at the speech-to-text price.",
                     "type": "boolean",
                 },
                 "lang": {
@@ -518,12 +518,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -569,7 +569,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "tab": {
-                    "description": "Only on Rumble or YouTube. Rumble: The uploads the figures cover: videos (default: the Videos tab), shorts, or live (Rumble's Livestreams tab: past streams, with the one on air and… YouTube: The uploads the figures cover: the channel's latest videos (default) or its latest shorts.",
+                    "description": "Only on Rumble or YouTube. Rumble: The tab whose uploads the figures cover. YouTube: The uploads the figures cover: the channel's latest videos or its latest shorts.",
                     "enum": [
                         "videos",
                         "shorts",
@@ -587,12 +587,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -708,7 +708,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "status": {
-                    "description": "Only for Facebook ads, GitHub issues, TikTok ads. Only items that are still running (active), only items that stopped (inactive), or both (all).",
+                    "description": "Only for Facebook ads, GitHub issues, TikTok ads. Only active items, only inactive ones, or both (all).",
                     "enum": [
                         "active",
                         "inactive",
@@ -717,11 +717,11 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "fill": {
-                    "description": "Only on some platforms (find_endpoint lists which). true also fetches each result's item from the platform: its full, current record in details (exact counts, its ID), as the platform's own endpoint for that kind returns it.",
+                    "description": "Only on some platforms (find_endpoint lists which). true also fetches each result's full, current record from the platform into details (exact counts, its ID).",
                     "type": "boolean",
                 },
                 "period": {
-                    "description": "Only for Facebook products, LinkedIn jobs. The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "Only for Facebook products, LinkedIn jobs. The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "1",
                         "7",
@@ -730,7 +730,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -745,12 +745,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -863,7 +863,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_account",
         "title": "Get account balance",
-        "description": "Get the account, balance and calling key. The account's balance and plan, the low-balance alert threshold, and the calling key: its scopes, spend limit (with what it used this interval) and expiry. Free; never cached. Use it to check the credit balance before a large task; every other result already states credits_remaining. It also says how your user buys credits.",
+        "description": "Get the account, balance and calling key. Returns the account: its balance, plan and settings, and the key that made the call, with its scopes, spend limit and expiry. Never cached. Use it to check the credit balance before a large task; every other result already states credits_remaining. It also says how your user buys credits.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -937,7 +937,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "Instagram story URL: a story's own link (instagram.com/stories/<username>/<story id>/, as the app shares it) or a highlight's item…",
+                    "description": "A story's own link (instagram.com/stories/<username>/<story id>/, as the app shares it) or a highlight item's…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -951,12 +951,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1020,7 +1020,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "media": {
-                    "description": "Only on X. Read the community's Media tab instead of Top: its recent posts with media.",
+                    "description": "Only on X. Lists the Media tab, its recent posts with media, instead of Top.",
                     "enum": [
                         "any",
                         "image",
@@ -1029,7 +1029,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -1044,12 +1044,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1098,7 +1098,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "kind": {
-                    "description": "Only on YouTube. Which tab of the hashtag's page: all (default: its videos, shorts and streams, each with its channel, exact view count, upload time and length) or…",
+                    "description": "Only on YouTube. The hashtag page's tab.",
                     "enum": [
                         "all",
                         "short",
@@ -1106,7 +1106,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 36,
                     "minimum": 1,
                     "type": "integer",
@@ -1121,12 +1121,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1174,7 +1174,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -1189,12 +1189,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1250,7 +1250,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -1265,12 +1265,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1318,7 +1318,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -1333,12 +1333,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1386,7 +1386,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 12,
                     "minimum": 1,
                     "type": "integer",
@@ -1401,12 +1401,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1454,7 +1454,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -1469,12 +1469,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1514,7 +1514,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "kind": {
-                    "description": "Only on Apple Music. Which chart: most played songs (the default) or music videos.",
+                    "description": "Only on Apple Music. The chart: most played songs or most played music videos.",
                     "enum": [
                         "song",
                         "music_video",
@@ -1534,7 +1534,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "period": {
-                    "description": "Only on TikTok. The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "Only on TikTok. The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "7",
                         "30",
@@ -1542,7 +1542,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "rank_by": {
-                    "description": "Only on TikTok. What the board ranks by in the window: views (the default; paid and organic), organic_views (views not bought as ads), engagement_rate (interactions…",
+                    "description": "Only on TikTok. What the board ranks by: views (paid and organic), organic_views (views not bought as ads), engagement_rate (interactions per view) or…",
                     "enum": [
                         "views",
                         "organic_views",
@@ -1563,7 +1563,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -1578,12 +1578,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1652,7 +1652,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 40,
                     "minimum": 1,
                     "type": "integer",
@@ -1667,12 +1667,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1706,12 +1706,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Telegram channel: its username with or without the @, or any link to it (t.me/durov, t.me/s/durov, telegram.me/durov, durov.t.me).",
+                    "description": "A Telegram channel: its username, with or without the @, in any case, or a link (t.me/<name>, t.me/s/<name>, t.me/boost/<name>, <name>.t.me…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "contains": {
-                    "description": "Only the channel's posts matching these words, as the search box of its page reads them (a word, a #hashtag).",
+                    "description": "Only the channel's posts matching these words, as its search box reads them (a word, a #hashtag).",
                     "maxLength": 200,
                     "type": "string",
                 },
@@ -1725,7 +1725,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -1740,12 +1740,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1779,7 +1779,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A TikTok effect link (the effect page's tiktok.com/effect/Bold-Glamour-14519845, or the older tiktok.com/sticker/Bold-Glamour-14519845) or the…",
+                    "description": "A TikTok effect link (tiktok.com/effect/<name>-<id>, or the older tiktok.com/sticker/<name>-<id>) or its numeric ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -1793,7 +1793,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 30,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -1808,12 +1808,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1848,7 +1848,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "feed": {
                     "default": "top",
-                    "description": "Which feed: top is the front page (the default), new the newest stories, best the highest voted of recent days, ask Ask HN, show Show HN, jobs the…",
+                    "description": "top: the front page.",
                     "enum": [
                         "top",
                         "new",
@@ -1869,7 +1869,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 30,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -1884,12 +1884,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -1923,13 +1923,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Facebook profile (a Page's or a person's): its vanity name (NASA, case-insensitive), its numeric profile ID, or any link to it…",
+                    "description": "A Page's or person's vanity name (NASA, any case), numeric profile ID or link (facebook.com/<name> with any tab, profile.php?id=<id>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "tab": {
                     "default": "uploaded",
-                    "description": "Which photos: uploaded, the profile's own (the tab Facebook calls <name>'s Photos); tagged, the ones others tagged it in (Photos of <name>), which…",
+                    "description": "uploaded: the profile's own photos (Facebook's <name>'s Photos).",
                     "enum": [
                         "uploaded",
                         "tagged",
@@ -1946,7 +1946,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 8,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 8,
                     "minimum": 1,
                     "type": "integer",
@@ -1961,12 +1961,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2000,7 +2000,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Pinterest account: its username (any case, with or without the @), its profile link (pinterest.com/<username>/, any of its tabs such as…",
+                    "description": "The Pinterest account: its username (any case, @ optional), a link to its profile or a tab of it (pinterest.com/<username>/, /<username>/_created/…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2013,7 +2013,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "tab": {
-                    "description": "Which pins: saved (default), every pin the account saved, its own and the ones it saved from others, as its profile's Pins tab lists them; created…",
+                    "description": "saved: the profile's Pins tab, every pin the account saved, its own and others'.",
                     "enum": [
                         "saved",
                         "created",
@@ -2022,7 +2022,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 25,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 25,
                     "minimum": 1,
                     "type": "integer",
@@ -2037,12 +2037,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2076,7 +2076,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "An Instagram highlight: its link (instagram.com/stories/highlights/18195781759377100/), its share link…",
+                    "description": "An Instagram highlight link (instagram.com/stories/highlights/<id>/), its share link (instagram.com/s/<code>), or its numeric ID, with or without the…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2090,7 +2090,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -2105,12 +2105,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2144,13 +2144,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The playlist: its link (open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M, also under /intl-de/ and /embed/, the old /user/<name>/playlist/… form…",
+                    "description": "A playlist: its link (open.spotify.com/playlist/<id>, the old /user/<name>/playlist/<id>, also under /intl-<lang>/ or /embed/…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -2165,12 +2165,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2204,7 +2204,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The podcast: its link (open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL, also under /intl-de/ and /embed/, with any share parameters), a share link…",
+                    "description": "A podcast: its link (open.spotify.com/show/<id>, also under /intl-<lang>/, /embed/ or /embed-podcast/, /embed?uri=spotify:show:<id>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2218,7 +2218,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -2233,12 +2233,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2272,7 +2272,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A LinkedIn post or article: a post's link as the share menu gives it (linkedin.com/posts/<author>_<slug>-activity-<id>-<code>), its feed or embed…",
+                    "description": "A LinkedIn post or article: linkedin.com/posts/<author>_<slug>-activity-<id>-<code>, a feed or embed link (feed/update/urn:li:activity:<id>, or…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2286,7 +2286,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -2301,12 +2301,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2340,7 +2340,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "X account whose mentions to find: a username with or without the @ (NASA, @NASA), a numeric user ID (11348282), or a profile link (x.com/NASA or…",
+                    "description": "The account whose mentions to find: a username (@ optional, any case), a user ID, or a profile link: x.com/<username> with any tab…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2354,7 +2354,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -2369,12 +2369,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2408,7 +2408,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The influencer's storefront: its handle (sydneydelrey, the name after /shop/ in its link, any case, with or without the @) or its link on any Amazon…",
+                    "description": "The storefront: its handle (sydneydelrey, any case, @ optional), its account ID (amzn1.account.<ID>, the Amazon Shop API's id), or a link on any…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2418,7 +2418,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "type": {
                     "default": "all",
-                    "description": "Which posts: all (default: the videos, then the photos), video (the Videos tab) or photo (the Photos tab).",
+                    "description": "all: every video, then every photo.",
                     "enum": [
                         "all",
                         "video",
@@ -2428,7 +2428,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -2443,12 +2443,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2482,7 +2482,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The SoundCloud account: its name (forss, also written @forss), its link (soundcloud.com/forss, with any tab such as /tracks, also on…",
+                    "description": "An account: its name (forss or @forss, any case; @123 is a name, 123 an ID), its link (soundcloud.com/<name>, soundcloud.com/<name>/<tab>, also on…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2496,7 +2496,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -2511,12 +2511,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2550,13 +2550,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Hacker News user: a username (case-sensitive: pg, not PG) or a link to the user's page or one of its lists (news.ycombinator.com/user?id=pg…",
+                    "description": "A username, case-sensitive (pg, not PG: a wrong case returns not_found), or a link to the user's page or lists…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 30,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -2571,12 +2571,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2610,13 +2610,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Hacker News user: a username (case-sensitive: pg, not PG) or a link to the user's page or one of its lists (news.ycombinator.com/user?id=pg…",
+                    "description": "A username, case-sensitive (pg, not PG: a wrong case returns not_found), or a link to the user's page or lists…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "kind": {
                     "default": "all",
-                    "description": "Which stories: all (default: stories, jobs and polls), story (every story but jobs and polls: links, Ask HN, Show HN and Launch HN), ask_hn (Ask HN…",
+                    "description": "all: stories, jobs and polls.",
                     "enum": [
                         "all",
                         "story",
@@ -2638,7 +2638,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -2653,12 +2653,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2692,13 +2692,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Twitch channel: its login with or without the @ (ninja), a channel link with any tab after it (twitch.tv/ninja/videos), or its numeric ID (19571641).",
+                    "description": "A Twitch channel: its login, with or without the @ (ninja), twitch.tv/<login> with any tab, or its numeric ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "type": {
                     "default": "all",
-                    "description": "Which videos: all (default), archive (past broadcasts), highlight (cut from a broadcast by the channel) or upload.",
+                    "description": "archive: past broadcasts, which Twitch deletes after a while, so a channel can have none.",
                     "enum": [
                         "all",
                         "archive",
@@ -2726,7 +2726,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -2741,12 +2741,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2780,7 +2780,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The advertiser: its Ad Library link (facebook.com/ads/library/?view_all_page_id=…), its Facebook Page's link or name, or its Page ID.",
+                    "description": "The advertiser: its Ad Library link (facebook.com/ads/library/?view_all_page_id=<id>, whose filters are ignored), its Page's link or name, or its Page ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2794,12 +2794,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2833,7 +2833,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The seller: its merchant ID (A3A7XJ7DLGM1CB, the seller= in its links) or its link on any Amazon marketplace: its page (amazon.com/sp?seller=…)…",
+                    "description": "The seller: its merchant ID (A3A7XJ7DLGM1CB, the seller= in its links) or a link on any Amazon marketplace (amazon.com/sp?seller=<id>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2851,12 +2851,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2890,7 +2890,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The influencer's storefront: its handle (sydneydelrey, the name after /shop/ in its link, any case, with or without the @), its link on any Amazon…",
+                    "description": "The storefront: its handle (sydneydelrey, any case, @ optional), its account ID (amzn1.account.<ID>, as id returns it), or a link on any Amazon…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -2908,12 +2908,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -2954,7 +2954,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "kind": {
-                    "description": "Only on LinkedIn. Which of the member's interests: companies (default: the company Pages they follow), top_voices (the Top Voices, influential members, they follow)…",
+                    "description": "Only on LinkedIn. Which Interests list.",
                     "enum": [
                         "companies",
                         "top_voices",
@@ -2964,7 +2964,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -2979,12 +2979,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3024,7 +3024,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -3039,12 +3039,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3078,18 +3078,18 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The company: its LinkedIn Page link (linkedin.com/company/<name>, any tab of it), its name with or without company/ (company/anthropicresearch), or…",
+                    "description": "The company: linkedin.com/company/<name> (any tab), its name with or without company/, or its numeric ID (1441, linkedin.com/company/1441), in any case.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "title": {
-                    "description": "Only people whose current job title matches these words (engineer, head of sales, recruiter), as LinkedIn's people search matches titles.",
+                    "description": "Only people whose current job title matches these words (engineer, head of sales, recruiter), as LinkedIn's people search matches titles, in any case.",
                     "maxLength": 100,
                     "type": "string",
                 },
                 "limit": {
                     "default": 25,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 25,
                     "minimum": 1,
                     "type": "integer",
@@ -3104,12 +3104,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3143,13 +3143,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The List: its link on x.com or twitter.com (x.com/i/lists/<id>, any of its views such as /followers or /members, the older…",
+                    "description": "An X List link (x.com/i/lists/<id>, with any view such as /members or /followers, x.com/<owner>/lists/<name>, on x.com, twitter.com or a mobile host, #!",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 200,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 200,
                     "minimum": 1,
                     "type": "integer",
@@ -3164,12 +3164,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3203,12 +3203,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A LinkedIn post or article: a post's link as the share menu gives it (linkedin.com/posts/<author>_<slug>-activity-<id>-<code>), its feed or embed…",
+                    "description": "A LinkedIn post or article: linkedin.com/posts/<author>_<slug>-activity-<id>-<code>, a feed or embed link (feed/update/urn:li:activity:<id>, or…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "reaction": {
-                    "description": "Only the accounts that reacted this way: like, praise, empathy, appreciation, interest or entertainment (LinkedIn's own names, as reaction_type…",
+                    "description": "Only this reaction: LinkedIn's names, as reaction_type writes them, or its app's names, read as those: celebrate (praise), love (empathy), support…",
                     "enum": [
                         "like",
                         "praise",
@@ -3226,7 +3226,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -3241,12 +3241,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3280,13 +3280,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The repository whose contributors to list: its link (github.com/cli/cli, or any page under it: a file, a folder, its issues or releases), owner/name…",
+                    "description": "owner/name (cli/cli), github:owner/name or a link: github.com/<owner>/<name> and any page under it, a clone link (.git…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -3301,12 +3301,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3340,13 +3340,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "Instagram username with or without the @, a numeric user ID (787132), or a profile URL (instagram.com/natgeo, m.instagram.com, instagr.am, a…",
+                    "description": "A username or @username, a user ID, or a profile link (instagram.com/<username>/ with any tab or query, /_u/<username>, /stories/<username>/…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -3361,12 +3361,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3401,7 +3401,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "period": {
                     "default": "1",
-                    "description": "The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "1",
                         "7",
@@ -3410,13 +3410,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "programming_language": {
-                    "description": "Only developers trending for one programming language, named as GitHub names it, in any case (rust, python, c++, c#, Jupyter Notebook): a…",
+                    "description": "Only developers trending in this programming language, as GitHub names it, in any case (rust, c++, c#, Jupyter Notebook): a repository's programming_language.",
                     "maxLength": 100,
                     "type": "string",
                 },
                 "limit": {
                     "default": 25,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 25,
                     "minimum": 1,
                     "type": "integer",
@@ -3431,12 +3431,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3477,7 +3477,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "comment_id": {
-                    "description": "Only on Instagram or TikTok. Instagram: ID of the comment (the id of a comment from the comments endpoint). TikTok: ID of the comment: any TikTok comment, top-level or reply (the id of a comment from the comments or replies endpoints).",
+                    "description": "Only on Instagram or TikTok. Instagram: The comment's numeric ID (a comment's id from the Instagram Comments API). TikTok: The comment's ID, top-level or reply.",
                     "maxLength": 64,
                     "type": "string",
                 },
@@ -3491,12 +3491,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3555,7 +3555,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -3570,12 +3570,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3615,7 +3615,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "comment_id": {
-                    "description": "Facebook: ID of the top-level comment whose replies to list (data[].id from the Facebook Comments API). TikTok: ID of the top-level comment whose replies to list (the id of a TikTok comment; a reply's thread_id names its top-level comment).",
+                    "description": "Facebook: The top-level comment whose replies to list (data[].id from the Facebook Comments API). TikTok: The ID of the top-level comment whose replies to list.",
                     "maxLength": 64,
                     "type": "string",
                 },
@@ -3628,7 +3628,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -3643,12 +3643,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3682,7 +3682,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The issue or pull request: its link (https://github.com/golang/go/issues/70000, https://github.com/react/react/pull/27522 or any of its tabs, or…",
+                    "description": "owner/name#number (golang/go#70000) or a link: github.com/<owner>/<name>/issues/<n> or /pull/<n> with any tab or anchor…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -3696,7 +3696,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -3711,12 +3711,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3750,7 +3750,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The video ad's Meta Ad Library link (facebook.com/ads/library/?id=…), the official Ad Library API's ad_snapshot_url…",
+                    "description": "The video ad's Ad Library link (facebook.com/ads/library/?id=<id>, on any facebook.com or fb.com host), the official Ad Library API's ad_snapshot_url…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -3759,7 +3759,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "transcribe_audio": {
-                    "description": "Speech-to-text for media the platform has no captions for, at the endpoint's speech-to-text price.",
+                    "description": "Speech-to-text for media without captions, at the speech-to-text price.",
                     "type": "boolean",
                 },
                 "detail": {
@@ -3772,12 +3772,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3828,12 +3828,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3881,7 +3881,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "status": {
-                    "description": "Only on Facebook. Only items that are still running (active), only items that stopped (inactive), or both (all).",
+                    "description": "Only on Facebook. Only active items, only inactive ones, or both (all).",
                     "enum": [
                         "active",
                         "inactive",
@@ -3890,7 +3890,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "format": {
-                    "description": "Facebook: Only ads of this kind, as the Ad Library files them: image, video, meme (an image with text in it), image_and_meme (both) or text (no image or video). Google: Only ads of this format.",
+                    "description": "Facebook: Only ads of this kind, as the Ad Library files them. Google: Only ads of this format.",
                     "enum": [
                         "image",
                         "video",
@@ -3938,7 +3938,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 40,
                     "minimum": 1,
                     "type": "integer",
@@ -3953,12 +3953,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -3998,7 +3998,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "period": {
                     "default": "30",
-                    "description": "The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "7",
                         "30",
@@ -4008,7 +4008,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "rank_by": {
                     "default": "for_you",
-                    "description": "How Creative Center ranks the board: for_you (its own blend, the default), or best first by impressions, likes, click-through rate (ctr), conversion…",
+                    "description": "for_you: Creative Center's own blend.",
                     "enum": [
                         "for_you",
                         "impressions",
@@ -4085,7 +4085,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -4100,12 +4100,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4154,12 +4154,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4199,7 +4199,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "period": {
                     "default": "7",
-                    "description": "The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "7",
                         "30",
@@ -4230,7 +4230,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -4245,12 +4245,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4300,12 +4300,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4355,12 +4355,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4414,12 +4414,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4476,12 +4476,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4530,12 +4530,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4584,12 +4584,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4623,12 +4623,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The GitHub user: its username, with or without the @; its numeric account ID, which survives a rename; or its profile link (github.com/torvalds, with any tab).",
+                    "description": "A user's username, with or without @, a numeric account ID, which survives a rename, or a link: github.com/<username> with any tab…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "year": {
-                    "description": "A calendar year, January 1 to December 31 (the current one up to today).",
+                    "description": "A calendar year: January 1 to December 31, or to today for the current year.",
                     "minimum": 2008,
                     "type": "integer",
                 },
@@ -4642,12 +4642,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4681,7 +4681,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "TikTok video or photo post link (web, mobile, embed, player or share link) or a numeric post ID.",
+                    "description": "A TikTok video or photo post link (tiktok.com/@user/video/<id>, /@user/photo/<id>, m.tiktok.com/v/<id>.html, an embed or player link…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -4695,12 +4695,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4734,7 +4734,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A TikTok effect link (the effect page's tiktok.com/effect/Bold-Glamour-14519845, or the older tiktok.com/sticker/Bold-Glamour-14519845) or the…",
+                    "description": "A TikTok effect link (tiktok.com/effect/<name>-<id>, or the older tiktok.com/sticker/<name>-<id>) or its numeric ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -4748,12 +4748,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4787,12 +4787,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "Instagram post, reel or profile link (instagram.com/p/…, /reel/…, /reels/…, /tv/…, /<username>/p/…, share links, m.instagram.com…",
+                    "description": "An Instagram post, reel or profile link (instagram.com/p/<code>/, /reel/<code>/, /reels/<code>/, /tv/<code>/, /<username>/p/<code>/, /share/……",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "max_width": {
-                    "description": "Widest the embed may be laid out, in pixels (default and most: 658; a wider value is laid out at 658).",
+                    "description": "The widest the embed may be laid out, in pixels.",
                     "minimum": 320,
                     "type": "integer",
                 },
@@ -4801,7 +4801,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "boolean",
                 },
                 "omit_script": {
-                    "description": "Leave Instagram's embed.js script tag out of html, for a page that loads it once itself (then call window.instgrm.Embeds.process() after inserting the markup).",
+                    "description": "Leave Instagram's embed.js script tag out of html, for a page that loads it once itself.",
                     "type": "boolean",
                 },
                 "detail": {
@@ -4814,12 +4814,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4867,12 +4867,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4906,7 +4906,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The issue or pull request: its link (https://github.com/golang/go/issues/70000, https://github.com/react/react/pull/27522 with any tab such as…",
+                    "description": "owner/name#number (golang/go#70000) or a link: github.com/<owner>/<name>/issues/<n> or /pull/<n> with any tab or anchor, /pull/<n>.diff or .patch…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -4920,12 +4920,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -4959,7 +4959,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A LinkedIn job: its link (linkedin.com/jobs/view/<id>, with or without the title in it), a job search or collection link with the job open…",
+                    "description": "A LinkedIn job: linkedin.com/jobs/view/<id>, with or without the title in it, a job search or collection link with ?currentJobId=<id>, or its ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -4973,12 +4973,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5012,7 +5012,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "TikTok username with or without the @ (aljazeeraenglish, @aljazeeraenglish), a profile or LIVE page URL (tiktok.com/@aljazeeraenglish…",
+                    "description": "A TikTok username, with or without the @, a profile or LIVE link (tiktok.com/@<username>, /@<username>/live, tiktok.com/share/user/<id>), a numeric…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5026,12 +5026,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5065,7 +5065,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "An Instagram location link (instagram.com/explore/locations/212988663/new-york-new-york/, as a post's location tag opens it; any name or tab after…",
+                    "description": "An Instagram location link (instagram.com/explore/locations/<id>/<name>/, as a post's location tag opens it, with any name or tab after the ID) or…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5079,12 +5079,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5118,7 +5118,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The podcast: its link (open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL, also under /intl-de/ and /embed/, with any share parameters), a share link…",
+                    "description": "A podcast: its link (open.spotify.com/show/<id>, also under /intl-<lang>/, /embed/ or /embed-podcast/, /embed?uri=spotify:show:<id>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5132,12 +5132,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5171,7 +5171,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The repository: its link (github.com/torvalds/linux, or any page under it: its README's page, a file, a folder), owner/name alone (torvalds/linux), a…",
+                    "description": "owner/name (torvalds/linux), github:owner/name or a link: github.com/<owner>/<name> and any page under it, a clone link (.git…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5185,12 +5185,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5224,12 +5224,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The account whose follow is checked (the source): a username with or without the @ (NASA, @NASA), a numeric user ID (11348282), or a profile link…",
+                    "description": "The source account, whose follows are checked: a username (@ optional, any case), a user ID, or a profile link: x.com/<username> with any tab…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "target": {
-                    "description": "The other account (the target): is the source following it, and is it following the source?",
+                    "description": "The target account, in any form handle takes.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5243,12 +5243,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5283,7 +5283,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The repository: its link (github.com/torvalds/linux, or any page under it: a file, a folder, its issues or releases), owner/name alone…",
+                    "description": "owner/name (torvalds/linux), github:owner/name or a link: github.com/<owner>/<name> and any page under it, a clone link (.git…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5297,12 +5297,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5336,12 +5336,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The Space: its link on x.com or twitter.com (x.com/i/spaces/<id>, its /peek view, mobile hosts and any query too) or its ID.",
+                    "description": "An X Space link (x.com/i/spaces/<id>, /i/spaces/<id>/peek, on x.com, twitter.com or a mobile host, any query) or its ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "streams": {
-                    "description": "Also return the Space's HLS playlist: in streams while it is live, in platform_specific.x.replay_url once it is over and X keeps the recording.",
+                    "description": "Also return the HLS playlist, at the same price: in streams while live, in platform_specific.x.replay_url once over, when X keeps the recording.",
                     "type": "boolean",
                 },
                 "detail": {
@@ -5354,12 +5354,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5393,7 +5393,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Instagram username to check, with or without the @ (socialtap, @socialtap), or a profile link (instagram.com/socialtap).",
+                    "description": "The username to check, with or without the @, or a profile link (instagram.com/<username>/).",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5407,12 +5407,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5446,7 +5446,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "Any web page's link, exactly as people save it: an article, a recipe, a product page, another platform's video.",
+                    "description": "Any web page's link: an article, a recipe, a product, another platform's video.",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5460,12 +5460,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5517,7 +5517,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -5532,12 +5532,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5571,7 +5571,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The GitHub account: its username (login), with or without the @; its numeric account ID; or its link (github.com/torvalds, with any tab…",
+                    "description": "A username, with or without @ (a bot's ends in [bot]), a numeric account ID, which survives a rename, or a link: github.com/<username> with any tab…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -5585,7 +5585,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -5600,12 +5600,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5639,13 +5639,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Pinterest account: its username (any case, with or without the @), its profile link (pinterest.com/pinterest/, any tab of it, also on a country's…",
+                    "description": "The Pinterest account: its username (any case, @ optional), a link to its profile or a tab of it (pinterest.com/<username>/, /<username>/_created/…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -5660,12 +5660,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5703,13 +5703,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "category": {
-                    "description": "Only the deals of one category: its browse node ID (172282 is Electronics on amazon.com), or a link that names one: a category link…",
+                    "description": "Only one category's deals: its browse node ID (172282: Electronics on amazon.com) or a link naming one (amazon.com/b?node=<id>, a department's search…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -5724,12 +5724,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5763,13 +5763,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Facebook profile (a Page's or a person's): its vanity name (jannuslive, case-insensitive), its numeric profile ID, or any link to it…",
+                    "description": "A Page's or person's vanity name (jannuslive, any case), numeric profile ID or link (facebook.com/<name> with any tab, profile.php?id=<id>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "time": {
                     "default": "upcoming",
-                    "description": "Which events: upcoming, soonest first (events under way included); past, latest first, as the profile's Events tab shows them.",
+                    "description": "upcoming: soonest first, events under way included.",
                     "enum": [
                         "upcoming",
                         "past",
@@ -5786,7 +5786,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 8,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 8,
                     "minimum": 1,
                     "type": "integer",
@@ -5801,12 +5801,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5840,13 +5840,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "Instagram username with or without the @, a numeric user ID (528817151), or a profile URL (instagram.com/nasa, m.instagram.com, instagr.am, a /reels/…",
+                    "description": "A username or @username, a user ID, or a profile link (instagram.com/<username>/ with any tab or query, /_u/<username>, /stories/<username>/…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 10,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 10,
                     "minimum": 1,
                     "type": "integer",
@@ -5861,12 +5861,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -5900,13 +5900,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The repository: its link (https://github.com/golang/go, any of its pages such as /issues or /pulls, its clone link ending in .git, or…",
+                    "description": "owner/name (golang/go) or a link: github.com/<owner>/<name> and any page under it, its clone link ending in .git, api.github.com/repos/<owner>/<name>.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "status": {
                     "default": "active",
-                    "description": "Only items that are still running (active), only items that stopped (inactive), or both (all).",
+                    "description": "Only active items, only inactive ones, or both (all).",
                     "enum": [
                         "active",
                         "inactive",
@@ -5916,7 +5916,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "type": {
                     "default": "all",
-                    "description": "Which kind of item: all (the default: issues and pull requests, as GitHub lists them together), issue or pull_request.",
+                    "description": "Only issues, only pull requests, or both (all).",
                     "enum": [
                         "all",
                         "issue",
@@ -5925,7 +5925,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "labels": {
-                    "description": "Only items that have every one of these labels: their names, separated by commas (bug,help wanted).",
+                    "description": "Only items with every one of these labels: names separated by commas (bug,help wanted), in any case.",
                     "maxLength": 600,
                     "type": "string",
                 },
@@ -5950,7 +5950,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -5965,12 +5965,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6004,13 +6004,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "A LinkedIn job: its link (linkedin.com/jobs/view/<id>, with or without the title in it), a job search or collection link with the job open…",
+                    "description": "A LinkedIn job: linkedin.com/jobs/view/<id>, with or without the title in it, a job search or collection link with ?currentJobId=<id>, or its ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "list": {
                     "default": "similar",
-                    "description": "Which list beside the job: similar, the jobs LinkedIn shows as similar to it (its Similar jobs, with their pay when the card shows it); also_viewed…",
+                    "description": "similar: LinkedIn's Similar jobs, with pay where the card shows it.",
                     "enum": [
                         "similar",
                         "also_viewed",
@@ -6019,7 +6019,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 30,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -6034,12 +6034,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6073,17 +6073,17 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The LinkedIn company: its Page's link (linkedin.com/company/<name>, any tab of it such as /jobs/), its name (amazon-web-services, company/<name>)…",
+                    "description": "The LinkedIn company: linkedin.com/company/<name> (any tab, such as /jobs/), its name with or without company/, its numeric ID, or…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "location": {
-                    "description": "Only jobs in this place: a country, state, metro area or city in words (Germany, California, London), matched to the first place LinkedIn's own…",
+                    "description": "Only jobs in this place: a country, state, metro area or city (Germany, London), read as LinkedIn's first location suggestion, or a geoId.",
                     "maxLength": 100,
                     "type": "string",
                 },
                 "easy_apply": {
-                    "description": "Only jobs applied for on LinkedIn itself (Easy Apply); their is_easy_apply is then true.",
+                    "description": "Only jobs applied for on LinkedIn itself; their is_easy_apply is true.",
                     "type": "boolean",
                 },
                 "since": {
@@ -6096,7 +6096,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 60,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 60,
                     "minimum": 1,
                     "type": "integer",
@@ -6111,12 +6111,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6150,7 +6150,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The product: its link on any Amazon marketplace (amazon.com/dp/B0FQFB8FMG, with or without the title before /dp/, /gp/product/, /gp/aw/d/…",
+                    "description": "The product: a link on any Amazon marketplace (amazon.com/dp/<ASIN>, /<title>/dp/<ASIN>, /gp/product/<ASIN>, /gp/aw/d/<ASIN>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -6160,7 +6160,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 11,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 11,
                     "minimum": 1,
                     "type": "integer",
@@ -6175,12 +6175,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6214,13 +6214,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The GitHub user or organization: its username, with or without the @; its numeric account ID, which survives a rename; or its profile link…",
+                    "description": "A username, with or without @, a numeric account ID, which survives a rename, or a link: github.com/<username> with any tab, github.com/orgs/<org>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 6,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 6,
                     "minimum": 1,
                     "type": "integer",
@@ -6235,12 +6235,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6274,12 +6274,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The city: its Facebook events link (facebook.com/events/explore/<city>/<id>/, with a time window after it such as /today/; m.",
+                    "description": "The city: its events link (facebook.com/events/explore/<city>/<id>/, also with a window such as /today/; m.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "time": {
-                    "description": "Only events in this window, as Facebook's city page filters them; every coming event when omitted.",
+                    "description": "Only events in this window, as Facebook's city page filters them.",
                     "enum": [
                         "today",
                         "tomorrow",
@@ -6299,7 +6299,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 12,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 12,
                     "minimum": 1,
                     "type": "integer",
@@ -6314,12 +6314,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6353,13 +6353,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "TikTok username with or without the @, a profile URL (tiktok.com/@tiktok), a numeric user ID or a secUid (MS4wLjABAAAA…).",
+                    "description": "A TikTok username, with or without the @, a profile link (tiktok.com/@<username>, tiktok.com/share/user/<id>), a numeric user ID or a secUid (MS4wLjABAAAA…).",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 30,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 30,
                     "minimum": 1,
                     "type": "integer",
@@ -6374,12 +6374,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6413,7 +6413,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "section": {
-                    "description": "Only the terms of one section of Instagram's popular page: trending_now (Trending now), entertainment (Pop culture moments), get_inspired (Get…",
+                    "description": "Only this section of Instagram's popular page: trending_now, entertainment (Pop culture moments), get_inspired, learn_something_new, shop_the_trends…",
                     "enum": [
                         "trending_now",
                         "entertainment",
@@ -6427,7 +6427,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -6442,12 +6442,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6481,13 +6481,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "A TikTok Shop shop: its storefront link (shop.tiktok.com/us/store/<slug>/<seller id>, www.tiktok.com/shop/store/<slug>/<seller id>) or its seller ID.",
+                    "description": "A TikTok Shop store: its storefront link (shop.tiktok.com/us/store/<slug>/<seller id>, www.tiktok.com/shop/store/<slug>/<seller id>) or its seller ID.",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -6502,12 +6502,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6541,13 +6541,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The LinkedIn member: their profile link (linkedin.com/in/<name>, any tab of it), their public name, with or without in/ (in/satyanadella), or their…",
+                    "description": "A LinkedIn member: linkedin.com/in/<name> (any tab), their public name with or without in/ (in/satyanadella), or their profile URN (ACoAA…, alone…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 25,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 25,
                     "minimum": 1,
                     "type": "integer",
@@ -6562,12 +6562,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6601,13 +6601,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The GitHub account whose pull requests to list: its username (login), with or without the @; its numeric account ID, which survives a rename; its…",
+                    "description": "A username, with or without @ (a bot's ends in [bot]), a numeric account ID, which survives a rename, or a link: github.com/<username> with any tab…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "status": {
                     "default": "all",
-                    "description": "Only items that are still running (active), only items that stopped (inactive), or both (all).",
+                    "description": "Only active items, only inactive ones, or both (all).",
                     "enum": [
                         "active",
                         "inactive",
@@ -6637,7 +6637,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -6652,12 +6652,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6691,7 +6691,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "url": {
-                    "description": "The repository: its link (https://github.com/cli/cli, or any page under it such as /releases or a release's own page), owner/name (cli/cli), a clone…",
+                    "description": "owner/name (cli/cli), github:owner/name or a link: github.com/<owner>/<name> and any page under it, a clone link (.git…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -6705,7 +6705,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 10,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 10,
                     "minimum": 1,
                     "type": "integer",
@@ -6720,12 +6720,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6759,7 +6759,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The GitHub user or organization whose repositories to list: its username (login), with or without the @; its numeric account ID, which survives a…",
+                    "description": "A username, with or without @, a numeric account ID, which survives a rename, or a link: github.com/<username> with any tab, github.com/orgs/<org>…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -6775,7 +6775,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "type": {
                     "default": "owner",
-                    "description": "owner (default): the repositories the account owns, the forks it made included.",
+                    "description": "owner: the repositories the account owns, its forks included.",
                     "enum": [
                         "owner",
                         "member",
@@ -6793,7 +6793,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -6808,12 +6808,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6847,13 +6847,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The Twitch channel: its login with or without the @ (riotgames), a channel link (twitch.tv/riotgames/schedule), or its numeric ID (36029255).",
+                    "description": "A Twitch channel: its login, with or without the @ (riotgames), twitch.tv/<login> or twitch.tv/<login>/schedule, or its numeric ID (36029255).",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -6868,12 +6868,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6907,7 +6907,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "handle": {
-                    "description": "The influencer's storefront: its handle (sydneydelrey, the name after /shop/ in its link, any case, with or without the @), its link on any Amazon…",
+                    "description": "The storefront: its handle (sydneydelrey, any case, @ optional), its account ID (amzn1.account.<ID>, the Amazon Shop API's id), or a link on any…",
                     "maxLength": 2048,
                     "type": "string",
                 },
@@ -6917,7 +6917,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 20,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 20,
                     "minimum": 1,
                     "type": "integer",
@@ -6932,12 +6932,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -6989,7 +6989,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -7004,12 +7004,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7053,7 +7053,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -7068,12 +7068,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7107,12 +7107,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "category": {
-                    "description": "The category: its department's slug as Amazon's Best Sellers links write it (electronics, books, or ce-de on Amazon Germany), optionally with a…",
+                    "description": "The category: its department slug (electronics, or ce-de on Amazon Germany), optionally with a browse node (electronics/<node>), a browse node alone…",
                     "maxLength": 2048,
                     "type": "string",
                 },
                 "list": {
-                    "description": "Which of the category's lists: best_sellers (the most sold), new_releases (the best-selling new and upcoming products), movers_and_shakers (the…",
+                    "description": "best_sellers: most sold.",
                     "enum": [
                         "best_sellers",
                         "new_releases",
@@ -7128,7 +7128,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -7143,12 +7143,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7189,7 +7189,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "kind": {
                     "default": "top_monthly",
-                    "description": "Which board: top_monthly (the default: the most searched terms this month), top_yearly (this year), growing (the terms whose searches rose most this…",
+                    "description": "top_monthly: the most searched terms this month.",
                     "enum": [
                         "top_monthly",
                         "top_yearly",
@@ -7199,7 +7199,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "category": {
-                    "description": "Only terms Pinterest files under this interest, and each term's categories filled in.",
+                    "description": "Only terms Pinterest files under this interest.",
                     "enum": [
                         "womens_fashion",
                         "mens_fashion",
@@ -7260,7 +7260,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 50,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 50,
                     "minimum": 1,
                     "type": "integer",
@@ -7275,12 +7275,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7315,7 +7315,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "period": {
                     "default": "1",
-                    "description": "The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
+                    "description": "The time window, in days back from the platform's latest update; each endpoint lists its values.",
                     "enum": [
                         "1",
                         "7",
@@ -7329,13 +7329,13 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "spoken_language": {
-                    "description": "Only repositories whose description and README are written in this spoken language: an ISO 639-1 code (en, zh, ja).",
+                    "description": "Only repositories whose description and README are in this spoken language: an ISO 639-1 code (en, zh, ja).",
                     "maxLength": 10,
                     "type": "string",
                 },
                 "limit": {
                     "default": 25,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 25,
                     "minimum": 1,
                     "type": "integer",
@@ -7350,12 +7350,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7389,7 +7389,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "month": {
-                    "description": "The month's thread, as YYYY-MM (2026-10), from April 2011 on.",
+                    "description": "A month's thread, as YYYY-MM (2026-10), from 2011-04 on.",
                     "maxLength": 20,
                     "type": "string",
                 },
@@ -7403,7 +7403,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 },
                 "limit": {
                     "default": 100,
-                    "description": "Items per page, 1 to the endpoint's page size (its default and maximum; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
+                    "description": "Items per page, up to the endpoint's page size (the default; larger values are reduced to it). Omit it for the cheapest walk: a page costs the same whatever its limit.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
@@ -7418,12 +7418,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "max_age": {
-                    "description": "Accept a cached response up to this many seconds old. Cache hits cost 0 credits. Omit to always fetch fresh.",
+                    "description": "Accept a cached answer up to this many seconds old; cache hits are free. Omit to always fetch live.",
                     "minimum": 0,
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "The most this request may be charged, in credits. A request that would cost more answers insufficient_credits with details.reason max_credits, free, before the work that would cost more (a speech-to-text transcription, a data partner's lookup, results filled in). Omit it to be charged the endpoint's price, up to its maximum.",
+                    "description": "The most this request may be charged, in credits. One that would cost more stops first, free, with insufficient_credits (details.reason max_credits). Omit for the endpoint's price, up to its maximum.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7445,12 +7445,12 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "create_background_job",
         "title": "Create a background job",
-        "description": "Run many requests (or one long one) as a job. Runs up to `max_requests` (1000) endpoint requests in the background: each item is exactly the request its endpoint answers synchronously, at the same price (failed items are free), with the same caches. `max_pages` walks a list endpoint server-side with its cursor. Credits work as for synchronous requests: each page reserves its endpoint's minimum when it runs (against the balance and the calling key's spend limit) and is topped up to its price, so a job starts whenever its first page could run; `max_credits` (default: the sum of every item's maximum price) caps what the job may spend. With `wait`, the answer is 200 with the first page of results when the job ends in time (a synchronous batch), else 202 with the job; poll `GET /v1/jobs/{id}` (free) or subscribe to `job.completed`. Use it instead of a loop of single calls for many items or for walking a whole list; poll it with get_background_job and read its results with list_background_job_results. Retrying with the same arguments (and idempotency_key) never creates a second job.",
+        "description": "Run many requests (or one long one) as a job. Runs up to 1000 endpoint requests in the background, each exactly as its endpoint answers it directly: same price, same caches, and failed items are free. Each page is charged when it runs, as a direct request is, against the balance and the calling key's spend limit: a job starts once its first page could run. max_credits caps the total. Follow it with GET /v1/jobs/{id}, free to poll, or the job.completed event. Use it instead of a loop of single calls for many items or for walking a whole list; poll it with get_background_job and read its results with list_background_job_results. Retrying with the same arguments (and idempotency_key) never creates a second job.",
         "input_schema": {
             "type": "object",
             "properties": {
                 "wait": {
-                    "description": "Seconds to wait for the job to end before answering. If it ends in time the answer is 200 with the first page of results (a synchronous batch); otherwise 202 with the job as it is.",
+                    "description": "Seconds to wait for the job to end: 200 with the first page of results if it does, else 202 with the job as it is.",
                     "maximum": 60,
                     "minimum": 0,
                     "type": "integer",
@@ -7461,7 +7461,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "integer",
                 },
                 "max_credits": {
-                    "description": "Most the job may spend: a cap, never held up front (each page reserves as a synchronous request does). Default: the sum of every item's maximum price (times its max_pages). Items that would go over it are canceled.",
+                    "description": "The most the job may spend, never held up front. Default: the sum of every item's maximum price, times its max_pages. Items that would pass it are canceled.",
                     "minimum": 1,
                     "type": "integer",
                 },
@@ -7824,7 +7824,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_background_job",
         "title": "Get a background job",
-        "description": "Get a job (free to poll). The job's status, per-state request counts and credits. Free: poll it, or long-poll with `wait`. Poll a job created with create_background_job until it completes (wait long-polls); polling is free. Read its results with list_background_job_results.",
+        "description": "Get a job (free to poll). Returns a job's status, its items' counts by state and its credits. Polling is free, and wait long-polls until the job ends. Poll a job created with create_background_job until it completes (wait long-polls); polling is free. Read its results with list_background_job_results.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -7852,7 +7852,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "list_background_job_results",
         "title": "List a background job's results",
-        "description": "List a job's results as they complete. The job's results in the order they completed, cursor-paged: one per page an item fetched (a single-item endpoint has one page), and one with the item's final status when it ended without a result (canceled, expired). `result` is exactly the synchronous response's envelope, `error` exactly its error object. Results of a running job can be read as they arrive: keep the last `page.next_cursor` and continue from it. Kept `results_retention_s` (7 days) after the job ends. Free. Each result is one page of one item: exactly that endpoint's answer, concise like the endpoint tools' unless detail is full. Follow next_cursor for the next results; results arrive while the job runs.",
+        "description": "List a job's results as they complete. Returns a job's results in the order they completed: one per page an item fetched, or one with its final status when it ended without a result. Read a running job's results as they arrive: keep the last page.next_cursor and continue from it. Results are kept 7 days after the job ends. Each result is one page of one item: exactly that endpoint's answer, concise like the endpoint tools' unless detail is full. Follow next_cursor for the next results; results arrive while the job runs.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -7871,7 +7871,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "type": "string",
                 },
                 "limit": {
-                    "description": "Results per page (default and maximum 100).",
+                    "description": "Results per page. Default: the maximum.",
                     "maximum": 100,
                     "minimum": 1,
                     "type": "integer",
