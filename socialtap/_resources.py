@@ -32429,7 +32429,8 @@ class TikTokProfile:
 
         Returns a public TikTok profile from a username, profile link, user ID or secUid, with exact follower,
         following, video and like counts. It also has the display name, bio, bio link, avatar, verified badge, user ID
-        and secUid, whether the account is private, its business category, join date and registered country.
+        and secUid, whether the account is private, its business category, join date and the country TikTok attributes
+        to it.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 
@@ -74463,7 +74464,8 @@ class AsyncTikTokProfile:
 
         Returns a public TikTok profile from a username, profile link, user ID or secUid, with exact follower,
         following, video and like counts. It also has the display name, bio, bio link, avatar, verified badge, user ID
-        and secUid, whether the account is private, its business category, join date and registered country.
+        and secUid, whether the account is private, its business category, join date and the country TikTok attributes
+        to it.
 
         Cost: 1 credit. Failed requests and cache hits are free.
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Dict, NamedTuple, Optional
 
-VERSION = "1.600.37"
+VERSION = "1.602.39"
 """SDK version: 1.<contract facts>.<generator revision> (sdk/README.md)."""
 CLIENT_NAME = "socialtap-python"
 """The name this SDK sends as its User-Agent's product and its MCP clientInfo name (catalog clients)."""
@@ -44,7 +44,7 @@ ERROR_CODES: Dict[str, ErrorInfo] = {
     "invalid_cursor": ErrorInfo(400, False, "Repeat the original request without cursor to start the list again."),
     "unauthorized": ErrorInfo(401, False, "Send a valid API key in the x-api-key header. No key yet? A person gets one at details.signup_url; an AI agent follows details.agent_auth_url."),
     "forbidden": ErrorInfo(403, False, "Act on details.reason. suspended: contact support. scope: use a key with details.required_scope. previous_secret: use the new secret. key_expired or key_revoked: create a new key. ip_not_allowed: call from an allowed IP."),
-    "insufficient_credits": ErrorInfo(402, False, "Have a person buy credits at details.purchase_url (or make them a checkout link with details.checkout), then repeat the request. Do not retry automatically."),
+    "insufficient_credits": ErrorInfo(402, False, "Have a person buy credits at details.purchase_url (details.options lists the plans and packs with their prices; details.checkout makes a checkout link for a pack), then repeat the request. Do not retry automatically."),
     "spend_limit_reached": ErrorInfo(402, False, "Wait until details.resets_at, or raise the key's spend limit (PATCH /v1/api_keys/{id}). Do not retry automatically."),
     "rate_limited": ErrorInfo(429, True, "Wait the seconds in the retry-after header, then retry. If your steady traffic needs more, ask support to raise the ceiling; without an API key, send one."),
     "request_too_large": ErrorInfo(413, False, "Send a smaller body, or split a large job into several."),
@@ -53,7 +53,7 @@ ERROR_CODES: Dict[str, ErrorInfo] = {
     "idempotency_key_reused": ErrorInfo(422, False, "Use a new Idempotency-Key for a different request, and reuse a key only to retry the identical request. With reason answer_expired, check what the first request created (GET /v1/api_keys, GET /v1/webhook_endpoints) before sending it again under a new key."),
     "idempotency_key_in_progress": ErrorInfo(409, True, "Retry after the seconds in the retry-after header to get that request's result."),
     "job_not_found": ErrorInfo(404, False, "Check the job ID. Finished jobs are kept for a limited time."),
-    "unknown_endpoint": ErrorInfo(404, False, "Call details.suggestion when it is set (the path you most likely meant), or pick one from details.endpoints. Do not retry the same path."),
+    "unknown_endpoint": ErrorInfo(404, False, "Call details.suggestion when it is set (the path you most likely meant); otherwise pick one from details.endpoints. Do not retry the same path."),
     "not_found": ErrorInfo(404, False, "Check the link or ID. Do not retry."),
     "private_or_unavailable": ErrorInfo(403, False, "Only public items can be fetched. Do not retry."),
     "no_transcript": ErrorInfo(404, False, "Do not retry. If the platform offers other languages, try one with lang."),

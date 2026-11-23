@@ -9,7 +9,7 @@ MCP_PATH: Optional[str] = "/mcp"
 MCP_PROTOCOL_VERSION = "2026-07-28"
 """The MCP revision of a tool call: the stateless one, so a call is one POST without a session."""
 
-DEFAULT_TOOLS: List[str] = ["find_endpoint", "get_post", "list_posts", "get_profile", "list_comments", "get_transcript", "get_engagement", "search", "call_endpoint", "search_docs", "read_doc", "get_account"]
+DEFAULT_TOOLS: List[str] = ["find_endpoint", "get_post", "list_posts", "get_profile", "list_comments", "get_transcript", "get_engagement", "search", "call_endpoint", "search_docs", "read_doc", "get_account", "buy_credits"]
 """The tools a model gets by default (the server's default toolset): finding an endpoint, the kinds of data most
 platforms have, call_endpoint for every other endpoint, the docs and the account."""
 
@@ -584,7 +584,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "search",
         "title": "Search by query",
-        "description": "Search a platform by query for ads, advertisers, albums, channels, comments, communities, events, groups, hashtags, issues, jobs, places, playlists, podcasts, posts, products, profiles, repositories, sounds, suggestions or top. Pass platform, type and query. Types by platform: amazon: products; applemusic: albums, profiles, playlists, posts; bluesky: posts; facebook: ads, advertisers, events, groups, products, places, posts, profiles; github: issues, profiles, repositories; google: ads, profiles, suggestions; hackernews: comments, posts; instagram: hashtags, places, posts, profiles, sounds, suggestions; linkedin: ads, jobs, posts, profiles; pinterest: posts; reddit: comments, posts, profiles, communities; rumble: posts; spotify: albums, profiles, playlists, podcasts, posts; telegram: channels; threads: posts, profiles; tiktok: ads, hashtags, posts, profiles, sounds, suggestions, top; tiktokshop: products; x: communities, hashtags, posts, profiles; youtube: posts, profiles, suggestions. Price per successful page: Amazon, Apple Music, Bluesky, GitHub, Google, Hacker News, Instagram, Pinterest, Reddit, Rumble, Spotify, Threads, TikTok Shop, YouTube: 1 credit. Facebook, LinkedIn, Telegram, TikTok, X: 1 credit + 1 per result filled in (with fill=true). Follow next_cursor while it is set; a short page is not the end.",
+        "description": "Search a platform by query for ads, advertisers, albums, channels, comments, communities, events, groups, hashtags, issues, jobs, places, playlists, podcasts, posts, products, profiles, repositories, sounds, suggestions or top. Pass platform, type and query. Types by platform: amazon: products; applemusic: albums, profiles, playlists, posts; bluesky: posts; facebook: ads, advertisers, events, groups, products, places, posts, profiles; github: issues, profiles, repositories; google: ads, profiles, suggestions; hackernews: comments, posts; instagram: hashtags, places, posts, profiles, sounds, suggestions; linkedin: ads, jobs, posts, profiles; pinterest: posts; reddit: comments, posts, profiles, communities; rumble: posts; spotify: albums, profiles, playlists, podcasts, posts; telegram: channels; threads: posts, profiles; tiktok: ads, hashtags, posts, profiles, sounds, suggestions, top; tiktokshop: products; x: communities, hashtags, posts, profiles; youtube: posts, profiles, suggestions. Price per successful page: Amazon, Apple Music, Bluesky, GitHub, Google, Hacker News, Instagram, Pinterest, Reddit, Rumble, Spotify, Threads, TikTok Shop, YouTube: 1 credit. Facebook, LinkedIn, Telegram, TikTok, X: 1 credit + 1 per result filled in (with fill=true). Follow next_cursor while it is set; a short page is not the end. It also takes each platform's own filters (such as kind or author), not listed here: find_endpoint's params name them for each search.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -669,58 +669,6 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     "description": "Only for Apple Music (every type), Bluesky posts, Facebook ads, Spotify (every type), YouTube suggestions. Preferred language: a BCP-47 tag such as en or pt-BR (case-insensitive; _ is read as -).",
                     "type": "string",
                 },
-                "kind": {
-                    "description": "Only for Apple Music playlists or posts, GitHub issues, Hacker News posts, Spotify profiles or posts, YouTube posts. Apple Music playlists: What to list: playlists (the default) or radio stations. Apple Music posts: What to list: songs (the default), music videos or radio episodes. GitHub issues: Which kind of item: all (the default: issues and pull requests together), issue or pull_request. Hacker News posts: Which stories: all (default: stories, jobs and polls), story (every story but jobs and polls: links, Ask HN, Show HN and Launch HN), ask_hn (Ask HN… Spotify profiles: Whose accounts: artist (default), or listener, the people, brands and labels whose accounts own playlists. Spotify posts: What to list: tracks (the default) or podcast episodes. YouTube posts: Which results: all (default: the videos, streams and shorts in YouTube's result list, without its shelves), video (YouTube's Videos filter), short…",
-                    "enum": [
-                        "playlist",
-                        "station",
-                        "song",
-                        "music_video",
-                        "radio_episode",
-                        "all",
-                        "issue",
-                        "pull_request",
-                        "story",
-                        "ask_hn",
-                        "show_hn",
-                        "launch_hn",
-                        "job",
-                        "poll",
-                        "artist",
-                        "listener",
-                        "track",
-                        "episode",
-                        "video",
-                        "short",
-                        "live",
-                    ],
-                    "type": "string",
-                },
-                "author": {
-                    "description": "Only for Bluesky posts, Hacker News (every type), YouTube posts. Bluesky posts: Only posts by this account: a handle, a DID or a profile link. Hacker News comments: Only comments written by this user: a username (case-sensitive, as on Hacker News) or a profile link. Hacker News posts: Only stories posted by this user: a username (case-sensitive, as on Hacker News) or a profile link. YouTube posts: Only this channel's videos, as its Search tab finds them: a handle (@MrBeast), any channel link or a UC… channel ID.",
-                    "maxLength": 512,
-                    "type": "string",
-                },
-                "mentions": {
-                    "description": "Only for Bluesky posts. Only posts that mention this account: a handle, a DID or a profile link.",
-                    "maxLength": 300,
-                    "type": "string",
-                },
-                "tag": {
-                    "description": "Only for Bluesky posts. Only posts with this hashtag, with or without the #.",
-                    "maxLength": 100,
-                    "type": "string",
-                },
-                "domain": {
-                    "description": "Only for Bluesky posts. Only posts that link to this domain or a subdomain of it.",
-                    "maxLength": 253,
-                    "type": "string",
-                },
-                "links_to": {
-                    "description": "Only for Bluesky posts. Only posts that link to this page: a full URL.",
-                    "maxLength": 2000,
-                    "type": "string",
-                },
                 "since": {
                     "description": "Only on some platforms (find_endpoint lists which). Only items at or after this time: RFC 3339 (2026-10-01T12:00:00Z) or a date (2026-10-01, midnight UTC).",
                     "type": "string",
@@ -738,44 +686,9 @@ TOOL_DATA: List[Dict[str, Any]] = [
                     ],
                     "type": "string",
                 },
-                "location": {
-                    "description": "Only for Facebook events or products, LinkedIn jobs. Facebook events: Only events in this place: its Facebook events link (facebook.com/events/explore/<city>/<id>/) or its numeric ID, the one the Facebook Marketplace… Facebook products: The place to search around, instead of lat and lng: a Marketplace place ID (platform_specific.facebook.location_id of a listing there, such as… LinkedIn jobs: Where the jobs are: a city, region or country in words, as in LinkedIn's location box (Berlin, Germany; London Area; Germany; Worldwide), or…",
-                    "maxLength": 2048,
-                    "type": "string",
-                },
                 "fill": {
                     "description": "Only on some platforms (find_endpoint lists which). true also fetches each result's item from the platform: its full, current record in details (exact counts, its ID), as the platform's own endpoint for that kind returns it.",
                     "type": "boolean",
-                },
-                "lat": {
-                    "description": "Only for Facebook products or places. Facebook products: Latitude of the place to search around (WGS 84 degrees), with lng; or use location. Facebook places: Latitude (WGS 84 degrees) to rank places near, with lng: of two Springfields, the closer comes first.",
-                    "maximum": 90,
-                    "minimum": -90,
-                    "type": "number",
-                },
-                "lng": {
-                    "description": "Only for Facebook products or places. Facebook products: Longitude of the place to search around (WGS 84 degrees), with lat; or use location. Facebook places: Longitude (WGS 84 degrees) to rank places near, with lat.",
-                    "maximum": 180,
-                    "minimum": -180,
-                    "type": "number",
-                },
-                "radius_km": {
-                    "description": "Only for Facebook products. How far around the place to search, in kilometers (default 65).",
-                    "maximum": 805,
-                    "minimum": 1,
-                    "type": "integer",
-                },
-                "min_price": {
-                    "description": "Only for Facebook products. Only listings at this price or above, in major units of the local currency.",
-                    "maximum": 2147483647,
-                    "minimum": 0,
-                    "type": "number",
-                },
-                "max_price": {
-                    "description": "Only for Facebook products. Only listings at this price or below, in major units of the local currency.",
-                    "maximum": 2147483647,
-                    "minimum": 0,
-                    "type": "number",
                 },
                 "period": {
                     "description": "Only for Facebook products, LinkedIn jobs. The window the ranking counts over, in days back from the platform's latest update (each endpoint lists its own).",
@@ -783,178 +696,6 @@ TOOL_DATA: List[Dict[str, Any]] = [
                         "1",
                         "7",
                         "30",
-                    ],
-                    "type": "string",
-                },
-                "condition": {
-                    "description": "Only for Facebook products. Only listings in these conditions, comma-separated: new, used_like_new, used_good, used_fair.",
-                    "maxLength": 60,
-                    "type": "string",
-                },
-                "availability": {
-                    "description": "Only for Facebook products. available (default): listings for sale now.",
-                    "enum": [
-                        "available",
-                        "sold",
-                    ],
-                    "type": "string",
-                },
-                "delivery_method": {
-                    "description": "Only for Facebook products. all (default), only listings the buyer can pick up (local_pickup), or only those the seller ships (shipping), which can come from far away.",
-                    "enum": [
-                        "all",
-                        "local_pickup",
-                        "shipping",
-                    ],
-                    "type": "string",
-                },
-                "category_id": {
-                    "description": "Only for Facebook products. Only listings in this Marketplace category (data[].category_id of a listing, such as 1658310421102081 for Bicycles).",
-                    "maxLength": 25,
-                    "type": "string",
-                },
-                "media": {
-                    "description": "Only for Facebook posts, Reddit posts. Facebook posts: video: only the videos of Pages and profiles (facebook.com/<name>/videos/…), found the same way, so fill=true gets each video's post record with… Reddit posts: Only posts that carry media uploaded to Reddit: image (one image or GIF), video (a Reddit video), carousel (a gallery, several images in one post) or…",
-                    "enum": [
-                        "video",
-                        "image",
-                        "carousel",
-                        "any",
-                    ],
-                    "type": "string",
-                },
-                "account_type": {
-                    "description": "Only for Facebook profiles, LinkedIn profiles. Facebook profiles: Only accounts of this kind: page (a Page, or a person in professional mode, as Facebook describes both alike) or person. LinkedIn profiles: Only accounts of this kind: company (a company's Page), school (a school's Page), showcase (a company's page for one brand or product) or member (a…",
-                    "enum": [
-                        "page",
-                        "person",
-                        "company",
-                        "school",
-                        "showcase",
-                        "member",
-                    ],
-                    "type": "string",
-                },
-                "topic": {
-                    "description": "Only for Google ads. political: only the election ads that lead to the website (the center's Political ads view), with their impressions and spend; needs country.",
-                    "enum": [
-                        "all",
-                        "political",
-                    ],
-                    "type": "string",
-                },
-                "format": {
-                    "description": "Only for Google ads. Only ads of this format.",
-                    "enum": [
-                        "text",
-                        "image",
-                        "video",
-                    ],
-                    "type": "string",
-                },
-                "service": {
-                    "description": "Only for Google ads. Only ads shown on this Google service.",
-                    "enum": [
-                        "google_search",
-                        "google_maps",
-                        "google_play",
-                        "google_shopping",
-                        "youtube",
-                    ],
-                    "type": "string",
-                },
-                "story": {
-                    "description": "Only for Hacker News comments. Only comments on this story, replies included: a story's link (news.ycombinator.com/item?id=8863) or its item ID.",
-                    "maxLength": 300,
-                    "type": "string",
-                },
-                "search_in": {
-                    "description": "Only for Hacker News (every type). Hacker News comments: Where the words must appear: all (default: the comment's text and its author's username) or text (the text alone). Hacker News posts: Where the words must appear: all (default: the title, the link's address, the text and the poster's username), title, url (the link's address: a…",
-                    "enum": [
-                        "all",
-                        "text",
-                        "title",
-                        "url",
-                    ],
-                    "type": "string",
-                },
-                "min_points": {
-                    "description": "Only for Hacker News posts. Only stories with at least this many points.",
-                    "maximum": 1000000,
-                    "minimum": 0,
-                    "type": "integer",
-                },
-                "min_comments": {
-                    "description": "Only for Hacker News posts. Only stories with at least this many comments.",
-                    "maximum": 1000000,
-                    "minimum": 0,
-                    "type": "integer",
-                },
-                "front_page": {
-                    "description": "Only for Hacker News posts. Only the stories on Hacker News' front page now.",
-                    "type": "boolean",
-                },
-                "search_by": {
-                    "description": "Only for LinkedIn ads, TikTok ads. LinkedIn ads: What query names. TikTok ads: advertiser: the advertiser named exactly as query, else TikTok's first suggestion.",
-                    "enum": [
-                        "keyword",
-                        "advertiser",
-                        "advertiser_id",
-                        "payer",
-                    ],
-                    "type": "string",
-                },
-                "advertiser": {
-                    "description": "Only for LinkedIn ads. Only ads of advertisers with these words in their name, for a keyword or payer search.",
-                    "maxLength": 200,
-                    "type": "string",
-                },
-                "advertiser_id": {
-                    "description": "Only for LinkedIn ads, TikTok ads. LinkedIn ads: Only this company's ads, for a keyword or payer search: its numeric ID, several with commas, or its link by ID (advertiser.url from the LinkedIn Ad… TikTok ads: An advertiser's business ID (platform_specific.tiktok.advertiser_business_id), with query its name.",
-                    "maxLength": 500,
-                    "type": "string",
-                },
-                "countries": {
-                    "description": "Only for LinkedIn ads. Only ads shown in any of these countries: ISO 3166-1 alpha-2 codes with commas.",
-                    "maxLength": 750,
-                    "type": "string",
-                },
-                "company_id": {
-                    "description": "Only for LinkedIn jobs. Only jobs at these companies: a company's numeric LinkedIn ID, or several with commas.",
-                    "maxLength": 500,
-                    "type": "string",
-                },
-                "easy_apply": {
-                    "description": "Only for LinkedIn jobs. Only jobs applied for on LinkedIn itself (Easy Apply).",
-                    "type": "boolean",
-                },
-                "under_10_applicants": {
-                    "description": "Only for LinkedIn jobs. Only jobs with fewer than ten applicants so far.",
-                    "type": "boolean",
-                },
-                "subreddit": {
-                    "description": "Only for Reddit comments or posts. Reddit comments: Only comments in this subreddit: its name (golang), r/golang or its link. Reddit posts: Only posts in this subreddit: its name (golang), r/golang, or its link (https://www.reddit.com/r/golang/).",
-                    "maxLength": 256,
-                    "type": "string",
-                },
-                "include_body": {
-                    "description": "Only for Reddit posts. Also return each post's body (text, mentions) and its exact type, read from Reddit's feed of the page's posts: a second upstream request per page, at…",
-                    "type": "boolean",
-                },
-                "tab": {
-                    "description": "Only for Rumble posts. The search tab to list: videos (default; videos and live streams) or shorts.",
-                    "enum": [
-                        "videos",
-                        "shorts",
-                    ],
-                    "type": "string",
-                },
-                "duration": {
-                    "description": "Only for Rumble posts, YouTube posts. Rumble posts: Only short videos (Rumble's Under 4 minutes) or long ones (Over 20 minutes). YouTube posts: Only videos of a length: short (under 3 minutes), medium (3 to 20 minutes) or long (over 20 minutes), by YouTube's Duration filter.",
-                    "enum": [
-                        "short",
-                        "long",
-                        "medium",
                     ],
                     "type": "string",
                 },
@@ -988,7 +729,7 @@ TOOL_DATA: List[Dict[str, Any]] = [
                 "type",
                 "query",
             ],
-            "additionalProperties": False,
+            "additionalProperties": True,
         },
         "read_only": True,
         "destructive": False,
@@ -1087,10 +828,20 @@ TOOL_DATA: List[Dict[str, Any]] = [
     {
         "name": "get_account",
         "title": "Get account balance",
-        "description": "Get the account, balance and calling key. The account's balance and plan, the low-balance alert threshold, and the calling key: its scopes, spend limit (with what it used this interval) and expiry. Free; never cached. Use it to check the credit balance before a large task; every other result already states credits_remaining.",
+        "description": "Get the account, balance and calling key. The account's balance and plan, the low-balance alert threshold, and the calling key: its scopes, spend limit (with what it used this interval) and expiry. Free; never cached. Use it to check the credit balance before a large task; every other result already states credits_remaining. It also says how your user buys credits.",
         "input_schema": {
             "type": "object",
-            "properties": {},
+            "properties": {
+                "detail": {
+                    "default": "concise",
+                    "description": "concise (default) returns the fields an agent acts on; full returns every field, the account's settings included.",
+                    "enum": [
+                        "concise",
+                        "full",
+                    ],
+                    "type": "string",
+                },
+            },
             "required": [],
             "additionalProperties": False,
         },
@@ -1098,6 +849,43 @@ TOOL_DATA: List[Dict[str, Any]] = [
         "destructive": False,
         "idempotent": True,
         "open_world": False,
+    },
+    {
+        "name": "buy_credits",
+        "title": "Buy credits (checkout link)",
+        "description": "Buy a credit pack (Stripe Checkout). Creates a Stripe Checkout session for a credit pack; open the returned url to pay. Credits are added when payment completes; GET /v1/billing/checkout/{id} follows it. Use it when your user wants more credits or a call answered insufficient_credits: give them the url, which opens Stripe Checkout in their browser. Nothing is charged until they pay there, and the credits are added when they do. Ask them which pack first.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "pack": {
+                    "description": "Pack ID: 1k (1,000 credits, $14.00), 30k (30,000 credits, $59.00), 250k (250,000 credits, $379.00), 2m (2,000,000 credits, $1,499.00), starter_topup (5,000 credits, $14.00, for subscribers of the starter plan only), growth_topup (10,000 credits, $18.00, for subscribers of the growth plan only), scale_topup (15,000 credits, $25.00, for subscribers of the scale plan only).",
+                    "enum": [
+                        "1k",
+                        "30k",
+                        "250k",
+                        "2m",
+                        "starter_topup",
+                        "growth_topup",
+                        "scale_topup",
+                    ],
+                    "type": "string",
+                },
+                "idempotency_key": {
+                    "description": "Makes a retry safe: the same key with the same arguments returns the first call's result (its current state), never runs it twice. Default: derived from the other arguments, so an identical retry is already safe; pass a new value to run the same arguments again.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string",
+                },
+            },
+            "required": [
+                "pack",
+            ],
+            "additionalProperties": False,
+        },
+        "read_only": False,
+        "destructive": False,
+        "idempotent": False,
+        "open_world": True,
     },
     {
         "name": "get_story",
@@ -7145,9 +6933,9 @@ TOOL_DATA: List[Dict[str, Any]] = [
         "open_world": True,
     },
     {
-        "name": "create_job",
+        "name": "create_background_job",
         "title": "Create a background job",
-        "description": "Run many requests (or one long one) as a job. Runs up to `max_requests` (1000) endpoint requests in the background: each item is exactly the request its endpoint answers synchronously, at the same price (failed items are free), with the same caches. `max_pages` walks a list endpoint server-side with its cursor. Credits work as for synchronous requests: each page reserves its endpoint's minimum when it runs (against the balance and the calling key's spend limit) and is topped up to its price, so a job starts whenever its first page could run; `max_credits` (default: the sum of every item's maximum price) caps what the job may spend. With `wait`, the answer is 200 with the first page of results when the job ends in time (a synchronous batch), else 202 with the job; poll `GET /v1/jobs/{id}` (free) or subscribe to `job.completed`. Use it instead of a loop of single calls for many items or for walking a whole list; poll it with get_job and read its results with list_job_results. Retrying with the same arguments (and idempotency_key) never creates a second job.",
+        "description": "Run many requests (or one long one) as a job. Runs up to `max_requests` (1000) endpoint requests in the background: each item is exactly the request its endpoint answers synchronously, at the same price (failed items are free), with the same caches. `max_pages` walks a list endpoint server-side with its cursor. Credits work as for synchronous requests: each page reserves its endpoint's minimum when it runs (against the balance and the calling key's spend limit) and is topped up to its price, so a job starts whenever its first page could run; `max_credits` (default: the sum of every item's maximum price) caps what the job may spend. With `wait`, the answer is 200 with the first page of results when the job ends in time (a synchronous batch), else 202 with the job; poll `GET /v1/jobs/{id}` (free) or subscribe to `job.completed`. Use it instead of a loop of single calls for many items or for walking a whole list; poll it with get_background_job and read its results with list_background_job_results. Retrying with the same arguments (and idempotency_key) never creates a second job.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -7524,9 +7312,9 @@ TOOL_DATA: List[Dict[str, Any]] = [
         "open_world": True,
     },
     {
-        "name": "get_job",
+        "name": "get_background_job",
         "title": "Get a background job",
-        "description": "Get a job (free to poll). The job's status, per-state request counts and credits. Free: poll it, or long-poll with `wait`. Poll a job created with create_job until it completes (wait long-polls); polling is free. Read its results with list_job_results.",
+        "description": "Get a job (free to poll). The job's status, per-state request counts and credits. Free: poll it, or long-poll with `wait`. Poll a job created with create_background_job until it completes (wait long-polls); polling is free. Read its results with list_background_job_results.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -7552,8 +7340,8 @@ TOOL_DATA: List[Dict[str, Any]] = [
         "open_world": False,
     },
     {
-        "name": "list_job_results",
-        "title": "List a job's results",
+        "name": "list_background_job_results",
+        "title": "List a background job's results",
         "description": "List a job's results as they complete. The job's results in the order they completed, cursor-paged: one per page an item fetched (a single-item endpoint has one page), and one with the item's final status when it ended without a result (canceled, expired). `result` is exactly the synchronous response's envelope, `error` exactly its error object. Results of a running job can be read as they arrive: keep the last `page.next_cursor` and continue from it. Kept `results_retention_s` (7 days) after the job ends. Free. Each result is one page of one item: exactly that endpoint's answer, concise like the endpoint tools' unless detail is full. Follow next_cursor for the next results; results arrive while the job runs.",
         "input_schema": {
             "type": "object",

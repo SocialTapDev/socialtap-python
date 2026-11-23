@@ -5,14 +5,12 @@
 SocialTap is the social media scraper API for developers and AI agents. Send a public link, a handle or a search and get live data back in one schema. Failed requests are free.
 
 The Python SDK for the SocialTap API: a method for every endpoint, typed models and errors, retries and pagination.
-Generated from the SocialTap catalog (version 1.600.37). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
+Generated from the SocialTap catalog (version 1.602.39). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
 
 ## Install
 
-Not published to PyPI yet: install it from source, from GitHub.
-
 ```sh
-pip install "git+https://github.com/SocialTapDev/socialtap-python"
+pip install socialtap
 ```
 
 Zero dependencies (the standard library's urllib); Python 3.10+; fully typed (`py.typed`, checked with `mypy --strict`).
@@ -64,17 +62,17 @@ print(res.credits.charged, res.meta.request_id)
 ```json
 {
   "approximate_fields": [],
-  "avatar_url": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/e5143212a59c09a008bf50f487d54d1f~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640\u0026refresh_token=29840d4e\u0026x-expires=4070908800\u0026x-signature=SCRUBBED\u0026t=4d5b0474\u0026ps=13740610\u0026shp=a5d48078\u0026shcp=81f88b70\u0026idc=useast5",
+  "avatar_url": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-avt-0068-tx/e5143212a59c09a008bf50f487d54d1f~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640\u0026refresh_token=13f3c5e3\u0026x-expires=4070908800\u0026x-signature=SCRUBBED\u0026t=4d5b0474\u0026ps=13740610\u0026shp=a5d48078\u0026shcp=81f88b70\u0026idc=useast8",
   "banner_url": null,
   "bio": "Making the seemingly impossible, possible.✨",
   "category": null,
-  "country_code": "US",
+  "country_code": "JP",
   "created_at": "2026-07-20T15:55:49Z",
   "display_name": "NASA",
   "external_links": [
     {
       "title": null,
-      "url": "https://science.nasa.gov/feature/artemis-ii-preliminary-lunar-science-report"
+      "url": "https://go.nasa.gov/3WyvlQi"
     }
   ],
   "id": "7664638705177150477",
@@ -82,10 +80,10 @@ print(res.credits.charged, res.meta.request_id)
   "is_verified": true,
   "location": null,
   "metrics": {
-    "follower_count": 2152843,
+    "follower_count": 2217556,
     "following_count": 23,
-    "post_count": 62,
-    "total_like_count": 11486661,
+    "post_count": 70,
+    "total_like_count": 11877309,
     "total_view_count": null
   },
   "platform": "tiktok",
@@ -469,7 +467,7 @@ guard that stopped it) and `end_reason` (the API's `page.end_reason`) say what h
 Each page is checked against its catalog price before it is fetched, and an empty page with `has_more` is not the end.
 
 ```python
-items = client.amazon.deal_products.iterate(max_pages=10, max_credits=100)
+items = client.tiktok.posts.iterate(handle="@khaby.lame", max_pages=10, max_credits=100)
 for item in items:
     print(item)
 print(items.pages_fetched, items.credits_charged, items.stop_reason, items.end_reason)
@@ -583,6 +581,7 @@ print(r.is_error, r.output)
 | `search_docs` | Search the docs |
 | `read_doc` | Read a docs page |
 | `get_account` | Get account balance |
+| `buy_credits` | Buy credits (checkout link) |
 | `get_story` | Story by link |
 | `list_community_posts` | Community posts |
 | `list_hashtag_posts` | Hashtag posts |
@@ -678,9 +677,9 @@ print(r.is_error, r.output)
 | `list_top_trends` | Top trends |
 | `list_trending_repositories` | Trending repositories |
 | `list_whoishiring_jobs` | Whoishiring jobs |
-| `create_job` | Create a background job |
-| `get_job` | Get a background job |
-| `list_job_results` | List a job's results |
+| `create_background_job` | Create a background job |
+| `get_background_job` | Get a background job |
+| `list_background_job_results` | List a background job's results |
 
 ## Versioning
 
