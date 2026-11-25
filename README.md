@@ -5,7 +5,7 @@
 SocialTap is the social media scraper API for developers and AI agents. Send a public link, a handle or a search and get live data back in one schema. Failed requests are free.
 
 The Python SDK for the SocialTap API: a method for every endpoint, typed models and errors, retries and pagination.
-Generated from the SocialTap catalog (version 1.604.40). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
+Generated from the SocialTap catalog (version 1.605.41). Docs: https://socialtap.dev/docs/. Source: https://github.com/SocialTapDev/socialtap-python.
 
 ## Install
 
@@ -41,7 +41,7 @@ asyncio.run(main())
 ## Authenticate
 
 The client reads your API key from `SOCIALTAP_API_KEY`, or takes it as an option. Requests send it in the
-`x-api-key` header. Get a key at https://socialtap.dev/signup/: every account starts with 100 free credits.
+`x-api-key` header. Get a key at https://socialtap.dev/signup/?ref=sdk: every account starts with 100 free credits.
 
 ## First call
 

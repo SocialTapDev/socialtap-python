@@ -5,13 +5,13 @@ from __future__ import annotations
 
 from typing import Dict, NamedTuple, Optional
 
-VERSION = "1.604.40"
+VERSION = "1.605.41"
 """SDK version: 1.<contract facts>.<generator revision> (sdk/README.md)."""
 CLIENT_NAME = "socialtap-python"
 """The name this SDK sends as its User-Agent's product and its MCP clientInfo name (catalog clients)."""
 DEFAULT_BASE_URL = "https://socialtap.dev"
 API_KEY_ENV = "SOCIALTAP_API_KEY"
-SIGNUP_URL: Optional[str] = "https://socialtap.dev/signup/"
+SIGNUP_URL: Optional[str] = "https://socialtap.dev/signup/?ref=sdk"
 """Where a person gets an API key (None when the catalog names no sign-up page)."""
 DEFAULT_TIMEOUT_S = 60.0
 """Timeout of one attempt."""
